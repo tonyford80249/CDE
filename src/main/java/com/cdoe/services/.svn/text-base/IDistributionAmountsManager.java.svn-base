@@ -1,7 +1,6 @@
 
 package com.cdoe.services;
 
-import com.cdoe.biz.model.Prorate;
 import com.cdoe.ui.form.ProrateForm;
 
 public interface IDistributionAmountsManager extends IBaseManager {
@@ -12,7 +11,7 @@ public interface IDistributionAmountsManager extends IBaseManager {
 	
 	ProrateForm setupForm(long id);
 
-	ProrateForm setupForm(String fiscalYear, String districtNos);
+	ProrateForm setupForm(String fiscalYear);
 
 	void runFirstPayment(ProrateForm prorateForm);
 

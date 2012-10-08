@@ -4,8 +4,6 @@ package com.cdoe.services.impl;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.hibernate.FlushMode;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.cdoe.biz.IDistributionAmountsDAO;
 import com.cdoe.biz.ITransportationDAO;
@@ -72,11 +70,10 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 	
 	
 	
-	public ProrateForm setupForm(String fiscalYear, String districtNumber) {
-		//Prorate obj = findById(Prorate.class, districtNumber); 
+	public ProrateForm setupForm(String fiscalYear) {
 		ProrateForm form = new ProrateForm();
 		
-		List<Prorate> prorateList = distributionAmountsDAO.getByDistrictAndYear(districtNumber, fiscalYear);
+		List<Prorate> prorateList = distributionAmountsDAO.getByFiscalYear(fiscalYear);
 		if (prorateList != null && prorateList.size() > 0) {
 			logger.info("Prorate Transportation data received");
 			form = setFormData(form, prorateList.get(0));
@@ -87,12 +84,6 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		}
 		return form;
 	}
-	
-	private Prorate findById(Class<Prorate> class1, String districtNumber) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 	public ProrateForm setFormData(ProrateForm form, Prorate obj) {
 		form.setId(obj.getId());
@@ -118,7 +109,6 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		
 	}
 	
-	@Transactional(readOnly = false)
 	public void runPayment(ProrateForm prorateForm, int paymentNos) {
 		String fiscalYear = prorateForm.getFiscalYear();
 		if (fiscalYear == null || "".equals(fiscalYear))
@@ -129,17 +119,20 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		System.out.println(" res 0 " + res[0]);
 		System.out.println(" res 1 " + res[1]);
 		double advPay = ((Double)res[0]).doubleValue();
-		double reimTran = ((Double)res[0]).doubleValue();
+		double reimTran = ((Double)res[1]).doubleValue();
 		
 		double prorateFactor =  ((prorateForm.getTotalDistribution() != null ? prorateForm.getTotalDistribution().doubleValue() : 0 ) - advPay )/ reimTran;
 	
 		List<Transportation> transportationList = transportationDAO.getByYear(fiscalYear);
 		
 		for (Transportation transportation : transportationList) {
-			
-			double finalReimEntitlementProrated = prorateFactor * transportation.getFinalReimEntitlement();
+			logger.debug("prorateFactor " + prorateFactor);
+			double finalReimEntitlementProrated = prorateFactor * (transportation.getFinalReimEntitlement() != null ? transportation.getFinalReimEntitlement().doubleValue() : 0);
 			double totalPayment = finalReimEntitlementProrated +  transportation.getAdvPay();
-			double migrantEducation = (totalPayment /  transportation.getTotalReimMileage()) * transportation.getMigMiles();
+			double totalMileage =  (transportation.getTotalReimMileage() != null ? transportation.getTotalReimMileage().doubleValue() : 0) * (transportation.getMigMiles() != null ? transportation.getMigMiles().doubleValue() : 0);
+			double migrantEducation = 0;
+			if (totalMileage != 0)
+			  migrantEducation = (totalPayment /totalMileage);
 			transportation.setTotalReimEntitlement(totalPayment);
 			transportation.setFinalReimProrated(finalReimEntitlementProrated);
 			double netPayment = totalPayment - migrantEducation;
@@ -157,8 +150,9 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 			
 			//commit;
 			saveOrUpdate(transportation);
-			saveOrUpdate(prorateForm);
+			
 		}
+		saveOrUpdate(prorateForm);
 	}
 	
 	

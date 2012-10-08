@@ -84,6 +84,7 @@ public class Cde40TransReimbFormController {
 			return ".Cde40TransReimbForm-index";
 		}
 		cde40TransReimbFormManager.saveOrUpdate(transportationForm);
+		transportationForm.setMessage("Cde40 Transportation Reimbursement Information saved successfully");
 		model.addAttribute("saved", true);
 		HttpSession session = request.getSession();
 		session.setAttribute("preparerEmailId", transportationForm.getEmailPreparerCde40());

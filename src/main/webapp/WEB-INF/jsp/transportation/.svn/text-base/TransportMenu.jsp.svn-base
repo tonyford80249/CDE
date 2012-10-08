@@ -24,7 +24,7 @@ $Log:$
 
 
 <script type="text/javascript">
-	sfHover = function() {
+	/** sfHover = function() {
 		var sfEls = document.getElementById("nav").getElementsByTagName("li");
 		for ( var i = 0; i < sfEls.length; i++) {
 			sfEls[i].onmouseover = function() {
@@ -36,7 +36,7 @@ $Log:$
 		}
 	}
 	if (window.attachEvent)
-		window.attachEvent("onload", sfHover);
+		window.attachEvent("onload", sfHover);*/
 </script>
 <%
 	UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");

@@ -83,25 +83,4 @@ public class Cde40SummaryController {
 		return ".Cde40Summary-index";
 	}
 
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-	public String update(Model model, @PathVariable long id) {
-		TransportationForm form = cde40SummaryManager.setupForm(id);
-		model.addAttribute("transportationForm", form);
-		return ".Cde40Summary-index";
-	}
-
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	public String delete(@PathVariable long id, HttpServletRequest request) {
-		cde40SummaryManager.delete(Transportation.class, id);
-		return "redirect:" + RequestUtils.getContextPath(request) + "/list";
-	}
-
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model) {
-		List<Transportation> transportations = cde40SummaryManager
-				.findAll(Transportation.class);
-		model.addAttribute("transportations", transportations);
-		return ".Cde40Summary-list";
-	}
-
 }

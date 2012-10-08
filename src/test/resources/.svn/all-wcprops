@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/resources
 END
-system.properties
+db-access.properties
 K 25
 svn:wc:ra_dav:version-url
-V 87
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/system.properties
+V 90
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/resources/db-access.properties
 END
 message.properties
 K 25
@@ -15,11 +15,11 @@ svn:wc:ra_dav:version-url
 V 88
 /svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/message.properties
 END
-db-access.properties
+system.properties
 K 25
 svn:wc:ra_dav:version-url
-V 90
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/db-access.properties
+V 87
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/system.properties
 END
 applicationContext-tiles.xml
 K 25
@@ -97,5 +97,5 @@ applicationContext-data.xml
 K 25
 svn:wc:ra_dav:version-url
 V 97
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-data.xml
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-data.xml
 END

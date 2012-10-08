@@ -13,10 +13,13 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import com.cdoe.services.IDistributionAmountsManager;
+import com.cdoe.ui.form.ProrateForm;
+import com.cdoe.util.DateUtil;
 import com.cdoe.biz.model.Prorate;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 	"classpath:applicationContext.xml",
@@ -26,7 +29,7 @@ import com.cdoe.biz.model.Prorate;
 	"classpath:applicationContext-hbm.xml",
 	"classpath:applicationContext-service.xml",
 	"classpath:applicationContext.xml"}, inheritLocations = true)
-@TransactionConfiguration(transactionManager = "defaultTransactionManger")
+@TransactionConfiguration(transactionManager = "defaultTransactionManger", defaultRollback=false)
 public class TestDistributionAmountsManager extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	private static final Logger logger = Logger.getLogger(TestDistributionAmountsManager.class);
@@ -59,6 +62,37 @@ public class TestDistributionAmountsManager extends AbstractTransactionalJUnit4S
 		final List<Prorate> list3 = distributionAmountsManager.findAll(Prorate.class);
 		int size3 = list3.size();
 		assertEquals(size1, size3);
+	}
+	
+	@Test
+	public void testSaveOrUpdateProrate() {
+		Prorate obj = new Prorate();
+		obj.setFiscalYear(DateUtil.getFiscalYear());
+		obj.setTotalFirstPayment(new Double(1500000.00));
+		obj.setTotalDistribution(new Double(1500000.00));
+		try {
+			distributionAmountsManager.saveOrUpdate(obj);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail();
+		}
+		assertTrue(true);
+	}
+	
+	@Test
+	public void testSaveOrUpdateProrateForm() {
+		ProrateForm obj = new ProrateForm();
+		obj.setId(0);
+		obj.setFiscalYear(DateUtil.getFiscalYear());
+		obj.setTotalFirstPayment(new Double(1500000.00));
+		obj.setTotalDistribution(new Double(1500000.00));
+		try {
+			distributionAmountsManager.saveOrUpdate(obj);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail();
+		}
+		assertTrue(true);
 	}
 	
 }

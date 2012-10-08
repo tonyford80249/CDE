@@ -54,6 +54,11 @@ public class DateUtil {
 		
 	}
 
+	public static String getFiscalYearFormattedLong(String fiscalYear) {
+		return "July 1, " + fiscalYear.substring(0, 4) + " - June 30, " + fiscalYear.substring(4);
+		
+	}
+	
 	public static String getFormattedDate(String formatString) {
 		Date date = new Date();
 		DateFormat format2 = new SimpleDateFormat(formatString);

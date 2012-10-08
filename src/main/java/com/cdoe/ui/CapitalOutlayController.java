@@ -40,16 +40,19 @@ public class CapitalOutlayController {
 	@RequestMapping(method = RequestMethod.GET)
     public String index(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		System.out.println ("Dist Name and Nos" + session.getAttribute("districtNos"));
+		logger.debug ("Dist Name and Nos" + session.getAttribute("districtNos"));
 		String districtNos = (String) session.getAttribute("districtNos");
 		String preparerEmailId = (String) session.getAttribute("preparerEmailId");
 		String preparerPhoneNos = (String) session.getAttribute("preparerPhoneNos");
 		String preparerName = (String) session.getAttribute("preparerName");
+		String districtName = (String) session.getAttribute("districtName");
     	CapitalOutlayForm form = capitalOutlayManager.setupForm(districtNos);
     	form.setPreparerEmailId(preparerEmailId);
     	form.setPreparerPhoneNos(preparerPhoneNos);
     	form.setPreparerName(preparerName);
     	form.setDistrictNumber(districtNos);
+    	form.setDistrictName(districtName);
+    	
     	model.addAttribute("capitalOutlayForm", form);
 		return ".CapitalOutlay-index";
     }
@@ -65,6 +68,7 @@ public class CapitalOutlayController {
 		//Remove formatting here for saving?
 		capitalOutlayManager.saveOrUpdate(capitalOutlayForm);
 		model.addAttribute("saved", true);
+		capitalOutlayForm.setMessage("Capital Outlay Information saved successfully");
 		return ".CapitalOutlay-index";
     }
     

@@ -47,7 +47,7 @@ $Log:$
 								</h2></TD>
 						</TR>
 						<%
-							if (info.isStateEqualUser()) {
+							//if (info.isStateEqualUser()) {
 						%>
 						<TR>
 							<TD align="left"><c:url value="State Equal" var="link" />
@@ -57,27 +57,21 @@ $Log:$
 						</TR>
 						<TR><TD></TD></TR>
 						<%
-							}
+							//}
 						%>
-						<%
-							if (info.isTransportationUser()) {
-						%>
-						<TR>
+						<!--TR>
 							<TD align="left"><c:url value="Transportation" var="link" />
 								<a id=""
 								href="${pageContext.request.contextPath}/secure/TransportationHomePage?pageName=TransportationHome"><font
 									color="black"><b>2. Transportation</b></font></a></TD>
 						</TR>
-						<TR><TD></TD></TR>
-						<%
-							}
-						%>
+						<TR><TD></TD></TR-->
 						<!-- if (info.isAuditSupervisorUser() || info.isAuditDistrictUser()) { %-->
 						<TR>
 							<TD align="left"><c:url value="Audit" var="link" /> <a
 								id=""
 								href="${pageContext.request.contextPath}/secure/AuditorHomePage?pageName=AuditorHome"><font
-									color="black"><b>3. Audit</b></font></a></TD>
+									color="black"><b>2. Audit</b></font></a></TD>
 						</TR>
 						
 						<!-- % } %-->

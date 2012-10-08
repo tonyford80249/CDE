@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cdoe.biz.model.Prorate;
 import com.cdoe.services.IDistributionAmountsManager;
 import com.cdoe.ui.form.ProrateForm;
-import com.cdoe.util.DateUtil;
 import com.resqsoft.util.RequestUtils;
 
 @Controller
@@ -39,18 +38,13 @@ public class DistributionAmountsController {
 	private Validator prorateValidator;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String index(Model model,  HttpServletRequest request) {
-		String fiscalYear = DateUtil.getFiscalYear();
-		HttpSession session = request.getSession();
-		String districtNos = (String) session.getAttribute("districtNos");
-    	ProrateForm form = distributionAmountsManager.setupForm(fiscalYear, districtNos);
+    public String index(Model model, HttpSession session) {
+		String fiscalYear = (String)session.getAttribute("fiscalYear");
+		ProrateForm form = distributionAmountsManager.setupForm(fiscalYear);
     	
     	model.addAttribute("prorateForm", form);
 		return ".DistributionAmounts-index";
     }
-    
-	
-	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Model model, @ModelAttribute ProrateForm prorateForm, BindingResult result, HttpServletRequest request) {
@@ -71,11 +65,6 @@ public class DistributionAmountsController {
 		return ".DistributionAmounts-index";
     }
 	
-	private String actionChosen() {
-		return null;
-		
-	}
-    
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String update(Model model, @PathVariable long id) {
     	ProrateForm form = distributionAmountsManager.setupForm(id);

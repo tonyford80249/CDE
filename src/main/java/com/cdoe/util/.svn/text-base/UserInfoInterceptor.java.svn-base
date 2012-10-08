@@ -14,7 +14,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import us.co.cde.state.security.exception.CdeApplicationSecurityException;
 
 import com.cdoe.services.IReferenceDataManager;
-import java.util.Map.Entry;
 
 /**
  * This intercepter will populate the UserInfo class in the session
@@ -52,18 +51,23 @@ public class UserInfoInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 		boolean retValue = true;
 		HttpSession session = request.getSession(false);
-		if (session != null && session.isNew() && session.getAttribute("USER_INFO") == null) {
-			Map<String, String> districtMap = referenceDataManager.getDistrictReference();
+		if (session != null && session.isNew()
+				&& session.getAttribute("USER_INFO") == null) {
+			Map<String, String> districtMap = referenceDataManager
+					.getDistrictReference();
 			UserInfo userInfo = new UserInfo(request, districtMap);
 			if (userInfo.isValid()) {
-				request.getSession().setAttribute("USER_INFO", userInfo);
-                                
-                                Entry<String, String> currentDistrict = userInfo.getDistrictMap().entrySet().iterator().next();
-                                
-                                request.getSession().setAttribute("districtNos", currentDistrict.getKey());
-		                request.getSession().setAttribute("districtName", currentDistrict.getValue());
-		                request.getSession().setAttribute("fiscalYear", DateUtil.getFiscalYear());
-                                
+				request.getSession().setAttribute(UserInfo.USER_INFO_ATTR, userInfo);
+				// For now, assume that a district user is only assigned to one
+				// district
+				String currentDistrict = userInfo.getUsersDistricts().get(0);
+				request.getSession().setAttribute("districtNos",
+						currentDistrict);
+				request.getSession().setAttribute("districtName",
+						userInfo.getDistrictMap().get(currentDistrict));
+				request.getSession().setAttribute("fiscalYear",
+						DateUtil.getFiscalYear());
+
 				retValue = true;
 			} else {
 				request.getSession().invalidate();

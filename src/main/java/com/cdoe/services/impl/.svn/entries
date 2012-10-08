@@ -1,15 +1,15 @@
 10
 
 dir
-167
+181
 http://74.50.60.253/svn/cde_fco/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/impl
 http://74.50.60.253/svn/cde_fco
 
 
 
-2012-10-04T01:49:22.861468Z
-149
-tford
+2012-10-08T14:32:08.675106Z
+181
+ldobbins
 
 
 
@@ -604,40 +604,6 @@ ldobbins
 
 979
 
-MonthlyPaymentsManager.java
-file
-
-
-
-
-2012-09-17T19:25:09.505000Z
-67037713046edb79b65126231229310e
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1328
-
 CapitalOutlayManager.java
 file
 
@@ -671,6 +637,40 @@ sandeep
 
 
 6177
+
+MonthlyPaymentsManager.java
+file
+
+
+
+
+2012-09-17T19:25:09.505000Z
+67037713046edb79b65126231229310e
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1328
 
 Cde40SummaryManager.java
 file
@@ -706,40 +706,6 @@ sandeep
 
 4076
 
-CrosswalkCollectionDataManager.java
-file
-
-
-
-
-2012-09-25T16:43:43.680803Z
-77e2f67780d15a971fe9c12607516ed1
-2012-09-21T17:34:53.272172Z
-66
-ldobbins
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9192
-
 UploadStudentsManager.java
 file
 
@@ -773,6 +739,40 @@ sandeep
 
 
 3321
+
+CrosswalkCollectionDataManager.java
+file
+
+
+
+
+2012-09-25T16:43:43.680803Z
+77e2f67780d15a971fe9c12607516ed1
+2012-09-21T17:34:53.272172Z
+66
+ldobbins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9192
 
 DistrictPaymentReportManager.java
 file
@@ -944,40 +944,6 @@ ldobbins
 
 9119
 
-ElectionsManager.java
-file
-
-
-
-
-2012-09-17T19:25:09.794000Z
-6aef01b40b007da326811f23f1aab2d7
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1607
-
 CommentsManager.java
 file
 
@@ -1012,16 +978,16 @@ ldobbins
 
 1403
 
-DistributionAmountsManager.java
+ElectionsManager.java
 file
 
 
 
 
-2012-09-25T16:43:43.713031Z
-4492919ab0d57bb3e088896f94b3bb98
-2012-09-21T17:34:53.272172Z
-66
+2012-09-17T19:25:09.794000Z
+6aef01b40b007da326811f23f1aab2d7
+2012-09-13T15:25:48.411984Z
+26
 ldobbins
 
 
@@ -1044,7 +1010,41 @@ ldobbins
 
 
 
-6202
+1607
+
+DistributionAmountsManager.java
+file
+
+
+
+
+2012-10-08T17:17:25.531875Z
+dc98f28b834e6a38f01e52b3a050fa5e
+2012-10-08T14:32:08.675106Z
+181
+ldobbins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6167
 
 MillLevyOverrideWorksheetManager.java
 file

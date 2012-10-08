@@ -21,6 +21,8 @@ import us.co.cde.state.security.exception.CdeSecurityException;
  * obtained from the container security.
  */
 public class UserInfo implements Serializable {
+	
+	public static final String USER_INFO_ATTR = "USER_INFO";
 
     private static final long serialVersionUID = 1L;
     private final Logger log = Logger.getLogger(UserInfo.class);

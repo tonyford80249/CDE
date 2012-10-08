@@ -1,7 +1,7 @@
 10
 
 dir
-167
+181
 http://74.50.60.253/svn/cde_fco/cdoe_weblogic/trunk/cdoe/src/main/webapp/static/images
 http://74.50.60.253/svn/cde_fco
 
@@ -502,40 +502,6 @@ has-props
 
 26366
 
-caseconvert_ci2c07.jpg
-file
-
-
-
-
-2012-09-17T19:25:20.120000Z
-c41de1918a0576b5ca09f643bea0726e
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5398
-
 toolbar_diskette.gif
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 988
+
+caseconvert_ci2c07.jpg
+file
+
+
+
+
+2012-09-17T19:25:20.120000Z
+c41de1918a0576b5ca09f643bea0726e
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5398
 
 icon_printer.ico
 file
@@ -740,14 +740,14 @@ has-props
 
 4936
 
-pencil.gif
+toolbar_help.gif
 file
 
 
 
 
-2012-09-17T19:25:20.324000Z
-e1336bfa3d6d5bbb80fb3866d006d04e
+2012-09-17T19:25:20.281000Z
+0b68504d81596065ccb2a734296527f2
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -772,7 +772,7 @@ has-props
 
 
 
-1312
+1025
 
 toolbar_checkmark.gif
 file
@@ -808,14 +808,14 @@ has-props
 
 958
 
-toolbar_help.gif
+pencil.gif
 file
 
 
 
 
-2012-09-17T19:25:20.281000Z
-0b68504d81596065ccb2a734296527f2
+2012-09-17T19:25:20.324000Z
+e1336bfa3d6d5bbb80fb3866d006d04e
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -840,7 +840,7 @@ has-props
 
 
 
-1025
+1312
 
 toolbar_ibutton.ico
 file
@@ -876,40 +876,6 @@ has-props
 
 1150
 
-Custom071!.jpg
-file
-
-
-
-
-2012-09-17T19:25:20.397000Z
-bc6f389c884fbe37bed5db8cd0807159
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-854
-
 toolbar_properties.gif
 file
 
@@ -943,6 +909,40 @@ has-props
 
 
 982
+
+Custom071!.jpg
+file
+
+
+
+
+2012-09-17T19:25:20.397000Z
+bc6f389c884fbe37bed5db8cd0807159
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+854
 
 lookup_sja.bmp
 file
@@ -978,40 +978,6 @@ has-props
 
 26366
 
-casetree_m.bmp
-file
-
-
-
-
-2012-09-17T19:25:20.468000Z
-1eaf3487881b1312bfc65b8c377da78a
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1334
-
 menu_lookingglass.gif
 file
 
@@ -1045,6 +1011,40 @@ has-props
 
 
 999
+
+casetree_m.bmp
+file
+
+
+
+
+2012-09-17T19:25:20.468000Z
+1eaf3487881b1312bfc65b8c377da78a
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1334
 
 ReportWatermark01l.jpg
 file
@@ -2440,40 +2440,6 @@ has-props
 
 980
 
-icon_myrecent.ico
-file
-
-
-
-
-2012-09-17T19:25:21.591000Z
-5a2c3d4928e9840d4910fa2f127d0083
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-894
-
 icon_localcase.ico
 file
 
@@ -2508,14 +2474,14 @@ has-props
 
 894
 
-icon_help.ico
+icon_myrecent.ico
 file
 
 
 
 
-2012-09-17T19:25:21.638000Z
-966462c4cb48915b38246a7a28e1892b
+2012-09-17T19:25:21.591000Z
+5a2c3d4928e9840d4910fa2f127d0083
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -2576,6 +2542,40 @@ has-props
 
 10133
 
+icon_help.ico
+file
+
+
+
+
+2012-09-17T19:25:21.638000Z
+966462c4cb48915b38246a7a28e1892b
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+894
+
 lookuptables_lookup.bmp
 file
 
@@ -2609,40 +2609,6 @@ has-props
 
 
 630
-
-CaseGuideOverlay02.jpg
-file
-
-
-
-
-2012-09-17T19:25:21.708000Z
-c2e82cb1dde31352e38d7ce89dcefd89
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14414
 
 toolbar_localcase.gif
 file
@@ -2678,14 +2644,14 @@ has-props
 
 985
 
-casetree_a32.bmp
+CaseGuideOverlay02.jpg
 file
 
 
 
 
-2012-09-17T19:25:21.753000Z
-b32eefd278cd9109e75c03fdee934277
+2012-09-17T19:25:21.708000Z
+c2e82cb1dde31352e38d7ce89dcefd89
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -2710,7 +2676,7 @@ has-props
 
 
 
-1334
+14414
 
 settings.bmp
 file
@@ -2746,6 +2712,40 @@ has-props
 
 822
 
+casetree_a32.bmp
+file
+
+
+
+
+2012-09-17T19:25:21.753000Z
+b32eefd278cd9109e75c03fdee934277
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1334
+
 CaseGuideOverlay04.jpg
 file
 
@@ -2780,14 +2780,14 @@ has-props
 
 14683
 
-diskette.gif
+CaseGuideOverlay06.jpg
 file
 
 
 
 
-2012-09-17T19:25:21.850000Z
-8f0c16037c169667f5eefb6da50fe778
+2012-09-17T19:25:21.805000Z
+0d9f147c568cc1c29a42a670eaa90152
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -2812,7 +2812,7 @@ has-props
 
 
 
-5327
+15337
 
 arrow2.gif
 file
@@ -2848,14 +2848,14 @@ has-props
 
 49
 
-CaseGuideOverlay06.jpg
+diskette.gif
 file
 
 
 
 
-2012-09-17T19:25:21.805000Z
-0d9f147c568cc1c29a42a670eaa90152
+2012-09-17T19:25:21.850000Z
+8f0c16037c169667f5eefb6da50fe778
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -2880,7 +2880,7 @@ has-props
 
 
 
-15337
+5327
 
 PipeUp.jpg
 file
@@ -3052,40 +3052,6 @@ has-props
 
 1334
 
-localcase.gif
-file
-
-
-
-
-2012-09-17T19:25:22.017000Z
-d70e56c686e204ccbc62d816c617230e
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4364
-
 myrecent.gif
 file
 
@@ -3119,6 +3085,40 @@ has-props
 
 
 7098
+
+localcase.gif
+file
+
+
+
+
+2012-09-17T19:25:22.017000Z
+d70e56c686e204ccbc62d816c617230e
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4364
 
 toolbar_config.gif
 file
@@ -3188,6 +3188,9 @@ has-props
 
 6478
 
+PowerBuilder
+dir
+
 icon_quit.ico
 file
 
@@ -3221,9 +3224,6 @@ has-props
 
 
 894
-
-PowerBuilder
-dir
 
 lookup_judge.bmp
 file
@@ -3429,40 +3429,6 @@ has-props
 
 1955
 
-icon_lookingglass.ico
-file
-
-
-
-
-2012-09-17T19:25:22.506000Z
-8ee084dae8dcc2ff4bec0a4de142a50e
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-894
-
 calendar.gif
 file
 
@@ -3496,6 +3462,40 @@ has-props
 
 
 1902
+
+icon_lookingglass.ico
+file
+
+
+
+
+2012-09-17T19:25:22.506000Z
+8ee084dae8dcc2ff4bec0a4de142a50e
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+894
 
 menu_localcase.gif
 file
@@ -3633,40 +3633,6 @@ has-props
 
 766
 
-keys.ico
-file
-
-
-
-
-2012-09-17T19:25:22.643000Z
-a96848601189a3ca5c4dbc418b697802
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9662
-
 menu_properties.gif
 file
 
@@ -3701,14 +3667,14 @@ has-props
 
 1018
 
-caseconvert_inv2a1501.gif
+keys.ico
 file
 
 
 
 
-2012-09-17T19:25:22.750000Z
-ab41402d9bf74bba5afef830a8e1d8d1
+2012-09-17T19:25:22.643000Z
+a96848601189a3ca5c4dbc418b697802
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -3733,41 +3699,7 @@ has-props
 
 
 
-452935
-
-casetree_sht.bmp
-file
-
-
-
-
-2012-09-17T19:25:22.690000Z
-edc3b99a235f6f2951a17f0afec375a3
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-822
+9662
 
 quit.gif
 file
@@ -3803,14 +3735,14 @@ has-props
 
 2441
 
-caseopen_je.bmp
+casetree_sht.bmp
 file
 
 
 
 
-2012-09-17T19:25:22.795000Z
-499e4111e2b374a41210825b0466bf62
+2012-09-17T19:25:22.690000Z
+edc3b99a235f6f2951a17f0afec375a3
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -3835,7 +3767,41 @@ has-props
 
 
 
-246
+822
+
+caseconvert_inv2a1501.gif
+file
+
+
+
+
+2012-09-17T19:25:22.750000Z
+ab41402d9bf74bba5afef830a8e1d8d1
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+452935
 
 toolbar_favorites.gif
 file
@@ -3871,6 +3837,40 @@ has-props
 
 994
 
+caseopen_je.bmp
+file
+
+
+
+
+2012-09-17T19:25:22.795000Z
+499e4111e2b374a41210825b0466bf62
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+246
+
 casetree_chg_sel.bmp
 file
 
@@ -3904,9 +3904,6 @@ has-props
 
 
 1334
-
-framework
-dir
 
 caseconvert_ci2c02.jpg
 file
@@ -3942,39 +3939,8 @@ has-props
 
 4001
 
-icon_mymessages.ico
-file
-
-
-
-
-2012-09-17T19:25:23.070000Z
-0659f8c576b4582f52fad9c5a12aac45
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1406
+framework
+dir
 
 download_icon.jpg
 file
@@ -4010,14 +3976,14 @@ has-props
 
 13371
 
-icon_gear.ico
+icon_mymessages.ico
 file
 
 
 
 
-2012-09-17T19:25:23.116000Z
-ae664e852262dc8f942acef27b24f83a
+2012-09-17T19:25:23.070000Z
+0659f8c576b4582f52fad9c5a12aac45
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -4042,7 +4008,7 @@ has-props
 
 
 
-894
+1406
 
 caseconvert_ci2c04.jpg
 file
@@ -4077,6 +4043,40 @@ has-props
 
 
 4704
+
+icon_gear.ico
+file
+
+
+
+
+2012-09-17T19:25:23.116000Z
+ae664e852262dc8f942acef27b24f83a
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+894
 
 lookingglass.gif
 file
@@ -4146,40 +4146,6 @@ has-props
 
 4129
 
-globedisc.ico
-file
-
-
-
-
-2012-09-17T19:25:23.213000Z
-cdac42b4a4358fe04c9dfa07bdf05fb5
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9662
-
 Logon_v2.jpg
 file
 
@@ -4213,6 +4179,40 @@ has-props
 
 
 14116
+
+globedisc.ico
+file
+
+
+
+
+2012-09-17T19:25:23.213000Z
+cdac42b4a4358fe04c9dfa07bdf05fb5
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9662
 
 favorites.gif
 file

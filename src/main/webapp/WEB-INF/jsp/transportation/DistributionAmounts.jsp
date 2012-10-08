@@ -23,10 +23,8 @@ $Log:$
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
-<%
-
-	String formattedFiscalYear = DateUtil.getFiscalYearFormattedLong();
-
+<%  String prevFiscalYear = DateUtil.getPrevFiscalYear();
+	String formattedFiscalYear = DateUtil.getFiscalYearFormattedLong(prevFiscalYear);
 %>
 
 <script type="text/javascript">
@@ -48,97 +46,140 @@ $Log:$
 		
 		document.getElementById('totalDistribution').value = val1 + val2;
 	}
+	
+	function editFields() {
+	   document.getElementById('totalFirstPayment').setAttribute("readOnly", "true");
+	   document.getElementById('runFirstPayment').disabled=true;
+	
+	}
+	</script>
+
+   <script type="text/javascript"> 
+		if (window.addEventListener) { // Mozilla, Netscape, Firefox     
+	  	    window.addEventListener('load', WindowLoad, false); 
+		} else if (window.attachEvent) { // IE     
+	   		window.attachEvent('onload', WindowLoad); 
+		}  
+	
+	
+	function WindowLoad(event) { 
+	  var prorateFirst =  document.getElementById('prorateFactor1stPayment').value; 
+	  if (prorateFirst > 0) {
+	      document.getElementById('totalFirstPayment').setAttribute("readOnly", "true");
+	  	  document.getElementById('runFirstPayment').disabled=true;
+	  } else {
+	  	  document.getElementById('totalSecondPayment').setAttribute("readOnly", "true");
+	  	  document.getElementById('runSecondPayment').disabled=true;
+	  }
+	}
+	  
 </script>
 <%-- Wrap the entire JSP in a try/catch block so that runtime exceptions
     in the JSP can be caught and reported. --%>
 <%@include file="/WEB-INF/jsp/JspTry.inc"%>
-<div id="mainbody">
-		<div id="contentarea">
-			<div id="pagecontent">
-				   
-		<h2>
-			<spring:message
-				code="DistributionAmounts.StaticText.distributionAmountsStaticText" />
-		</h2>
-<form:form commandName="prorateForm"
+<div id="mainContent">
+	<form:form commandName="prorateForm"
 		action="${pageContext.request.contextPath}/secure/DistributionAmounts/save"
 		method="post">
-   
-  <div class="formBlock boxShadow3 radius10">
-	<h3> For Period <%=formattedFiscalYear %>
-	</h3>
-	<form:hidden path="id" />
-	<div style='float: left;'>
-	  <span class="field" style='width: 300px;'><LABEL FOR=""><spring:message code="DistributionAmounts.StaticText.firstDistributionAmountStaticText" /></LABEL>
-      </span>
-	  <span class="bodyText" style='width: 350px;'>
-		<c:choose>
-		   <c:when test="${(prorateForm.totalFirstPayment <= 0) || (prorateForm.totalFirstPayment == '') }">
-		      <form:input id="totalFirstPayment" path="totalFirstPayment" onBlur="calculateTotalPayment()"/>
-		   </c:when>
-		   <c:otherwise>
-		      <form:input id="totalFirstPayment" path="totalFirstPayment" onBlur="calculateTotalPayment()"/>
-		   </c:otherwise>
-		</c:choose>
-		 <form:hidden path="fiscalYear"/>
-		 <form:errors path="totalFirstPayment" cssClass="validationError"/>
-	  </span>
-	  <br/>
-	  <span class="field" style='width: 300px;'><spring:message code="DistributionAmounts.StaticText.$1StProrationFactorStaticText" />
-      </span>
-	  <span class="bodyText" style='width: 350px;'>
-         <form:input id="prorateFactor1stPayment" path="prorateFactor1stPayment" readOnly="true" />
-	  </span>
-	  <br/>
-	  <span class="field" style='width: 300px;'><LABEL FOR=""><spring:message code="DistributionAmounts.StaticText.$2NdDistributionAmountStaticText" /></LABEL>
-	  </span>
-	  <span class="bodyText" style='width: 350px;'>
-		<c:choose>
-		   <c:when test="${prorateForm.totalFirstPayment > 0}">
-		      <form:input id="totalSecondPayment" path="totalSecondPayment" onBlur="calculateTotalPayment()"/>
-		   </c:when>
-		   <c:otherwise>
-		      <form:input id="totalSecondPayment" path="totalSecondPayment" readOnly="true"/>
-		   </c:otherwise>
-		</c:choose>
-	    <form:errors path="totalSecondPayment" cssClass="validationError"/></TD>
-	  </span>
-      <br/>
-	  <span class="field" style='width: 300px;'><spring:message code="DistributionAmounts.StaticText.$2NdProrationFactorStaticText" /></span>
-	  <span class="bodyText" style='width: 350px;'>
-		<form:input id="" path="prorateFactor2ndPayment" readOnly="true"/>
-	  </span>
-      <br/>
-	  <span class="field" style='width: 300px;'><spring:message code="DistributionAmounts.StaticText.totalDistributionStaticText" /></span>
-	  <span class="bodyText" style='width: 350px;'>
-		<form:input id="totalDistribution" path="totalDistribution" readOnly="true" />
-	  </span>
-        <br/>
-	    <input type="Submit" id="" name="saveChanges" value="Save Changes" />
-	    <input type="Submit" id="" name="runFirstPayment" value="Run First Payments" />
-	    <input type="Submit" id="" name="runSecondPayment" value="Run Second Payments" />
-	</div>	
-     	<div style='clear:both;'></div>
-  </div>
-  
-  <div style='text-align: left; margin: 1em 0;'>
-	  <span class="field" style='width: 350px;'><LABEL FOR=""><spring:message
-									code="DistributionAmounts.StaticText.enterAllFundingSourcesOfTotalPaymentStaticText" /></LABEL>
-      </span>
-      <br/>
-	  <span class="bodyText" style='width: 350px;'>
-          <form:textarea id="" path="fundingSources" rows="6" cols="115" />
-	  </span>
-  </div>
-  
-  <div style='text-align: center; margin: 1em 0;'>
-     <input type="Submit" name="saveFundingSources" value="Save Funding Sources" />
-  </div>
-	
-</form:form>
-    </div><!-- pagecontent -->
-		</div><!-- contentarea -->
-	</div><!-- mainbody -->
+
+		<h3>
+			<spring:message
+				code="DistributionAmounts.StaticText.distributionAmountsStaticText" />
+			For
+			<%=formattedFiscalYear%>
+		</h3>
+		<!-- Main outer table -->
+		<TABLE>
+			<TR>
+				<TD><form:hidden path="id" /></TD>
+				<TD>
+					<TABLE width="40%">
+						<TR>
+
+							<TD align="left"><LABEL FOR=""><spring:message
+										code="DistributionAmounts.StaticText.firstDistributionAmountStaticText" /></LABEL>
+							</TD>
+							<%
+								System.out.println();
+							%>
+							
+						
+
+                            <TD><form:input id="totalFirstPayment"
+											path="totalFirstPayment" onBlur="calculateTotalPayment()" />
+									<form:hidden path="fiscalYear" />
+							</TD>
+							<form:errors path="totalFirstPayment" cssClass="validationError" />
+						</TR>
+						<TR>
+
+							<TD align="left"><spring:message
+									code="DistributionAmounts.StaticText.$1StProrationFactorStaticText" />
+							</TD>
+							<TD><form:input id="prorateFactor1stPayment"
+									path="prorateFactor1stPayment" readOnly="true" /></TD>
+						</TR>
+						<TR>
+							<TD align="left"><LABEL FOR=""><spring:message
+										code="DistributionAmounts.StaticText.$2NdDistributionAmountStaticText" /></LABEL>
+							</TD>
+							
+							
+							<TD>
+							   <form:input id="totalSecondPayment"
+											path="totalSecondPayment"
+											onBlur="calculateTotalPayment()" />
+							   <form:errors path="totalSecondPayment" cssClass="validationError" />
+							</TD>
+						</TR>
+						<TR>
+							<TD align="left"><spring:message
+									code="DistributionAmounts.StaticText.$2NdProrationFactorStaticText" />
+							</TD>
+							<TD><form:input id="" path="prorateFactor2ndPayment"
+									readOnly="true" /></TD>
+						</TR>
+						<TR>
+							<TD align="left"><spring:message
+									code="DistributionAmounts.StaticText.totalDistributionStaticText" />
+							</TD>
+
+							<TD><form:input id="totalDistribution"
+									path="totalDistribution" readOnly="true" /></TD>
+						</TR>
+
+					</TABLE>
+					<TABLE>
+						<TR>
+							<TD><input type="Submit" id="saveChanges" name="saveChanges"
+								value="Save Changes" /></TD>
+							<TD><input type="Submit" id="runFirstPayment"
+								name="runFirstPayment" value="Run First Payments" /></TD>
+							<TD><input type="Submit" id="runSecondPayment"
+								name="runSecondPayment" value="Run Second Payments" /></TD>
+						</TR>
+					</TABLE>
+					<TABLE>
+						<TR>
+							<TD colspan="3" align="right"><h3>
+									<spring:message
+										code="DistributionAmounts.StaticText.enterAllFundingSourcesOfTotalPaymentStaticText" />
+								</h3></TD>
+						</TR>
+						<TR>
+							<TD><form:textarea id="" path="fundingSources" rows="6"
+									cols="120" /></TD>
+						</TR>
+						<TR>
+							<TD align="center"><input type="Submit"
+								name="saveFundingSources" value="Save Funding Sources" /></TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+	</form:form>
+</div>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/static/scripts/screen/DistributionAmounts.js"></script>
 <%-- End of try/catch around complete JSP in order to log and display

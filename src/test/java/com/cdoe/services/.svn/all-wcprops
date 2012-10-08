@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services
 END
 TestPaymentWorkSheetManager.java
 K 25
@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 117
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCde40TransReimbFormManager.java
 END
-TestCapitalOutlayManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 111
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCapitalOutlayManager.java
-END
 TestMillLevyCertManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestMillLevyCertManager.java
+END
+TestCapitalOutlayManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCapitalOutlayManager.java
 END
 TestUploadVariablesManager.java
 K 25
@@ -51,23 +51,23 @@ svn:wc:ra_dav:version-url
 V 110
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestImportAuditsManager.java
 END
-TestElectionsManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestElectionsManager.java
-END
 TestCommentsManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCommentsManager.java
 END
+TestElectionsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestElectionsManager.java
+END
 TestDistributionAmountsManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistributionAmountsManager.java
+V 118
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistributionAmountsManager.java
 END
 TestReferenceDataManager.java
 K 25

@@ -1,14 +1,14 @@
 10
 
 dir
-167
+181
 http://74.50.60.253/svn/cde_fco/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services
 http://74.50.60.253/svn/cde_fco
 
 
 
-2012-09-30T17:41:24.956720Z
-107
+2012-10-08T14:32:08.675106Z
+181
 ldobbins
 
 
@@ -94,40 +94,6 @@ ldobbins
 
 2382
 
-TestCapitalOutlayManager.java
-file
-
-
-
-
-2012-09-17T19:25:02.641000Z
-9a9004105006836da2a007656e6b087f
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2299
-
 TestMillLevyCertManager.java
 file
 
@@ -161,6 +127,40 @@ ldobbins
 
 
 3036
+
+TestCapitalOutlayManager.java
+file
+
+
+
+
+2012-09-17T19:25:02.641000Z
+9a9004105006836da2a007656e6b087f
+2012-09-13T15:25:48.411984Z
+26
+ldobbins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2299
 
 TestUploadVariablesManager.java
 file
@@ -298,40 +298,6 @@ ldobbins
 
 2237
 
-TestCommentsManager.java
-file
-
-
-
-
-2012-09-17T19:25:02.478000Z
-2b93eb8b1386e521e63002cfbf14889b
-2012-09-13T15:25:48.411984Z
-26
-ldobbins
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2210
-
 TestElectionsManager.java
 file
 
@@ -366,14 +332,14 @@ ldobbins
 
 3121
 
-TestDistributionAmountsManager.java
+TestCommentsManager.java
 file
 
 
 
 
-2012-09-17T19:25:02.526000Z
-16f4ddf9487c3f223d864887abd3539f
+2012-09-17T19:25:02.478000Z
+2b93eb8b1386e521e63002cfbf14889b
 2012-09-13T15:25:48.411984Z
 26
 ldobbins
@@ -398,7 +364,41 @@ ldobbins
 
 
 
-2263
+2210
+
+TestDistributionAmountsManager.java
+file
+
+
+
+
+2012-10-08T17:17:28.571054Z
+dddc803c02fb70f83d8f73e09f64b011
+2012-10-08T14:32:08.675106Z
+181
+ldobbins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3160
 
 TestReferenceDataManager.java
 file

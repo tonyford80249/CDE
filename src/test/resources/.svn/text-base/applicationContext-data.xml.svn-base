@@ -14,7 +14,7 @@
 		<property name="password" value="${db.password}"/>
 		<property name="maxIdle" value="300"/>
         <property name="maxWait" value="10000"/>
-        <property name="defaultAutoCommit" value="true"/>
+        <property name="defaultAutoCommit" value="false"/>
         <property name="removeAbandoned" value="true"/>
         <property name="removeAbandonedTimeout" value="600"/>
         <property name="initialSize" value="4" />

@@ -27,269 +27,360 @@ $Log:$
 <%@include file="/WEB-INF/jsp/JspTry.inc"%>
 
 <%
-	String formattedFiscalYear = DateUtil
-				.getFiscalYearFormattedLong();
-		UserInfo userInfo = (UserInfo) session
-				.getAttribute("USER_INFO");
+    String prevFiscalYear = DateUtil.getPrevFiscalYear();
+	String formattedFiscalYear = DateUtil.getFiscalYearFormattedLong(prevFiscalYear);
+		UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");
 %>
 <script type='text/javascript'>
-$(document).ready(function() {
-  $('#TotalCurrentOperatingExp').focus(function() { 
-	$('#hintRI').html("For assistance, please use the CDE-40 Worksheet.");
-	$('#hintRI').show();
-	//$('#hintRI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#TotalCurrentOperatingExp').blur(function() { 
-	$('#hintRI').hide();
-	checkAndFormatAmount('TotalCurrentOperatingExp');
-	return false; 
-  });
-  $('#MigMilesOfTransportation').focus(function() { 
-	$('#hintRI').html("Complete the Migrant Verification Form if miles are reported on Line 2");
-	$('#hintRI').show();
-	//$('#hintRI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#MigMilesOfTransportation').blur(function() { 
-	$('#hintRI').hide();
-	formatMileageField('MigMilesOfTransportation');
-	return false; 
-  });
-  $('#regDMiles').focus(function() { 
-	$('#hintRI').html("Includes all miles driven on the mileage count date when establishing routes for all eligible pupils. Same date as official pupil count date.<br/>If reporting parent miles, parent must have made the trip on September 30th 2011.");
-	$('#hintRI').show();
-	//$('#hintRI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#regDMiles').blur(function() { 
-	$('#hintRI').hide();
-	formatMileageField('regDMiles');
-	return false; 
-  });
-  $('#DaysSchoolWasInSession').focus(function() { 
-	$('#hintRI').html("Remember to remove snow and mud days.");
-	$('#hintRI').show();
-	//$('#hintRI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#DaysSchoolWasInSession').blur(function() { 
-	$('#hintRI').hide();
-	return false; 
-  });
-  $('#NosOfPupilSchedules').focus(function() { 
-	$('#hintAI').html("Report the number of students that the routes are set up for: total eligibility.");
-	$('#hintAI').show();
-	//$('#hintAI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#NosOfPupilSchedules').blur(function() { 
-	$('#hintAI').hide();
-	return false; 
-  });
-  $('#TotalActualMilesTravelled').focus(function() { 
-	$('#hintAI').html("Entitlement Period:<br/>July 1, 2011 through June 30, 2012");
-	$('#hintAI').show();
-	//$('#hintAI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#TotalActualMilesTravelled').blur(function() { 
-	$('#hintAI').hide();
-	return false; 
-  });
-  $('#TotalActualMilesTraveledForAnyPurpose').focus(function() { 
-	$('#hintAI').html("If pupil transportation vehicles are also used for other purposes (administrative), exclude the miles for other purposes.<br/><br/>Total Odometer Miles: Pupil Transportation Vehicles Only.");
-	$('#hintAI').show();
-	//$('#hintAI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#TotalActualMilesTraveledForAnyPurpose').blur(function() { 
-	$('#hintAI').hide();
-	formatMileageField('TotalActualMilesTraveledForAnyPurpose');
-	return false; 
-  });
-  $('#FeesCollected').focus(function() { 
-	$('#hintAI').html("Do not include transportation fees collected for activities.");
-	$('#hintAI').show();
-	//$('#hintAI').css("marginTop", "1em");
-	return false; 
-  });
-  $('#FeesCollected').blur(function() { 
-	$('#hintAI').hide();
-	checkAndFormatAmount('FeesCollected');
-	return false; 
-  });
-});
+	$(document)
+			.ready(
+					function() {
+						$('#TotalCurrentOperatingExp')
+								.focus(
+										function() {
+											$('#hintRI')
+													.html(
+															"For assistance, please use the CDE-40 Worksheet.");
+											$('#hintRI').show();
+											//$('#hintRI').css("marginTop", "1em");
+											return false;
+										});
+						$('#TotalCurrentOperatingExp').blur(function() {
+							$('#hintRI').hide();
+							checkAndFormatAmount('TotalCurrentOperatingExp');
+							return false;
+						});
+						$('#MigMilesOfTransportation')
+								.focus(
+										function() {
+											$('#hintRI')
+													.html(
+															"Complete the Migrant Verification Form if miles are reported on Line 2");
+											$('#hintRI').show();
+											//$('#hintRI').css("marginTop", "1em");
+											return false;
+										});
+						$('#MigMilesOfTransportation').blur(function() {
+							$('#hintRI').hide();
+							formatMileageField('MigMilesOfTransportation');
+							return false;
+						});
+						$('#regDMiles')
+								.focus(
+										function() {
+											$('#hintRI')
+													.html(
+															"Includes all miles driven on the mileage count date when establishing routes for all eligible pupils. Same date as official pupil count date.<br/>If reporting parent miles, parent must have made the trip on September 30th 2011.");
+											$('#hintRI').show();
+											//$('#hintRI').css("marginTop", "1em");
+											return false;
+										});
+						$('#regDMiles').blur(function() {
+							$('#hintRI').hide();
+							formatMileageField('regDMiles');
+							return false;
+						});
+						$('#DaysSchoolWasInSession')
+								.focus(
+										function() {
+											$('#hintRI')
+													.html(
+															"Remember to remove snow and mud days.");
+											$('#hintRI').show();
+											//$('#hintRI').css("marginTop", "1em");
+											return false;
+										});
+						$('#DaysSchoolWasInSession').blur(function() {
+							$('#hintRI').hide();
+							return false;
+						});
+						$('#NosOfPupilSchedules')
+								.focus(
+										function() {
+											$('#hintAI')
+													.html(
+															"Report the number of students that the routes are set up for: total eligibility.");
+											$('#hintAI').show();
+											//$('#hintAI').css("marginTop", "1em");
+											return false;
+										});
+						$('#NosOfPupilSchedules').blur(function() {
+							$('#hintAI').hide();
+							return false;
+						});
+						$('#TotalActualMilesTravelled')
+								.focus(
+										function() {
+											$('#hintAI')
+													.html(
+															"Entitlement Period:<br/>July 1, 2011 through June 30, 2012");
+											$('#hintAI').show();
+											//$('#hintAI').css("marginTop", "1em");
+											return false;
+										});
+						$('#TotalActualMilesTravelled').blur(function() {
+							$('#hintAI').hide();
+							return false;
+						});
+						$('#TotalActualMilesTraveledForAnyPurpose')
+								.focus(
+										function() {
+											$('#hintAI')
+													.html(
+															"If pupil transportation vehicles are also used for other purposes (administrative), exclude the miles for other purposes.<br/><br/>Total Odometer Miles: Pupil Transportation Vehicles Only.");
+											$('#hintAI').show();
+											//$('#hintAI').css("marginTop", "1em");
+											return false;
+										});
+						$('#TotalActualMilesTraveledForAnyPurpose')
+								.blur(
+										function() {
+											$('#hintAI').hide();
+											formatMileageField('TotalActualMilesTraveledForAnyPurpose');
+											return false;
+										});
+						$('#FeesCollected')
+								.focus(
+										function() {
+											$('#hintAI')
+													.html(
+															"Do not include transportation fees collected for activities.");
+											$('#hintAI').show();
+											//$('#hintAI').css("marginTop", "1em");
+											return false;
+										});
+						$('#FeesCollected').blur(function() {
+							$('#hintAI').hide();
+							checkAndFormatAmount('FeesCollected');
+							return false;
+						});
+					});
 </script>
+
+<script type="text/javascript">
+	if (window.addEventListener) { // Mozilla, Netscape, Firefox     
+		window.addEventListener('load', WindowLoad, false);
+	} else if (window.attachEvent) { // IE     
+		window.attachEvent('onload', WindowLoad);
+	}
+	function WindowLoad(event) {
+		checkAndFormatAmount('TotalCurrentOperatingExp');
+		formatMileageField('MigMilesOfTransportation');
+		formatMileageField('regDMiles');
+		//formatMileageField('DaysSchoolWasInSession');
+		//formatMileageField('NosOfPupilSchedules');
+		formatMileageField('TotalActualMilesTravelled');
+		formatMileageField('TotalActualMilesTraveledForAnyPurpose');
+		//checkAndFormatAmount('FeesCollected');
+
+	}
+</script>
+
 
 <script language="javascript" type="text/javascript">
 	function saveData() {
-	    if (document.getElementById('isCapitalOutLay') == false)
+		if (document.getElementById('isCapitalOutLay') == false)
 			alert("Your CDE-40 Form has been completed. A pdf copy of the CDE-40 will be emailed to the email address provided on this form. If any changes need to be made to this CDE-40 Form, please contact the Colorado Department of Education: 303-866-6843");
-        document.getElementById('TotalCurrentOperatingExp').value = (document.getElementById('TotalCurrentOperatingExp').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('MigMilesOfTransportation').value = (document.getElementById('MigMilesOfTransportation').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('regDMiles').value = (document.getElementById('regDMiles').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('DaysSchoolWasInSession').value = (document.getElementById('DaysSchoolWasInSession').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('NosOfPupilSchedules').value = (document.getElementById('NosOfPupilSchedules').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('TotalActualMilesTraveledForAnyPurpose').value = (document.getElementById('TotalActualMilesTraveledForAnyPurpose').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('TotalActualMilesTravelled').value = (document.getElementById('TotalActualMilesTravelled').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('FeesCollected').value = (document.getElementById('FeesCollected').value).replace(/[^0-9-.]/g, '');
+		//document.getElementById('Message').value = "";
+		document.getElementById('TotalCurrentOperatingExp').value = (document
+				.getElementById('TotalCurrentOperatingExp').value).replace(
+				/[^0-9-.]/g, '');
+		document.getElementById('MigMilesOfTransportation').value = (document
+				.getElementById('MigMilesOfTransportation').value).replace(
+				/[^0-9-.]/g, '');
+		document.getElementById('regDMiles').value = (document
+				.getElementById('regDMiles').value).replace(/[^0-9-.]/g, '');
+		document.getElementById('TotalActualMilesTraveledForAnyPurpose').value = (document
+				.getElementById('TotalActualMilesTraveledForAnyPurpose').value)
+				.replace(/[^0-9-.]/g, '');
+		document.getElementById('TotalActualMilesTravelled').value = (document
+				.getElementById('TotalActualMilesTravelled').value).replace(
+				/[^0-9-.]/g, '');
 	}
 
 	function formatPage() {
-	  formatMileageField('MigMilesOfTransportation');
-	  formatMileageField('regDMiles');
-	  formatMileageField('TotalActualMilesTraveledForAnyPurpose');
-	  formatMileageField('TotalActualMilesTravelled');
-	  
-	  document.getElementById('TotalCurrentOperatingExp').value =  parseFloat(document.getElementById('TotalCurrentOperatingExp').value).formatMoney();
-	 
-	  
-	}		
+		formatMileageField('MigMilesOfTransportation');
+		formatMileageField('regDMiles');
+		formatMileageField('TotalActualMilesTraveledForAnyPurpose');
+		formatMileageField('TotalActualMilesTravelled');
+
+		document.getElementById('TotalCurrentOperatingExp').value = parseFloat(
+				document.getElementById('TotalCurrentOperatingExp').value)
+				.formatMoney();
+
+	}
 </script>
-<script type="text/javascript"> 
-if (window.addEventListener) { // Mozilla, Netscape, Firefox     
-   window.addEventListener('load', WindowLoad, false); 
-} else if (window.attachEvent) { // IE     
-   window.attachEvent('onload', WindowLoad); 
-}  
-function WindowLoad(event) {     
-   	checkAndFormatAmount('TotalCurrentOperatingExp');
-	formatMileageField('MigMilesOfTransportation');
-	formatMileageField('regDMiles');
-	formatMileageField('DaysSchoolWasInSession');
-	formatMileageField('NosOfPupilSchedules');
-    formatMileageField('TotalActualMilesTravelled');	
-	formatMileageField('TotalActualMilesTraveledForAnyPurpose');
-	checkAndFormatAmount('FeesCollected');
-    
-} 
-</script> 
 
-	<div id="mainbody">
-		<div id="contentarea">
-			<div id="pagecontent">
 
-<h2><spring:message
+<div id="mainContent">
+	<form:form commandName="transportationForm"
+		action="${pageContext.request.contextPath}/secure/Cde40TransReimbForm/save"
+		method="post">
+
+		<!-- Main outer table -->
+
+		<h3>
+			<spring:message
 				code="Cde40TransReimbForm.StaticText.reimbursementClaimsForEntitlementPeriodStaticText" />
 			&nbsp;<%=formattedFiscalYear%>
-</h2>
-<form:form commandName="transportationForm" action="${pageContext.request.contextPath}/secure/Cde40TransReimbForm/save" method="post">
+		</h3>
+		<TABLE>
+			<TR>
+				<TD width="1180px">
 
-  <div class="formBlock boxShadow3 radius10">
-	<h3><spring:message
-	  code="Cde40TransReimbForm.StaticText.nameOfPersonPreparingTheReportStaticText" />
-	</h3>
-	<div style='float: left;'>
-	  <span class="field" style='width: 100px;'><label for="namePreparerCde40">Name</label></span>
-	  <span class="bodyText" style='width: 350px;'>
-		<form:input id="" path="namePreparerCde40" size="25"
-									maxlength="100" /><font color="red">*</font> <form:errors path="namePreparerCde40" cssClass="validationError" />
-	  </span>
-	  <br/>
-	  <span class="field" style='width: 100px;'><LABEL FOR=""><spring:message
-										code="Cde40TransReimbForm.StaticText.emailAddressStaticText" /></LABEL>
-      </span>
-	  <span class="bodyText" style='width: 350px;'>
-		<form:input id="emailPreparerCde40"
-									path="emailPreparerCde40" size="40" maxlength="100"
-									onBlur="validateEmail('emailPreparerCde40')" /><font color="red">*</font><form:errors path="emailPreparerCde40" cssClass="validationError" />
-	  </span>
-	  <br/>
-	  <span class="field" style='width: 100px;'><label for="PhoneNos"><spring:message code="Cde40TransReimbForm.StaticText.phoneStaticText" /></label></span>
-	  <span class="bodyText" style='width: 350px;'>
-		<form:input id="PhoneNos" path="phonePreparerCde40"
-                                                                        size="15" maxlength="15"
-                                                                        onBlur="checkUSPhone('PhoneNos', true)" /> <form:errors path="phonePreparerCde40" cssClass="validationError" />
-	  </span>
-	</div>
-	<div style='float: left; background-color: #fafafa; border: 1px solid #ddd; padding: 0.5em 1em;' class='radius5'>
-	  <span class="field" style='width: 120px;'><label for="DistrictNumber">District Number</label></span>
-	  <span class="bodyText">
-		<form:input id="DistrictNumber" path="districtNumber"
-                                                                        size="12" maxlength="12" />
-	  </span>
-	  <br/>
-	  <span class="field" style='width: 120px;'><label for="DistrictName">District Name</label></span>
-	  <span class="bodyText">
-		<form:input id="DistrictName" path="districtName"
-                                                                        size="26" maxlength="26" />
-	  </span>
-	</div>
-	<div style='clear:both;'></div>
-  </div>
+					<TABLE>
+						<div class="formBlock boxShadow3 radius10">
+						    <h3><spring:message  code="Cde40TransReimbForm.StaticText.nameOfPersonPreparingTheReportStaticText" />	</h3>
+							<div style='float: left;'>
+								<span class="field" style='width: 100px;'><label
+									for="namePreparerCde40">Name</label></span> <span class="bodyText"
+									style='width: 350px;'> <form:input id=""
+										path="namePreparerCde40" size="25" maxlength="100" /><font color="red"><b>*</b></font>
+								</span> <br /> 
+								<span class="field" style='width: 100px;'>
+								<LABEL FOR="">Email Address</LABEL> 
+								</span> <span class="bodyText"
+									style='width: 350px;'> <form:input id=""
+										path="emailPreparerCde40" size="40" maxlength="100"
+										onBlur="validateEmail('emailPreparerCde40')" />
+										<font color="red"><b>*</b></font>
+								</span> <br />
+							    <span class="field" style='width: 100px;'>
+							    <label
+									for="phonePreparerCde40">Phone</label></span> 
+									<span class="bodyText"
+									style='width: 350px;'> <form:input id=""
+										path="phonePreparerCde40" size="16" maxlength="16"
+										onBlur="validatePhoneNos('phonePreparerCde40')" />
+										<font color="red"><b>*</b></font>
+								</span>
+							</div>
+							<div
+								style='float: left; background-color: #fafafa; border: 1px solid #ddd; padding: 0.5em 1em;'
+								class='radius5'>
+								<span class="field" style='width: 120px;'>
+									<label for="districtNumber">District Number</label>
+								</span> 
+								<span	class="bodyText"> 
+									<form:input id="DistrictNumber"	path="districtNumber" size="12" maxlength="12" readonly="true" />
+								</span> <br /> 
+								<span class="field" style='width: 120px;'>
+									<label for="districtName">District Name</label>
+								</span> 
+								<span class="bodyText">
+									<form:input id="DistrictName" path="districtName" size="26"	maxlength="41" readonly="true"/>
+								</span>
+							</div>
+							<div style='clear: both;'></div>
+						</div>
+						</TABLE>
+						<TABLE>
+						 
+							<TR>
+								<TD COLSPAN="6"><b><spring:message
+											code="Cde40TransReimbForm.StaticText.reimbursementInformationStaticText" /></b>
+								</TD>
+							</TR>
+						
+						</TABLE>
+						<div id='hintRI' class="hint boxShadow3 radius5 right"></div>
+						<TABLE>
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$1aTotalCurrentOperatingExpendituresForPupilTransportationStaticText" />
+								</TD>
 
-  <div class="formBlock boxShadow3 radius10">
-	<h3><spring:message code="Cde40TransReimbForm.StaticText.reimbursementInformationStaticText"/></h3>
-	<div id='hintRI' class="hint boxShadow3 radius5 right"></div>
-	<div>
-	  <span class="field">
-	    <label for="TotalCurrentOperatingExp"><spring:message code="Cde40TransReimbForm.StaticText.$1aTotalCurrentOperatingExpendituresForPupilTransportationStaticText"/></label>
-	  </span>
-	  <span class="bodyText">
-		$ <form:input id="TotalCurrentOperatingExp" path="operTran" onBlur="calNetExpense('TotalCurrentOperatingExp')" /> <form:errors path="operTran" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field">
-	    <label for="MigMilesOfTransportation"><spring:message code="Cde40TransReimbForm.StaticText.$2MileageTraveledForTransportingMigrantEducationPupilsStaticText"/></label>
-	  </span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="MigMilesOfTransportation" path="migMiles" onBlur="formatMileageField('MigMilesOfTransportation')" /> <form:errors path="migMiles" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field"><label for="regDMiles"><spring:message code="Cde40TransReimbForm.StaticText.$3MileageScheduledForRegularPupilTransportationOnTheMileageCountDateStaticText"/></label></span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="regDMiles" path="regDMiles" onBlur="formatMileageField('regDMiles')" /> <form:errors path="regDMiles" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field"><label for="DaysSchoolWasInSession"><spring:message code="Cde40TransReimbForm.StaticText.$4DaysSchoolWasInSessionAndPupilsWereTransportedInTheSchoolTermStaticText"/></label></span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="DaysSchoolWasInSession" path="schoolDays" /> <form:errors path="schoolDays" cssClass="validationError" />
-	  </span>
-	</div>
-    <div>
-	  <span class="field"><label for="NosOfPupilSchedules"><spring:message code="Cde40TransReimbForm.StaticText.$5NumberOfDaysForWhichRoomAndBoardWasPaidForPupilsInLieuOfTransportationStaticText"/>
-	     </label>	  
-	  </span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="" path="boardTran" /> <form:errors path="boardTran" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field"><label for="TotalActualMilesTravelled"><spring:message code="Cde40TransReimbForm.StaticText.$6NumberOfPupilsScheduledToBeTransportedToAndFromPublicSchoolAtPublicStaticText"/>
-	  	          <spring:message code="Cde40TransReimbForm.StaticText.expenseOnTheMileageCountDateStaticText"/>
-	           </label></span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="NosOfPupilSchedules" path="pupilTran" /><form:errors path="pupilTran" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field"><label for="TotalActualMilesTraveledForAnyPurpose"><spring:message code="Cde40TransReimbForm.StaticText.$7TotalActualMilesTraveledForActivityTripsFieldTripsAthleticTripsEtcDuringEntitlementPeriodStaticText"/></label></span>
-	  <span class="bodyText">
-		&nbsp;&nbsp;<form:input id="TotalActualMilesTravelled" path="actMiles" onBlur="formatMileageField('TotalActualMilesTravelled')" /><form:errors path="actMiles" cssClass="validationError" />
-	  </span>
-	</div>
-	<div>
-	  <span class="field"><label for="FeesCollected"><spring:message code="Cde40TransReimbForm.StaticText.$8TotalActualMilesTraveledForAnyPurposeByPupilTransportationVehiclesDuringEntitlementPeriodStaticText"/></label></span>
-	  <span class="bodyText">
-		$ <form:input id="TotalActualMilesTraveledForAnyPurpose" path="totalMiles" onBlur="formatMileageField('TotalActualMilesTraveledForAnyPurpose')" /><form:errors path="totalMiles" cssClass="validationError" />
-	  </span>
-	</div>
-  </div>
-  <div style='text-align: center; margin: 1em 0;'>
-     <input type="Submit" id="saveButton" value="Save/Electronic Signature"  onclick="saveData()" />
-  </div>
-	
-   </form:form><!-- transportationForm -->
-   </div><!-- pagecontent -->
- </div><!-- contentarea -->
-</div><!-- mainbody -->
+								<TD>$<form:input id="TotalCurrentOperatingExp"
+										path="operTran" /><font color="red"><b>*</b> <form:errors path="operTran"
+										cssClass="validationError" /></font>
+								</TD>
+							</TR>
+
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$2MileageTraveledForTransportingMigrantEducationPupilsStaticText" />
+								</TD>
+								<TD><form:input id="MigMilesOfTransportation"
+										path="migMiles"
+										onBlur="formatMileageField('MigMilesOfTransportation')" /><font color="red"><b>*</b> <form:errors
+										path="migMiles" cssClass="validationError" /></font></td>
+							</TR>
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<LABEL FOR=""><spring:message
+											code="Cde40TransReimbForm.StaticText.$3MileageScheduledForRegularPupilTransportationOnTheMileageCountDateStaticText" /></LABEL>
+								</TD>
+								<TD><form:input id="regDMiles" path="regDMiles"
+										onBlur="formatMileageField('regDMiles')" /><font color="red"><b>*</b>  <form:errors
+										path="regDMiles" cssClass="validationError" /></font></TD>
+							</TR>
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$4DaysSchoolWasInSessionAndPupilsWereTransportedInTheSchoolTermStaticText" />
+								</TD>
+								<TD><form:input id="DaysSchoolWasInSession"
+										path="schoolDays" /><font color="red"><b>*</b>  <form:errors path="schoolDays"
+										cssClass="validationError" /></font></td>
+							</TR>
+
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<LABEL FOR=""><spring:message
+											code="Cde40TransReimbForm.StaticText.$5NumberOfDaysForWhichRoomAndBoardWasPaidForPupilsInLieuOfTransportationStaticText" /></LABEL>
+								</TD>
+								<TD><form:input id="" path="boardTran" /><form:errors
+										path="boardTran" cssClass="validationError" /></td>
+							</TR>
 
 
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$6NumberOfPupilsScheduledToBeTransportedToAndFromPublicSchoolAtPublicStaticText" />
+								</TD>
+							</TR>
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.expenseOnTheMileageCountDateStaticText" />
+								</TD>
+								<TD><form:input id="NosOfPupilSchedules" path="pupilTran" /><font color="red"><b>*</b> 
+									<form:errors path="pupilTran" cssClass="validationError" /></font></TD>
+							</TR>
 
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$7TotalActualMilesTraveledForActivityTripsFieldTripsAthleticTripsEtcDuringEntitlementPeriodStaticText" />
+								</TD>
+								<TD><form:input id="TotalActualMilesTravelled"
+										path="actMiles"
+										onBlur="formatMileageField('TotalActualMilesTravelled')" /><font color="red"><b>*</b> <form:errors
+										path="actMiles" cssClass="validationError" /></font></TD>
+							</TR>
+
+							<TR>
+								<TD width="78%">&nbsp;&nbsp;<spring:message
+										code="Cde40TransReimbForm.StaticText.$8TotalActualMilesTraveledForAnyPurposeByPupilTransportationVehiclesDuringEntitlementPeriodStaticText" />
+								</TD>
+								<TD><form:input id="TotalActualMilesTraveledForAnyPurpose"
+										path="totalMiles"
+										onBlur="formatMileageField('TotalActualMilesTraveledForAnyPurpose')" /><font color="red"><b>*</b> 
+									<form:errors path="totalMiles" cssClass="validationError" /></font></TD>
+							</TR>
+						</TABLE>
+						</div>
+						<font color="red"><c:out id="Message" value="${transportationForm.message}"/></font>
+						</br>
+						<TABLE>
+							<TR>
+								<TD width="48%"></TD>
+								<TD align="center" colspan="4"><input type="Submit"
+									id="saveButton" value="Save/Electronics Signature"
+									onclick="saveData()" /></TD>
+							</TR>
+						</TABLE>
+						</div>
+				</TD>
+			</TR>
+		</TABLE>
+	</form:form>
+</div>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/static/scripts/screen/Cde40TransReimbForm.js"></script>
 <%-- End of try/catch around complete JSP in order to log and display
