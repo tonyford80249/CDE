@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/cde_fco/!svn/ver/149/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services
+END
+ISSOLoginManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ISSOLoginManager.java
+END
+IChangeAtRiskCountsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IChangeAtRiskCountsManager.java
+END
+ICoforsUploadManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICoforsUploadManager.java
+END
+IImportAuditTransDataManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IImportAuditTransDataManager.java
+END
+IAudCDE40TransReimbFormManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cde_fco/!svn/ver/85/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAudCDE40TransReimbFormManager.java
+END
+IDisplayAdjustmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDisplayAdjustmentManager.java
+END
+IMillLevyCertManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IMillLevyCertManager.java
+END
+IMonthlyPaymentsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IMonthlyPaymentsManager.java
+END
+ICapitalOutlayManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICapitalOutlayManager.java
+END
+IUpdateStudentsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IUpdateStudentsManager.java
+END
+ICrosswalkCollectionDataManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICrosswalkCollectionDataManager.java
+END
+IDistrictPaymentReportManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDistrictPaymentReportManager.java
+END
+ICSICalculationsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICSICalculationsManager.java
+END
+IAuditSummaryManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/139/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAuditSummaryManager.java
+END
+IElectionsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IElectionsManager.java
+END
+IDistributionAmountsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDistributionAmountsManager.java
+END
+IHeaderManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IHeaderManager.java
+END
+IMillLevyOverrideWorksheetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IMillLevyOverrideWorksheetManager.java
+END
+IAudTrackingManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAudTrackingManager.java
+END
+IReportsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IReportsManager.java
+END
+IValidateSASIDsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IValidateSASIDsManager.java
+END
+IAudSumUpdateManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAudSumUpdateManager.java
+END
+IPaymentWorkSheetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cde_fco/!svn/ver/138/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IPaymentWorkSheetManager.java
+END
+IBaseManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IBaseManager.java
+END
+ICde40TransReimbFormManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40TransReimbFormManager.java
+END
+IUploadVariablesManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IUploadVariablesManager.java
+END
+ICde40SummaryManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40SummaryManager.java
+END
+IUploadStudentsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IUploadStudentsManager.java
+END
+IAdjustmentStatusManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAdjustmentStatusManager.java
+END
+IImportAuditsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IImportAuditsManager.java
+END
+ICommentsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICommentsManager.java
+END
+IChangeBillingManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IChangeBillingManager.java
+END
+IAddAdjustmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAddAdjustmentManager.java
+END
+IReferenceDataManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/124/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IReferenceDataManager.java
+END
+ICreateAuditManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICreateAuditManager.java
+END

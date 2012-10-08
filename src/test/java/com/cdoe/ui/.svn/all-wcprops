@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui
+END
+SecuritySeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/SecuritySeleniumTest.java
+END
+ReportsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/ReportsSeleniumTest.java
+END
+CapitalOutlaySeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CapitalOutlaySeleniumTest.java
+END
+ImportAuditsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/ImportAuditsSeleniumTest.java
+END
+ImportAuditTransDataSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/ImportAuditTransDataSeleniumTest.java
+END
+MillLevyCertSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/MillLevyCertSeleniumTest.java
+END
+SSOLoginSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/SSOLoginSeleniumTest.java
+END
+MonthlyPaymentsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/MonthlyPaymentsSeleniumTest.java
+END
+ElectionsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/ElectionsSeleniumTest.java
+END
+MaintainCalculationRulesSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/MaintainCalculationRulesSeleniumTest.java
+END
+CoforsUploadSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CoforsUploadSeleniumTest.java
+END
+DistributionAmountsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/DistributionAmountsSeleniumTest.java
+END
+LandingMenuSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/LandingMenuSeleniumTest.java
+END
+UploadVariablesSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/UploadVariablesSeleniumTest.java
+END
+CommentsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CommentsSeleniumTest.java
+END
+CrosswalkCollectionDataSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CrosswalkCollectionDataSeleniumTest.java
+END
+DisplayAdjustmentSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/DisplayAdjustmentSeleniumTest.java
+END
+HomePageSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/HomePageSeleniumTest.java
+END
+AddAdjustmentSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/AddAdjustmentSeleniumTest.java
+END
+HeaderSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/HeaderSeleniumTest.java
+END
+DistrictPaymentReportSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/DistrictPaymentReportSeleniumTest.java
+END
+CalculateEntitlementsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CalculateEntitlementsSeleniumTest.java
+END
+AdvanceAndEntitlementReportSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/AdvanceAndEntitlementReportSeleniumTest.java
+END
+MillLevyOverrideWorksheetSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/MillLevyOverrideWorksheetSeleniumTest.java
+END
+PaymentWorkSheetSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/PaymentWorkSheetSeleniumTest.java
+END
+Cde40TransReimbFormSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/Cde40TransReimbFormSeleniumTest.java
+END
+TransMenuSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/TransMenuSeleniumTest.java
+END
+Cde40SummarySeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/Cde40SummarySeleniumTest.java
+END
+CSICalculationsSeleniumTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/ui/CSICalculationsSeleniumTest.java
+END

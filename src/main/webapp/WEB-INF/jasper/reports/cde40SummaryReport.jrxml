@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report6" language="groovy" pageWidth="2380" pageHeight="1684" orientation="Landscape" columnWidth="2340" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1165"/>
+	<property name="ireport.y" value="0"/>
+	<style name="forOddRows">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}.intValue() % 2 == 0]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#D2D8DE"/>
+		</conditionalStyle>
+	</style>
+	<style name="highlighter" forecolor="#FFFFFF" backcolor="#FFFFFF">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}.intValue() % 2 == 0]]></conditionExpression>
+			<style mode="Opaque" forecolor="#6A7D99" backcolor="#FFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="districtName" forecolor="#000000" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{FEES_COLLECTED} == null]]></conditionExpression>
+			<style forecolor="#197A9B" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="true"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="fiscalYear" class="java.lang.String">
+		<defaultValueExpression><![CDATA[20122013]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select t.DISTRICT_NUMBER, m.organization_name, t.DATE_CHANGED, t.NET_CURRENT_OPER_EXPEND, t.MIG_MILES, t.REG_D_MILES, t.SCHOOL_DAYS, t.BOARD_TRAN, t.PUPIL_TRAN, t.ACT_MILES, t.TOTAL_MILES, t.FEES_COLLECTED, t.CAP_OUT_TRAN, t.REIM_TRAN_LY, t.ADV_PAY from transportation t, organization_unit_master m where t.district_number = m.organization_code and t.FISCAL_YEAR = $P{fiscalYear}]]>
+	</queryString>
+	<field name="DISTRICT_NUMBER" class="java.lang.String"/>
+	<field name="ORGANIZATION_NAME" class="java.lang.String"/>
+	<field name="DATE_CHANGED" class="java.lang.String"/>
+	<field name="NET_CURRENT_OPER_EXPEND" class="java.math.BigDecimal"/>
+	<field name="MIG_MILES" class="java.math.BigDecimal"/>
+	<field name="REG_D_MILES" class="java.math.BigDecimal"/>
+	<field name="SCHOOL_DAYS" class="java.math.BigDecimal"/>
+	<field name="BOARD_TRAN" class="java.math.BigDecimal"/>
+	<field name="PUPIL_TRAN" class="java.math.BigDecimal"/>
+	<field name="ACT_MILES" class="java.math.BigDecimal"/>
+	<field name="TOTAL_MILES" class="java.math.BigDecimal"/>
+	<field name="FEES_COLLECTED" class="java.math.BigDecimal"/>
+	<field name="CAP_OUT_TRAN" class="java.math.BigDecimal"/>
+	<field name="REIM_TRAN_LY" class="java.math.BigDecimal"/>
+	<field name="ADV_PAY" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement  x="0" y="0" width="1864" height="75"/>
+				<imageExpression><![CDATA["images/genbannerblank.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement  x="0" y="0" width="223" height="75"/>
+				<imageExpression><![CDATA["images/CDELogo2.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement  x="0" y="0" width="1864" height="20" backcolor="#003876"/>
+			</rectangle>
+			<staticText>
+				<reportElement  x="0" y="0" width="210" height="20" forecolor="#FFFFFF" backcolor="#003876"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CDE-40 Summary Report]]></text>
+			</staticText>
+			<textField>
+				<reportElement  x="1741" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#003876"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement  x="1821" y="0" width="40" height="20" forecolor="#FFFFFF" backcolor="#003876"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="80" splitType="Stretch">
+			<rectangle>
+				<reportElement  mode="Opaque" x="0" y="0" width="1864" height="80" backcolor="#F0F0CC"/>
+			</rectangle>
+			<staticText>
+				<reportElement  mode="Transparent" x="5" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[District Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="130" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[District Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="255" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last Updated]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="380" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Current Operating Expenditures]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="505" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Mileage Travelled Transporting Migrant Pupils]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="630" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mileage Scheduled for Regular Pupil Transport]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="755" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Days School was in Session]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="880" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Days Room and Board was Paid for Pupils in Lieu of Transport]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1005" y="0" width="100" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pupils Scheduled to be Transported at Public Expense]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1110" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actual Miles Traveled for Trips]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1235" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Actual Miles Traveled for Any Purpose]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1360" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fees Collected from Individuals]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1485" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Capital Outlay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1605" y="0" width="120" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Calculated Reimbursement Entitlement (Previous Year)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  mode="Transparent" x="1730" y="0" width="134" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="1.25" lineColor="#003876"/>
+					<bottomPen lineWidth="1.25" lineStyle="Solid" lineColor="#003876"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Advance Reimbursement Entitlement (Current Entitlement Period)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement  style="forOddRows" x="-3" y="0" width="1864" height="22" forecolor="#FFFFFF"/>
+			</rectangle>
+			<textField>
+				<reportElement  x="0" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DISTRICT_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  style="districtName" x="125" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ORGANIZATION_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="250" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DATE_CHANGED}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  x="375" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{NET_CURRENT_OPER_EXPEND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="500" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{MIG_MILES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="625" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{REG_D_MILES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="750" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{SCHOOL_DAYS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="875" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{BOARD_TRAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="1000" y="0" width="100" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{PUPIL_TRAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="1105" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ACT_MILES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="1230" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{TOTAL_MILES}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  x="1355" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FEES_COLLECTED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="1480" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CAP_OUT_TRAN}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  x="1605" y="0" width="120" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{REIM_TRAN_LY}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  x="1730" y="0" width="134" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ADV_PAY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

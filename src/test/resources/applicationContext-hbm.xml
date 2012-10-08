@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="annotatedClasses" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>com.cdoe.biz.model.AuditFpc</value>
+				<value>com.cdoe.biz.model.FundedCount</value>
+				<value>com.cdoe.biz.model.AuditEqual</value>
+				<value>com.cdoe.biz.model.Prorate</value>
+				<value>com.cdoe.biz.model.AuditHour</value>
+				<value>com.cdoe.biz.model.Transportation</value>
+				<value>com.cdoe.biz.model.AuditFteByGrade</value>
+				<value>com.cdoe.biz.model.CommentInfo</value>
+				<value>com.cdoe.biz.model.StEqLunch</value>
+				<value>com.cdoe.biz.model.Variable</value>
+				<value>com.cdoe.biz.model.VHeader</value>
+				<value>com.cdoe.biz.model.Csi</value>
+				<value>com.cdoe.biz.model.Finance</value>
+				<value>com.cdoe.biz.model.OrganizationUnitMaster</value>
+				<value>com.cdoe.biz.model.CapitalOutlay</value>
+				<value>com.cdoe.biz.model.AuditTracking</value>
+				<value>com.cdoe.biz.model.AuditTran</value>
+				<value>com.cdoe.biz.model.AudFpcLun</value>
+				<value>com.cdoe.biz.model.AuditLunch</value>
+				<value>com.cdoe.biz.model.AuditProgram</value>
+				<value>com.cdoe.biz.model.AuditProgramException</value>
+				<value>com.cdoe.biz.model.AuditRepayment</value>
+				<value>com.cdoe.biz.model.AuditSasidException</value>
+				<value>com.cdoe.biz.model.Election</value>
+				<value>com.cdoe.biz.model.FteByGrade</value>
+				<value>com.cdoe.biz.model.MillLevy</value>
+				<value>com.cdoe.biz.model.SeMonthly</value>
+				<value>com.cdoe.biz.model.StateEqual</value>
+				<value>com.cdoe.biz.model.FreeLunchCnt</value>
+				<value>com.cdoe.biz.model.AuditRepaymentAdjustment</value>
+				<value>com.cdoe.biz.model.User</value>
+				<value>com.cdoe.biz.model.Role</value>
+				<value>com.cdoe.biz.model.StateEqualMaster</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

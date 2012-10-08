@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report5" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="oddColor" forecolor="#000000" backcolor="#FFFFFF">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style forecolor="#000000" backcolor="#D2D8DE"/>
+		</conditionalStyle>
+	</style>
+	<style name="myStyle">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}.intValue() % 2 == 0]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#197A9B" isBlankWhenNull="false" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="fiscalYear" class="java.lang.String">
+		<defaultValueExpression><![CDATA[20102011]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select t.*,o.organization_name,pr.* from transportation t, organization_unit_master o, prorate pr where t.district_number = o.organization_code and t.FISCAL_YEAR = $P{fiscalYear} and pr.FISCAL_YEAR = $P{fiscalYear}]]>
+	</queryString>
+	<field name="DISTRICT_NUMBER" class="java.lang.String"/>
+	<field name="DATE_CHANGED" class="java.lang.String"/>
+	<field name="ERRORS" class="java.lang.String"/>
+	<field name="PUPIL_TRAN" class="java.math.BigDecimal"/>
+	<field name="OPER_TRAN" class="java.math.BigDecimal"/>
+	<field name="IND_CONT" class="java.math.BigDecimal"/>
+	<field name="CAP_OUT_TRAN" class="java.math.BigDecimal"/>
+	<field name="MIG_MILES" class="java.math.BigDecimal"/>
+	<field name="REG_D_MILES" class="java.math.BigDecimal"/>
+	<field name="SCHOOL_DAYS" class="java.math.BigDecimal"/>
+	<field name="REG_DAYS" class="java.math.BigDecimal"/>
+	<field name="BOARD_TRAN" class="java.math.BigDecimal"/>
+	<field name="EX_REIM" class="java.math.BigDecimal"/>
+	<field name="DESEG_REIM" class="java.math.BigDecimal"/>
+	<field name="REIM_TRAN" class="java.math.BigDecimal"/>
+	<field name="REIM_TRAN_LY" class="java.math.BigDecimal"/>
+	<field name="ADV_PAY_LY" class="java.math.BigDecimal"/>
+	<field name="REIM_ADV_PAY" class="java.math.BigDecimal"/>
+	<field name="ADV_PAY" class="java.math.BigDecimal"/>
+	<field name="ACT_MILES" class="java.math.BigDecimal"/>
+	<field name="TOTAL_MILES" class="java.math.BigDecimal"/>
+	<field name="FISCAL_YEAR" class="java.lang.String"/>
+	<field name="CDE_COMMENTS" class="java.lang.String"/>
+	<field name="FIRST_PAYMENT" class="java.math.BigDecimal"/>
+	<field name="SECOND_PAYMENT" class="java.math.BigDecimal"/>
+	<field name="DISTRICT_DISTRIBUTION" class="java.math.BigDecimal"/>
+	<field name="COFRS_BATCH_NUMBER" class="java.math.BigDecimal"/>
+	<field name="COFRS_DATE_PAID" class="java.sql.Timestamp"/>
+	<field name="NAME_PREPARER_CDE40" class="java.lang.String"/>
+	<field name="PHONE_PREPARER_CDE40" class="java.lang.String"/>
+	<field name="EMAIL_PREPARER_CDE40" class="java.lang.String"/>
+	<field name="FEES_COLLECTED" class="java.math.BigDecimal"/>
+	<field name="OTHER_REVENUE" class="java.math.BigDecimal"/>
+	<field name="NET_CURRENT_OPER_EXPEND" class="java.math.BigDecimal"/>
+	<field name="TOTAL_REIM_MILEAGE" class="java.math.BigDecimal"/>
+	<field name="MILEAGE_ENTITLEMENT" class="java.math.BigDecimal"/>
+	<field name="EX_COSTS" class="java.math.BigDecimal"/>
+	<field name="MAX_REIM_ENTITLEMENT" class="java.math.BigDecimal"/>
+	<field name="REIM_ENTITLEMENT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_REIM_ENTITLEMENT" class="java.math.BigDecimal"/>
+	<field name="FINAL_REIM_ENTITLEMENT" class="java.math.BigDecimal"/>
+	<field name="FINAL_REIM_PRORATED" class="java.math.BigDecimal"/>
+	<field name="ID" class="java.math.BigDecimal"/>
+	<field name="VERSION" class="java.math.BigDecimal"/>
+	<field name="ORGANIZATION_NAME" class="java.lang.String"/>
+	<field name="FUNDING_SOURCES" class="java.lang.String"/>
+	<field name="PRORATE_FACTOR_1ST_PAYMENT" class="java.math.BigDecimal"/>
+	<field name="PRORATE_FACTOR_2ND_PAYMENT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_DISTRIBUTION" class="java.math.BigDecimal"/>
+	<field name="TOTAL_FIRST_PAYMENT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_SECOND_PAYMENT" class="java.math.BigDecimal"/>
+	<variable name="defaultValue" class="java.lang.Double">
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band height="555" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement  x="0" y="0" width="802" height="555" backcolor="#F0F0F0"/>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement  stretchType="RelativeToBandHeight" x="0" y="0" width="800" height="73"/>
+				<imageExpression><![CDATA["images/genbannerblank.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement  x="1" y="0" width="223" height="59"/>
+				<imageExpression><![CDATA["images/CDELogo2.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="98" splitType="Stretch">
+			<rectangle>
+				<reportElement  x="582" y="73" width="122" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement  x="382" y="73" width="100" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement  x="142" y="73" width="140" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement  x="634" y="30" width="124" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement  x="399" y="30" width="134" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<rectangle>
+				<reportElement  x="172" y="30" width="110" height="20" backcolor="#F0F0CC"/>
+			</rectangle>
+			<staticText>
+				<reportElement  x="11" y="67" width="131" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reimbursement Year]]></text>
+			</staticText>
+			<textField>
+				<reportElement  mode="Transparent" x="142" y="67" width="140" height="31" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FISCAL_YEAR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement  x="282" y="67" width="100" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1st Proration]]></text>
+			</staticText>
+			<textField pattern="###0.0000">
+				<reportElement  mode="Transparent" x="382" y="67" width="100" height="31" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRORATE_FACTOR_1ST_PAYMENT} != null ? $F{PRORATE_FACTOR_1ST_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement  x="482" y="67" width="100" height="31"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2nd Proration]]></text>
+			</staticText>
+			<textField pattern="###0.0000">
+				<reportElement  mode="Transparent" x="582" y="67" width="122" height="31" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRORATE_FACTOR_2ND_PAYMENT} != null ? $F{PRORATE_FACTOR_2ND_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement  x="83" y="22" width="89" height="35"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1st Distribution]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  mode="Transparent" x="173" y="22" width="134" height="35" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_FIRST_PAYMENT} != null ? $F{TOTAL_FIRST_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement  x="307" y="22" width="92" height="35"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2nd Distribution]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  mode="Transparent" x="399" y="22" width="134" height="35" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_SECOND_PAYMENT} != null ? $F{TOTAL_SECOND_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement  x="533" y="22" width="101" height="35"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Distribution]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  mode="Transparent" x="634" y="22" width="124" height="35" backcolor="#D2D8DE"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_DISTRIBUTION} != null ? $F{TOTAL_DISTRIBUTION} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement  x="0" y="0" width="802" height="22" forecolor="#FFFFFF" backcolor="#003876"/>
+			</rectangle>
+			<staticText>
+				<reportElement  x="11" y="0" width="262" height="22" forecolor="#FFFFFF" backcolor="#000099"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISTRICT PAYMENT REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement  x="0" y="3" width="802" height="20" forecolor="#FFFFFF" backcolor="#003876"/>
+			</rectangle>
+			<staticText>
+				<reportElement  x="11" y="2" width="100" height="20" forecolor="#FFFFFF" backcolor="#000099"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[District Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="116" y="2" width="100" height="20" forecolor="#FFFFFF" backcolor="#000099"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[District Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="221" y="2" width="124" height="20" forecolor="#FFFFFF" backcolor="#000099"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1st Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="350" y="2" width="109" height="20" forecolor="#FFFFFF" backcolor="#000099"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2nd Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="464" y="2" width="102" height="20" forecolor="#FFFFFF" backcolor="#000099"/>
+				<box>
+					<topPen lineWidth="1.25"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Distribution]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement  style="myStyle" x="11" y="2" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DISTRICT_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  style="myStyle" x="116" y="2" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ORGANIZATION_NAME}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Column" pattern="¤ #,##0.00" isBlankWhenNull="false">
+				<reportElement  style="myStyle" x="221" y="2" width="124" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FIRST_PAYMENT} != null ? $F{FIRST_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  style="myStyle" x="350" y="2" width="109" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SECOND_PAYMENT} != null ?$F{SECOND_PAYMENT} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement  style="myStyle" x="464" y="2" width="102" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DISTRICT_DISTRIBUTION} != null ?$F{DISTRICT_DISTRIBUTION} : new BigDecimal(0.0)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cde_fco/!svn/ver/121/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator
+END
+AuditTrackingValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AuditTrackingValidator.java
+END
+Cde40TransFormValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cde_fco/!svn/ver/121/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/Cde40TransFormValidator.java
+END
+AuditTranValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AuditTranValidator.java
+END
+MillLevyValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/MillLevyValidator.java
+END
+AuditEqualValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AuditEqualValidator.java
+END
+VDataValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/VDataValidator.java
+END
+AuditFpcValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AuditFpcValidator.java
+END
+StateEqualValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/StateEqualValidator.java
+END
+ElectionsDetailValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/ElectionsDetailValidator.java
+END
+AuditSasidExceptionValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AuditSasidExceptionValidator.java
+END
+CapitalOutlayValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/CapitalOutlayValidator.java
+END
+ProrateValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/ProrateValidator.java
+END
+VHeaderValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/VHeaderValidator.java
+END
+AdjustmentValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/AdjustmentValidator.java
+END
+CommentInfoValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/CommentInfoValidator.java
+END
+CsiValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/CsiValidator.java
+END
+DistrictValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/DistrictValidator.java
+END
+TransportationValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/ui/validator/TransportationValidator.java
+END

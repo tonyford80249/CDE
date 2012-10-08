@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/cde_fco/!svn/ver/139/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl
+END
+MillLevyCertDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/MillLevyCertDAO.java
+END
+UpdateStudentsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/UpdateStudentsDAO.java
+END
+UploadVariablesDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/UploadVariablesDAO.java
+END
+AuditSummaryDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/139/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AuditSummaryDAO.java
+END
+ChangeBillingDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ChangeBillingDAO.java
+END
+AddAdjustmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AddAdjustmentDAO.java
+END
+HeaderDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/HeaderDAO.java
+END
+CreateAuditDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CreateAuditDAO.java
+END
+ValidateSASIDsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ValidateSASIDsDAO.java
+END
+AudSumUpdateDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AudSumUpdateDAO.java
+END
+DisplayAdjustmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/DisplayAdjustmentDAO.java
+END
+PaymentWorkSheetDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/PaymentWorkSheetDAO.java
+END
+MonthlyPaymentsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/MonthlyPaymentsDAO.java
+END
+CapitalOutlayDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CapitalOutlayDAO.java
+END
+Cde40SummaryDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/Cde40SummaryDAO.java
+END
+UploadStudentsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/UploadStudentsDAO.java
+END
+CrosswalkCollectionDataDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CrosswalkCollectionDataDAO.java
+END
+DistrictPaymentReportDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/DistrictPaymentReportDAO.java
+END
+CSICalculationsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CSICalculationsDAO.java
+END
+AdjustmentStatusDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/77/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AdjustmentStatusDAO.java
+END
+StateEqualMasterDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/cde_fco/!svn/ver/83/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/StateEqualMasterDAO.java
+END
+ImportAuditsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ImportAuditsDAO.java
+END
+ElectionsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ElectionsDAO.java
+END
+CommentsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CommentsDAO.java
+END
+DistributionAmountsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/DistributionAmountsDAO.java
+END
+TransportationDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/121/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/TransportationDAO.java
+END
+MillLevyOverrideWorksheetDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/MillLevyOverrideWorksheetDAO.java
+END
+AudTrackingDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AudTrackingDAO.java
+END
+SSOLoginDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/SSOLoginDAO.java
+END
+ReportsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ReportsDAO.java
+END
+ChangeAtRiskCountsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ChangeAtRiskCountsDAO.java
+END
+CoforsUploadDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/CoforsUploadDAO.java
+END
+ImportAuditTransDataDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/ImportAuditTransDataDAO.java
+END
+AudCDE40TransReimbFormDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/AudCDE40TransReimbFormDAO.java
+END
+DistrictsDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cde_fco/!svn/ver/58/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/DistrictsDAO.java
+END
+DistrictDetailDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/DistrictDetailDAO.java
+END
+Cde40TransReimbFormDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/biz/impl/Cde40TransReimbFormDAO.java
+END

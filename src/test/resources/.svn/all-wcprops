@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources
+END
+system.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/system.properties
+END
+message.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/message.properties
+END
+db-access.properties
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/db-access.properties
+END
+applicationContext-tiles.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-tiles.xml
+END
+reports.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/reports.properties
+END
+applicationContext-validator.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-validator.xml
+END
+hibernate.properties
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/hibernate.properties
+END
+applicationContext-tx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-tx.xml
+END
+applicationContext-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-service.xml
+END
+application-resources.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/application-resources.properties
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext.xml
+END
+applicationContext-dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-dao.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/log4j.properties
+END
+applicationContext-hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-hbm.xml
+END
+tmp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/resources/tmp.txt
+END
+applicationContext-data.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/resources/applicationContext-data.xml
+END

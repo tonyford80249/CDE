@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Services -->
+	<bean id="baseManager" class="com.cdoe.services.impl.BaseManager">
+		<property name="hibernateDAO" ref="hibernateDAO" />
+	</bean>
+	
+	<bean id="headerManager" class="com.cdoe.services.impl.HeaderManager" parent="baseManager">
+		<property name="headerDAO" ref="headerDAO"/>
+	</bean>
+	<bean id="sSOLoginManager" class="com.cdoe.services.impl.SSOLoginManager" parent="baseManager">
+		<property name="sSOLoginDAO" ref="sSOLoginDAO"/>
+	</bean>
+	<bean id="uploadVariablesManager" class="com.cdoe.services.impl.UploadVariablesManager" parent="baseManager">
+		<property name="uploadVariablesDAO" ref="uploadVariablesDAO"/>
+	</bean>
+	<bean id="importAuditsManager" class="com.cdoe.services.impl.ImportAuditsManager" parent="baseManager">
+		<property name="importAuditsDAO" ref="importAuditsDAO"/>
+	</bean>
+	<bean id="displayAdjustmentManager" class="com.cdoe.services.impl.DisplayAdjustmentManager" parent="baseManager">
+		<property name="displayAdjustmentDAO" ref="displayAdjustmentDAO"/>
+	</bean>
+	<bean id="commentsManager" class="com.cdoe.services.impl.CommentsManager" parent="baseManager">
+		<property name="commentsDAO" ref="commentsDAO"/>
+	</bean>
+	<bean id="reportsManager" class="com.cdoe.services.impl.ReportsManager" parent="baseManager">
+		<property name="reportsDAO" ref="reportsDAO"/>
+	</bean>
+	<bean id="millLevyCertManager" class="com.cdoe.services.impl.MillLevyCertManager" parent="baseManager">
+		<property name="millLevyCertDAO" ref="millLevyCertDAO"/>
+	</bean>
+	<bean id="millLevyOverrideWorksheetManager" class="com.cdoe.services.impl.MillLevyOverrideWorksheetManager" parent="baseManager">
+		<property name="millLevyOverrideWorksheetDAO" ref="millLevyOverrideWorksheetDAO"/>
+	</bean>
+	<bean id="electionsManager" class="com.cdoe.services.impl.ElectionsManager" parent="baseManager">
+		<property name="electionsDAO" ref="electionsDAO"/>
+	</bean>
+	<bean id="crosswalkCollectionDataManager" class="com.cdoe.services.impl.CrosswalkCollectionDataManager" parent="baseManager">
+		<property name="crosswalkCollectionDataDAO" ref="crosswalkCollectionDataDAO"/>
+	</bean>
+	<bean id="importAuditTransDataManager" class="com.cdoe.services.impl.ImportAuditTransDataManager" parent="baseManager">
+		<property name="importAuditTransDataDAO" ref="importAuditTransDataDAO"/>
+	</bean>
+	<bean id="cde40TransReimbFormManager" class="com.cdoe.services.impl.Cde40TransReimbFormManager" parent="baseManager">
+		<property name="cde40TransReimbFormDAO" ref="cde40TransReimbFormDAO"/>
+		<property name="districtDetailDAO" ref="districtDetailDAO"/>
+	</bean>
+	<bean id="districtPaymentReportManager" class="com.cdoe.services.impl.DistrictPaymentReportManager" parent="baseManager">
+		<property name="districtPaymentReportDAO" ref="districtPaymentReportDAO"/>
+	</bean>
+	<bean id="capitalOutlayManager" class="com.cdoe.services.impl.CapitalOutlayManager" parent="baseManager">
+		<property name="capitalOutlayDAO" ref="capitalOutlayDAO"/>
+		<property name="transportationDAO" ref="transportationDAO"/>
+	</bean>
+	<bean id="cde40SummaryManager" class="com.cdoe.services.impl.Cde40SummaryManager" parent="baseManager">
+		<property name="cde40SummaryDAO" ref="cde40SummaryDAO"/>
+	</bean>
+	<bean id="distributionAmountsManager" class="com.cdoe.services.impl.DistributionAmountsManager" parent="baseManager">
+		<property name="distributionAmountsDAO" ref="distributionAmountsDAO"/>
+		<property name="transportationDAO" ref="transportationDAO"/>
+	</bean>
+	<bean id="coforsUploadManager" class="com.cdoe.services.impl.CoforsUploadManager" parent="baseManager">
+		<property name="coforsUploadDAO" ref="coforsUploadDAO"/>
+	</bean>
+	<bean id="paymentWorkSheetManager" class="com.cdoe.services.impl.PaymentWorkSheetManager" parent="baseManager">
+		<property name="paymentWorkSheetDAO" ref="paymentWorkSheetDAO"/>
+		<property name="districtDetailDAO" ref="districtDetailDAO"/>
+	</bean>
+	<bean id="changeAtRiskCountsManager" class="com.cdoe.services.impl.ChangeAtRiskCountsManager" parent="baseManager">
+		<property name="changeAtRiskCountsDAO" ref="changeAtRiskCountsDAO"/>
+	</bean>
+	<bean id="audTrackingManager" class="com.cdoe.services.impl.AudTrackingManager" parent="baseManager">
+		<property name="audTrackingDAO" ref="audTrackingDAO"/>
+	</bean>
+	<bean id="changeBillingManager" class="com.cdoe.services.impl.ChangeBillingManager" parent="baseManager">
+		<property name="changeBillingDAO" ref="changeBillingDAO"/>
+	</bean>
+	<bean id="createAuditManager" class="com.cdoe.services.impl.CreateAuditManager" parent="baseManager">
+		<property name="createAuditDAO" ref="createAuditDAO"/>
+	</bean>
+	<bean id="audSumUpdateManager" class="com.cdoe.services.impl.AudSumUpdateManager" parent="baseManager">
+		<property name="audSumUpdateDAO" ref="audSumUpdateDAO"/>
+	</bean>
+	<bean id="adjustmentStatusManager" class="com.cdoe.services.impl.AdjustmentStatusManager" parent="baseManager">
+		<property name="adjustmentStatusDAO" ref="adjustmentStatusDAO"/>
+	</bean>
+	<bean id="uploadStudentsManager" class="com.cdoe.services.impl.UploadStudentsManager" parent="baseManager">
+		<property name="uploadStudentsDAO" ref="uploadStudentsDAO"/>
+	</bean>
+	<bean id="validateSASIDsManager" class="com.cdoe.services.impl.ValidateSASIDsManager" parent="baseManager">
+		<property name="validateSASIDsDAO" ref="validateSASIDsDAO"/>
+	</bean>
+	<bean id="updateStudentsManager" class="com.cdoe.services.impl.UpdateStudentsManager" parent="baseManager">
+		<property name="updateStudentsDAO" ref="updateStudentsDAO"/>
+	</bean>
+	<bean id="referenceDataManager"  class="com.cdoe.services.impl.ReferenceDataManager" init-method="init">
+		<property name="districtsDao" ref="districtDetailDAO"/>
+		<property name="stateEqualMasterDao" ref="stateEqualMasterDAO"/>
+	</bean>
+	
+</beans>

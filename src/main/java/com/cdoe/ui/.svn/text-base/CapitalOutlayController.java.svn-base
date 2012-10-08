@@ -1,0 +1,91 @@
+
+/*
+ * Copyright ResQSoft, Inc. 2011
+ */
+package com.cdoe.ui;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.cdoe.biz.model.CapitalOutlay;
+import com.cdoe.services.ICapitalOutlayManager;
+import com.cdoe.ui.form.CapitalOutlayForm;
+import com.resqsoft.util.RequestUtils;
+
+@Controller
+@RequestMapping("/secure/CapitalOutlay")
+public class CapitalOutlayController {
+
+	private static final Logger logger = Logger.getLogger(CapitalOutlayController.class);
+	
+	@Autowired
+	private ICapitalOutlayManager capitalOutlayManager;
+	
+	@Autowired
+	private Validator capitalOutlayValidator;
+	
+	@RequestMapping(method = RequestMethod.GET)
+    public String index(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		System.out.println ("Dist Name and Nos" + session.getAttribute("districtNos"));
+		String districtNos = (String) session.getAttribute("districtNos");
+		String preparerEmailId = (String) session.getAttribute("preparerEmailId");
+		String preparerPhoneNos = (String) session.getAttribute("preparerPhoneNos");
+		String preparerName = (String) session.getAttribute("preparerName");
+    	CapitalOutlayForm form = capitalOutlayManager.setupForm(districtNos);
+    	form.setPreparerEmailId(preparerEmailId);
+    	form.setPreparerPhoneNos(preparerPhoneNos);
+    	form.setPreparerName(preparerName);
+    	form.setDistrictNumber(districtNos);
+    	model.addAttribute("capitalOutlayForm", form);
+		return ".CapitalOutlay-index";
+    }
+    
+	
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(Model model, @ModelAttribute CapitalOutlayForm capitalOutlayForm, BindingResult result, HttpServletRequest request) {
+    	capitalOutlayValidator.validate(capitalOutlayForm, result);
+		if (result.hasErrors()) {
+			return ".CapitalOutlay-index";
+		}
+		//Remove formatting here for saving?
+		capitalOutlayManager.saveOrUpdate(capitalOutlayForm);
+		model.addAttribute("saved", true);
+		return ".CapitalOutlay-index";
+    }
+    
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String update(Model model, @PathVariable long id) {
+    	CapitalOutlayForm form = capitalOutlayManager.setupForm(id);
+    	model.addAttribute("capitalOutlayForm", form);
+		return ".CapitalOutlay-index";
+    }
+    
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable long id, HttpServletRequest request) {
+    	capitalOutlayManager.delete(CapitalOutlay.class, id);
+		return "redirect:" + RequestUtils.getContextPath(request) + "/list";
+    }
+    
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String list(Model model) {
+    	List<CapitalOutlay> capitalOutlays = capitalOutlayManager.findAll(CapitalOutlay.class);
+    	model.addAttribute("capitalOutlays", capitalOutlays);
+		return ".CapitalOutlay-list";
+    }
+	
+}

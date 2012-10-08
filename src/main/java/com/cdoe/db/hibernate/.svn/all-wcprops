@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/db/hibernate
+END
+HibernateDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/db/hibernate/HibernateDAO.java
+END
+IHibernateDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/db/hibernate/IHibernateDAO.java
+END
