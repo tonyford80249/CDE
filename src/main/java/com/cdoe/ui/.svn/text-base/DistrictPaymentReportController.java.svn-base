@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cdoe.biz.model.Prorate;
 import com.cdoe.services.IDistrictPaymentReportManager;
 import com.cdoe.ui.form.ProrateForm;
+import com.cdoe.util.UserInfo;
 import com.resqsoft.util.RequestUtils;
 
 @Controller
@@ -39,7 +40,8 @@ public class DistrictPaymentReportController {
     public String index(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String fiscalYear =  (String) session.getAttribute("fiscalYear");
-    	ProrateForm form = districtPaymentReportManager.setupForm(fiscalYear);
+                UserInfo userInfo = (UserInfo) session.getAttribute(UserInfo.USER_INFO_ATTR);
+    	ProrateForm form = districtPaymentReportManager.setupForm(fiscalYear, userInfo);
     	model.addAttribute("prorateForm", form);
 		return ".DistrictPaymentReport-index";
     }

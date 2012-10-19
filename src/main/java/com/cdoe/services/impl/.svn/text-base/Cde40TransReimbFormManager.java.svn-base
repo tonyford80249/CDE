@@ -81,6 +81,7 @@ public class Cde40TransReimbFormManager extends BaseManager implements ICde40Tra
 		obj.setReimEntitlement(form.getReimEntitlement());
 		obj.setTotalReimEntitlement(form.getTotalReimEntitlement());
 		obj.setFinalReimEntitlement(form.getFinalReimEntitlement());
+		obj.setErrors("None");
 		//obj.setFinalReimProrated(form.getFinalReimProrated());
 		
 	    saveOrUpdate(obj);
@@ -170,6 +171,7 @@ public class Cde40TransReimbFormManager extends BaseManager implements ICde40Tra
 		form.setTotalReimEntitlement(obj.getTotalReimEntitlement());
 		form.setFinalReimEntitlement(obj.getFinalReimEntitlement());
 		form.setFinalReimProrated(obj.getFinalReimProrated());
+		form.setErrors(obj.getErrors());
 		return form;
 	}
 	

@@ -60,8 +60,6 @@ public class PaymentWorkSheetController {
         UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");
         userInfo.getDistrictMap();
 
-
-        //Uncomment the following lines if you need to display district code drop down
         Map<String, String> districtsMap = userInfo.getDistrictMap();;
 
 
@@ -69,43 +67,12 @@ public class PaymentWorkSheetController {
         Object[] districtCodes = (Object[]) keys.toArray();
 
         TransportationForm form = paymentWorkSheetManager.setupForm(districtNos, districtName, fiscalYear);
-        //form.setDistrictName(districtName);
-        //form.getDistrictNumberName().toString();
-        model.addAttribute("transportationForm", form);
+         model.addAttribute("transportationForm", form);
         model.addAttribute("districtNumbers", districtCodes);
         return ".PaymentWorkSheet-index";
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(Model model, @ModelAttribute TransportationForm transportationForm, BindingResult result, HttpServletRequest request) {
-        transportationValidator.validate(transportationForm, result);
-        if (result.hasErrors()) {
-            return ".PaymentWorkSheet-index";
-        }
-        paymentWorkSheetManager.saveOrUpdate(transportationForm);
-        model.addAttribute("saved", true);
-        return ".PaymentWorkSheet-index";
-    }
-
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String update(Model model, @PathVariable long id) {
-        TransportationForm form = paymentWorkSheetManager.setupForm(id);
-        model.addAttribute("transportationForm", form);
-        return ".PaymentWorkSheet-index";
-    }
-
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String delete(@PathVariable long id, HttpServletRequest request) {
-        paymentWorkSheetManager.delete(Transportation.class, id);
-        return "redirect:" + RequestUtils.getContextPath(request) + "/list";
-    }
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model) {
-        List<Transportation> transportations = paymentWorkSheetManager.findAll(Transportation.class);
-        model.addAttribute("transportations", transportations);
-        return ".PaymentWorkSheet-list";
-    }
+  
 
     @RequestMapping(value = "/json", method = RequestMethod.GET)
     public ModelAndView retrieve(@RequestParam String districtNumber, @RequestParam String fiscalYear, HttpServletRequest request) {
@@ -193,10 +160,7 @@ public class PaymentWorkSheetController {
             }
 
             String reportId = reportName + "Report" + format + "View";
-
-
-
-            return new ModelAndView(reportId, parameterMap);
+           return new ModelAndView(reportId, parameterMap);
         } catch (Throwable t) {
             logger.error("Exception occurred during retrieve.", t);
         } finally {
@@ -209,7 +173,7 @@ public class PaymentWorkSheetController {
 
     /**
      *
-     * @param paymnetWorkSheet
+     * @param paymentWorkSheet
      */
     private void validate(PaymentWorkSheet paymnetWorkSheet) {
         List<PaymentWorkSheetCalculation> eachCalculation = paymnetWorkSheet.getCalculations();

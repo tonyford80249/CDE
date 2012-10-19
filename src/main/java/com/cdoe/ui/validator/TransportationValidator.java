@@ -29,12 +29,7 @@ public class TransportationValidator implements Validator {
 		if (form.getNetCurrentOperExpend() == null || form.getNetCurrentOperExpend() <= 0) {
 			errors.rejectValue("netCurrentOperExpend", "integer", "Net Current Operating Expenditure should be valid integer");
 		}
-		if (form.getCapOutTran() == null || form.getCapOutTran() <= 0) {
-			errors.rejectValue("capOutTran", "integer", "Value should be valid integer");
-		}
-		if (form.getOperTran() == null || form.getOperTran() <= 0) {
-			errors.rejectValue("operTran", "integer", "Value should be valid integer");
-		}
+		
 		if (form.getPupilTran() == null || form.getPupilTran() <= 0) {
 			errors.rejectValue("pupilTran", "integer", "Value should be valid integer");
 		}
@@ -42,10 +37,10 @@ public class TransportationValidator implements Validator {
 			errors.rejectValue("regDMiles", "integer", "Value should be valid integer");
 		}
 		if (form.getRegDays() == null || form.getRegDays() <= 0) {
-			errors.rejectValue("regDays", "integer", "Value should be valid integer");
+			errors.rejectValue("regDays", "integer", "The nos of school days should be greater than zero");
 		}
 		if (form.getTotalReimMileage() == null || form.getTotalReimMileage() <= 0) {
-			errors.rejectValue("totalReimMileage", "integer", "Value should be valid integer");
+			errors.rejectValue("totalReimMileage", "integer", "Total Mileage should be greater than 0");
 		}
 		if (form.getMileageEntitlement() == null || form.getMileageEntitlement() <= 0) {
 			errors.rejectValue("mileageEntitlement", "integer", "Value should be valid integer");
@@ -65,15 +60,13 @@ public class TransportationValidator implements Validator {
 		if (form.getReimTranLy() == null || form.getReimTranLy() <= 0) {
 			errors.rejectValue("reimTranLy", "integer", "Value should be valid integer");
 		}
-		if (form.getBoardTran() == null || form.getBoardTran() <= 0) {
+		if (form.getBoardTran() == null || form.getBoardTran() < 0) {
 			errors.rejectValue("boardTran", "integer", "Value should be valid integer");
 		}
 		if (form.getTotalReimEntitlement() == null || form.getTotalReimEntitlement() <= 0) {
 			errors.rejectValue("totalReimEntitlement", "integer", "Value should be valid integer");
 		}
-		if (form.getAdvPayLy() == null || form.getAdvPayLy() <= 0) {
-			errors.rejectValue("advPayLy", "integer", "Value should be valid integer");
-		}
+		
 		if (form.getFinalReimEntitlement() == null || form.getFinalReimEntitlement() <= 0) {
 			errors.rejectValue("finalReimEntitlement", "integer", "Value should be valid integer");
 		}

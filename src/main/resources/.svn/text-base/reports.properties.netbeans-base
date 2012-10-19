@@ -31,11 +31,15 @@ cde40SummaryPaymentReportHtmlView.url=/WEB-INF/jasper/reports/cde40SummaryReport
 
 paymentWorksheetReportXlsView.(class)=org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView
 paymentWorksheetReportXlsView.url=/WEB-INF/jasper/reports/paymentWorksheet.jrxml
+paymentWorksheetReportXlsView.reportDataKey=customJRDatasource
 
 
 paymentWorksheetReportPdfView.(class)=org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView
 paymentWorksheetReportPdfView.url=/WEB-INF/jasper/reports/paymentWorksheet.jrxml
-
+paymentWorksheetReportPdfView.reportDataKey=customJRDatasource
 
 paymentWorksheetReportHtmlView.(class)=org.springframework.web.servlet.view.jasperreports.JasperReportsHtmlView
 paymentWorksheetReportHtmlView.url=/WEB-INF/jasper/reports/paymentWorksheet.jrxml
+paymentWorksheetReportHtmlView.reportDataKey=customJRDatasource
+
+

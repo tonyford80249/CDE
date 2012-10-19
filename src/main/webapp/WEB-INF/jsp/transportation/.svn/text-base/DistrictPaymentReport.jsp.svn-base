@@ -52,12 +52,12 @@ $Log:$
 
 
 		<!-- Main outer table -->
-		<h3>
+		<h2>
 			<spring:message
 				code="DistrictPaymentReport.StaticText.districtPaymentReportForReimbursementYearStaticText" />
 			&nbsp;<%=formattedFiscalYear%>
 			<!--  form:input  id="" path="fiscalYear"   size="8" maxlength="8"/>-->
-		</h3>
+		</h2>
 		<TABLE>
 			<TR>
 				<TD>
@@ -95,7 +95,7 @@ $Log:$
 						<TR>
 							<TD COLSPAN="6">
 								<div id="transportationGrid" align="center"
-									style="border: 5px groove #ccc;" class="scrollableArea">
+									style="border: 5px groove #ccc;" class="boxShadow3 radius10 scrollableArea">
 									<table id="transportationGrid" class="display">
 										<thead>
 											<tr>
@@ -124,22 +124,22 @@ $Log:$
 
 													<form:hidden
 														path="prorateTransportationGridList[${idx.index}].organizationName" />
-													<td><c:out
+													<td align="left"><c:out
 															value="${prorateForm.prorateTransportationGridList[idx.index].organizationName}" /></td>
 
 													<form:hidden
 														path="prorateTransportationGridList[${idx.index}].firstPayment" />
-													<td><c:out
+													<td align="right"><c:out
 															value="${prorateForm.prorateTransportationGridList[idx.index].firstPayment}" /></td>
 
 													<form:hidden
 														path="prorateTransportationGridList[${idx.index}].secondPayment" />
-													<td><c:out
+													<td align="right"><c:out
 															value="${prorateForm.prorateTransportationGridList[idx.index].secondPayment}" /></td>
 
 													<form:hidden
 														path="prorateTransportationGridList[${idx.index}].districtDistribution" />
-													<td><c:out
+													<td align="right"><c:out
 															value="${prorateForm.prorateTransportationGridList[idx.index].districtDistribution}" /></td>
 
 												</tr>
@@ -155,13 +155,16 @@ $Log:$
 																	"table#transportationGrid")
 																	.dataTable(
 																			{
-																				"bPaginate" : true,
+																				"bPaginate" : false,
 																				"bSort" : true,
 																				"bFilter" : true,
-																				"bInfo" : false,
+																				"bInfo" : true,
 																				"bLengthChange" : true,
-																				"bAutoWidth" : true
+																				"bAutoWidth" : true,
+																				"iDisplayLength": 100 
 																			});
+														
+															
 														});
 									//-->
 									</script>

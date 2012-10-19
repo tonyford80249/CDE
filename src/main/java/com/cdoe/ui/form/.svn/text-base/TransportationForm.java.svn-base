@@ -7,6 +7,9 @@ package com.cdoe.ui.form;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+
+import org.springframework.format.annotation.NumberFormat;
+
 import com.cdoe.ui.form.grid.*;
 import com.cdoe.util.DateUtil;
 
@@ -16,38 +19,7 @@ import com.cdoe.util.DateUtil;
  * 
  * @author ResQSoft, Inc. (ResQSoft Engineer)
  */
-public class TransportationForm {
-
-	private long id;
-	
-    public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	private String districtNumber;
-	
-	public String getDistrictNumber () {
-        return this.districtNumber;
-    }
-
-    public void setDistrictNumber (String districtNumber) {
-        this.districtNumber = districtNumber;
-        
-    }
-    
-    private String districtName;
-	
-  	public String getDistrictName () {
-          return this.districtName;
-      }
-
-      public void setDistrictName (String districtName) {
-          this.districtName = districtName;
-     }
+public class TransportationForm extends BaseForm {
 
 	private String dateChanged;
 	
@@ -76,6 +48,8 @@ public class TransportationForm {
     public void setPupilTran (Long pupilTran) {
         this.pupilTran = pupilTran;
     }
+   
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double operTran;
 	
 	public Double getOperTran () {
@@ -85,6 +59,7 @@ public class TransportationForm {
     public void setOperTran (Double operTran) {
         this.operTran = operTran;
     }
+    
 	private Double indCont;
 	
 	public Double getIndCont () {
@@ -94,6 +69,8 @@ public class TransportationForm {
     public void setIndCont (Double indCont) {
         this.indCont = indCont;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double capOutTran;
 	
 	public Double getCapOutTran () {
@@ -103,6 +80,8 @@ public class TransportationForm {
     public void setCapOutTran (Double capOutTran) {
         this.capOutTran = capOutTran;
     }
+    
+    @NumberFormat(pattern="###,###,##0.0")
 	private Double migMiles;
 	
 	public Double getMigMiles () {
@@ -112,6 +91,8 @@ public class TransportationForm {
     public void setMigMiles (Double migMiles) {
         this.migMiles = migMiles;
     }
+    
+    @NumberFormat(pattern="###,###,##0.0")
 	private Double regDMiles;
 	
 	public Double getRegDMiles () {
@@ -122,7 +103,7 @@ public class TransportationForm {
         this.regDMiles = regDMiles;
     }
     
-    
+    @NumberFormat(pattern="###,###,##0.0")
     private Double regMiles;
 	
 	public Double getRegMiles () {
@@ -162,6 +143,8 @@ public class TransportationForm {
     public void setBoardTran (Long boardTran) {
         this.boardTran = boardTran;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double exReim;
 	
 	public Double getExReim () {
@@ -171,6 +154,8 @@ public class TransportationForm {
     public void setExReim (Double exReim) {
         this.exReim = exReim;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double desegReim;
 	
 	public Double getDesegReim () {
@@ -180,6 +165,9 @@ public class TransportationForm {
     public void setDesegReim (Double desegReim) {
         this.desegReim = desegReim;
     }
+    
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double reimTran;
 	
 	public Double getReimTran () {
@@ -189,6 +177,9 @@ public class TransportationForm {
     public void setReimTran (Double reimTran) {
         this.reimTran = reimTran;
     }
+    
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double reimTranLy;
 	
 	public Double getReimTranLy () {
@@ -198,6 +189,8 @@ public class TransportationForm {
     public void setReimTranLy (Double reimTranLy) {
         this.reimTranLy = reimTranLy;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double advPayLy;
 	
 	public Double getAdvPayLy () {
@@ -207,6 +200,9 @@ public class TransportationForm {
     public void setAdvPayLy (Double advPayLy) {
         this.advPayLy = advPayLy;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
+
 	private Double reimAdvPay;
 	
 	public Double getReimAdvPay () {
@@ -216,6 +212,9 @@ public class TransportationForm {
     public void setReimAdvPay (Double reimAdvPay) {
         this.reimAdvPay = reimAdvPay;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
+
 	private Double advPay;
 	
 	public Double getAdvPay () {
@@ -225,6 +224,8 @@ public class TransportationForm {
     public void setAdvPay (Double advPay) {
         this.advPay = advPay;
     }
+    
+    @NumberFormat(pattern="###,###,##0.0")
 	private Double actMiles;
 	
 	public Double getActMiles () {
@@ -234,6 +235,8 @@ public class TransportationForm {
     public void setActMiles (Double actMiles) {
         this.actMiles = actMiles;
     }
+    
+    @NumberFormat(pattern="###,###,##0.0")
 	private Double totalMiles;
 	
 	public Double getTotalMiles () {
@@ -244,44 +247,14 @@ public class TransportationForm {
         this.totalMiles = totalMiles;
     }
     
-    public String getCurrentFiscalYear() {
-     return DateUtil.getFiscalYear();   
-    }
-    
-    public void setCurrentFiscalYear(String any) {        
-    }
-	private String fiscalYear;
-	
-	public String getFiscalYear () {
-        return this.fiscalYear;
-    }
-
-    public void setFiscalYear (String fiscalYear) {
-        this.fiscalYear = fiscalYear;
-    }
-    
-    public String getFormattedCurrentFiscalYear() {
-      return DateUtil.getFiscalYearFormattedLong();  
-    }
-    
-    public void setFormattedCurrentFiscalYear(String any) {        
-    }
-    
-     private String formattedFiscalYear;
-	
-     public String getFormattedFiscalYear () {
-        return this.formattedFiscalYear;
-     }
-
-    public void setFormattedFiscalYear (String fiscalYear) {
-       this.formattedFiscalYear = fiscalYear;
-    }
+     
 	private String cdeComments;
 	
 	public String getCdeComments () {
         return this.cdeComments;
     }
 
+	 @NumberFormat(pattern="###,###,###,##0.00")
     public void setCdeComments (String cdeComments) {
         this.cdeComments = cdeComments;
     }
@@ -294,6 +267,8 @@ public class TransportationForm {
     public void setFirstPayment (Double firstPayment) {
         this.firstPayment = firstPayment;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double secondPayment;
 	
 	public Double getSecondPayment () {
@@ -303,6 +278,8 @@ public class TransportationForm {
     public void setSecondPayment (Double secondPayment) {
         this.secondPayment = secondPayment;
     }
+    
+    @NumberFormat(pattern="###,###,###,##0.00")
 	private Double districtDistribution;
 	
 	public Double getDistrictDistribution () {
@@ -312,6 +289,8 @@ public class TransportationForm {
     public void setDistrictDistribution (Double districtDistribution) {
         this.districtDistribution = districtDistribution;
     }
+    
+    
 	private Double cofrsBatchNumber;
 	
 	public Double getCofrsBatchNumber () {
@@ -366,6 +345,8 @@ public class TransportationForm {
     public void setFeesCollected (Double feesCollected) {
         this.feesCollected = feesCollected;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double otherRevenue;
 	
 	public Double getOtherRevenue () {
@@ -375,6 +356,8 @@ public class TransportationForm {
     public void setOtherRevenue (Double otherRevenue) {
         this.otherRevenue = otherRevenue;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double netCurrentOperExpend;
 	
 	public Double getNetCurrentOperExpend () {
@@ -384,6 +367,7 @@ public class TransportationForm {
     public void setNetCurrentOperExpend (Double netCurrentOperExpend) {
         this.netCurrentOperExpend = netCurrentOperExpend;
     }
+    
 	private Double totalReimMileage;
 	
 	public Double getTotalReimMileage () {
@@ -402,6 +386,8 @@ public class TransportationForm {
     public void setMileageEntitlement (Double mileageEntitlement) {
         this.mileageEntitlement = mileageEntitlement;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double exCosts;
 	
 	public Double getExCosts () {
@@ -411,6 +397,8 @@ public class TransportationForm {
     public void setExCosts (Double exCosts) {
         this.exCosts = exCosts;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double maxReimEntitlement;
 	
 	public Double getMaxReimEntitlement () {
@@ -420,6 +408,8 @@ public class TransportationForm {
     public void setMaxReimEntitlement (Double maxReimEntitlement) {
         this.maxReimEntitlement = maxReimEntitlement;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double reimEntitlement;
 	
 	public Double getReimEntitlement () {
@@ -429,6 +419,8 @@ public class TransportationForm {
     public void setReimEntitlement (Double reimEntitlement) {
         this.reimEntitlement = reimEntitlement;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double totalReimEntitlement;
 	
 	public Double getTotalReimEntitlement () {
@@ -438,6 +430,8 @@ public class TransportationForm {
     public void setTotalReimEntitlement (Double totalReimEntitlement) {
         this.totalReimEntitlement = totalReimEntitlement;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double finalReimEntitlement;
 	
 	public Double getFinalReimEntitlement () {
@@ -447,6 +441,8 @@ public class TransportationForm {
     public void setFinalReimEntitlement (Double finalReimEntitlement) {
         this.finalReimEntitlement = finalReimEntitlement;
     }
+    
+    @NumberFormat(pattern="###,###,###,###.00")
 	private Double finalReimProrated;
 	
 	public Double getFinalReimProrated () {
@@ -457,31 +453,27 @@ public class TransportationForm {
         this.finalReimProrated = finalReimProrated;
     }
     
-	private List<TransportationGrid> transportationGridList = new ArrayList<TransportationGrid>();
 	
-	public List<TransportationGrid> getTransportationGridList() {
-	    return this.transportationGridList;
-	}
 	
 	private boolean isCapitalOutLay;
 
-	public boolean getIsCapitalOutLay() {
+	/*public boolean getIsCapitalOutLay() {
 		return this.isCapitalOutLay;
 	}
 
 	public void setCapitalOutLay(boolean isCapitalOutLay) {
 		this.isCapitalOutLay = isCapitalOutLay;
-	}
+	}*/
         
-        private boolean valid;
-
-	public boolean getValid() {
-		return this.valid;
+        public boolean getIsCapitalOutLay() {
+		return isCapitalOutLay;
 	}
 
-	public void setValid(boolean valid) {
-		this.valid = valid;
+	public void setIsCapitalOutLay(boolean isCapitalOutLay) {
+		this.isCapitalOutLay = isCapitalOutLay;
 	}
+
+	
 
 	private String message;
 	

@@ -17,6 +17,7 @@ import com.cdoe.services.IReferenceDataManager;
 import com.cdoe.ui.form.ProrateForm;
 import com.cdoe.ui.form.grid.ProrateTransportationGrid;
 import com.cdoe.util.DateUtil;
+import com.cdoe.util.UserInfo;
 
 public class DistrictPaymentReportManager extends BaseManager implements IDistrictPaymentReportManager {
 
@@ -41,7 +42,7 @@ public class DistrictPaymentReportManager extends BaseManager implements IDistri
 		saveOrUpdate(obj);
 	}
 	
-	public ProrateForm setupForm(String fiscalYear) {
+	public ProrateForm setupForm(String fiscalYear, UserInfo userInfo) {
 		ProrateForm form = new ProrateForm();
 		//String fiscalYear = DateUtil.getFiscalYear(); //"20112012";
 		List<Prorate> prorateList = districtPaymentReportDAO.getDistrictPaymentReport(fiscalYear);
@@ -56,7 +57,7 @@ public class DistrictPaymentReportManager extends BaseManager implements IDistri
 		List<Transportation> transportationList = districtPaymentReportDAO.getTransportationByFiscalYear(fiscalYear);
 		if (transportationList != null && transportationList.size() > 0) {
 			logger.info("Transportation data received");
-			form = setTransportationData(form, transportationList);
+			form = setTransportationData(form, transportationList, userInfo);
 
 		} else {
 			logger.info("Transportation data not found");
@@ -77,15 +78,15 @@ public class DistrictPaymentReportManager extends BaseManager implements IDistri
 		return form;
 	}
 	
-	public ProrateForm setTransportationData(ProrateForm form, List<Transportation> transportationList) {
+	public ProrateForm setTransportationData(ProrateForm form, List<Transportation> transportationList,UserInfo userInfo) {
 		List<ProrateTransportationGrid> ltg = form.getProrateTransportationGridList();
 		for (Transportation a : transportationList) {
 			ProrateTransportationGrid transGrid = new ProrateTransportationGrid();
 			transGrid.setDistrictNumber(a.getDistrictNumber());
 			try {
-				transGrid.setOrganizationName(referenceDataManager.getDistrictName((a.getDistrictNumber())));
+				transGrid.setOrganizationName(userInfo.getDistrictMap().get(a.getDistrictNumber()));//referenceDataManager.getDistrictName((a.getDistrictNumber())));
 			} catch (Exception e) {
-				transGrid.setOrganizationName("Adam county");
+				transGrid.setOrganizationName("No Matching District Name");
 			}
 			transGrid.setFirstPayment(a.getFirstPayment());
 			transGrid.setSecondPayment(a.getSecondPayment());

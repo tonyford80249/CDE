@@ -55,6 +55,11 @@
 				isolation="DEFAULT"
 				propagation="REQUIRED"
 				timeout="1000"/>
+			<tx:method 
+				name="reject*"
+				isolation="DEFAULT"
+				propagation="REQUIRED"
+				timeout="1000"/>
 		</tx:attributes>
 	</tx:advice>
 	

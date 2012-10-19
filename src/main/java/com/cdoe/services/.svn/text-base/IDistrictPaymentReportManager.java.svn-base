@@ -7,12 +7,13 @@ import java.io.IOException;
 
 import com.cdoe.biz.model.Prorate;
 import com.cdoe.ui.form.ProrateForm;
+import com.cdoe.util.UserInfo;
 
 public interface IDistrictPaymentReportManager extends IBaseManager {
 
 	void saveOrUpdate(ProrateForm prorateForm);
 	
-	ProrateForm setupForm(String fiscalYear);
+	ProrateForm setupForm(String fiscalYear, UserInfo userInfo);
 	
 	ProrateForm setupForm(long id);
 

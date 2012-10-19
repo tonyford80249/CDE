@@ -130,7 +130,8 @@ public class CapitalOutlayManager extends BaseManager implements
 			}
 
 		}
-		form.setCapitalOutlayTotalFunding(getCapitalOutlayTotal(districtNos, fiscalYear));
+		form.setCapitalOutlayTotalFunding(capitalOutlayList.get(0).getCapitalOutlayTotalFunding());
+		//form.setCapitalOutlayTotalFunding(getCapitalOutlayTotal(districtNos, fiscalYear));
 		
 		return form;
 	}
@@ -164,7 +165,7 @@ public class CapitalOutlayManager extends BaseManager implements
 	
 	public boolean isCapitalOutlayDistricts(String fiscalYear, String districtNos) {
 		
-		fiscalYear = DateUtil.getPrevFiscalYear(fiscalYear);
+		//fiscalYear = DateUtil.getPrevFiscalYear(fiscalYear);
 		boolean isCapitalOutlayDistrict = false;
 		List<String> coDistricts = transportationDAO.getCapitalOutlayDistricts(fiscalYear);
 		for(String district : coDistricts) {

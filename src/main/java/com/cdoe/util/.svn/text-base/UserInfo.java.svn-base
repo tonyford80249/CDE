@@ -3,6 +3,7 @@ package com.cdoe.util;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -184,7 +185,10 @@ public class UserInfo implements Serializable {
 	 * @return
 	 */
 	public List<String> getAllDistrictCodes() {
-		return new ArrayList<String>(districtMap.keySet());
+		List<String> districtCodes = new ArrayList<String>(districtMap.keySet());
+		districtCodes.add("");
+		Collections.sort(districtCodes);
+		return districtCodes;
 	}
 	
 	/**

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
+import org.springframework.format.annotation.NumberFormat;
+
 /**
  * Java bean object serves as a data container to hold values for the DataGrid.
  * 
@@ -25,15 +27,20 @@ public class CapitalOutlayGrid {
 			this.id = id;
 		}
 
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double prevDepreciatedAmt;
+		
 		
 		public Double getPrevDepreciatedAmt () {
 			return this.prevDepreciatedAmt;
 	   	}
 	
+		
 		public void setPrevDepreciatedAmt (Double prevDepreciatedAmt) {
 		    this.prevDepreciatedAmt = prevDepreciatedAmt;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double remainingAmt;
 		
 		public Double getRemainingAmt () {
@@ -43,6 +50,8 @@ public class CapitalOutlayGrid {
 		public void setRemainingAmt (Double remainingAmt) {
 		    this.remainingAmt = remainingAmt;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double depreciationPy;
 		
 		public Double getDepreciationPy () {
@@ -52,6 +61,8 @@ public class CapitalOutlayGrid {
 		public void setDepreciationPy (Double depreciationPy) {
 		    this.depreciationPy = depreciationPy;
 		}
+		
+		@NumberFormat(pattern="##.00")
 		private Double contractorMiles;
 		
 		public Double getContractorMiles () {
@@ -61,6 +72,8 @@ public class CapitalOutlayGrid {
 		public void setContractorMiles (Double contractorMiles) {
 		    this.contractorMiles = contractorMiles;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double outlayExclusion;
 		
 		public Double getOutlayExclusion () {
@@ -70,6 +83,8 @@ public class CapitalOutlayGrid {
 		public void setOutlayExclusion (Double outlayExclusion) {
 		    this.outlayExclusion = outlayExclusion;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double depreciationCycle;
 		
 		public Double getDepreciationCycle () {
@@ -79,6 +94,8 @@ public class CapitalOutlayGrid {
 		public void setDepreciationCycle (Double depreciationCycle) {
 		    this.depreciationCycle = depreciationCycle;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double totalPurchasePrice;
 		
 		public Double getTotalPurchasePrice () {

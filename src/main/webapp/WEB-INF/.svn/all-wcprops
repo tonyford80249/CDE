@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF
-END
-applicationContext-tx.xml
-K 25
-svn:wc:ra_dav:version-url
-V 99
-/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-tx.xml
+/svn/cde_fco/!svn/ver/216/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF
 END
 applicationContext-service.xml
 K 25
 svn:wc:ra_dav:version-url
 V 105
-/svn/cde_fco/!svn/ver/141/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-service.xml
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-service.xml
 END
 applicationContext-tiles.xml
 K 25
@@ -21,23 +15,11 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/cde_fco/!svn/ver/52/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-tiles.xml
 END
-applicationContext.xml
+applicationContext-data.xml
 K 25
 svn:wc:ra_dav:version-url
-V 97
-/svn/cde_fco/!svn/ver/149/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext.xml
-END
-dispatcher-servlet.xml
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/cde_fco/!svn/ver/80/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/dispatcher-servlet.xml
-END
-applicationContext-dao.xml
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/cde_fco/!svn/ver/92/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-dao.xml
+V 102
+/svn/cde_fco/!svn/ver/188/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-data.xml
 END
 weblogic.xml
 K 25
@@ -45,17 +27,35 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/cde_fco/!svn/ver/144/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/weblogic.xml
 END
-applicationContext-validator.xml
+applicationContext.xml
 K 25
 svn:wc:ra_dav:version-url
-V 106
-/svn/cde_fco/!svn/ver/78/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-validator.xml
+V 97
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext.xml
 END
-applicationContext-hbm.xml
+dispatcher-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cde_fco/!svn/ver/80/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/dispatcher-servlet.xml
+END
+applicationContext-tx.xml
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/cde_fco/!svn/ver/81/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-hbm.xml
+/svn/cde_fco/!svn/ver/216/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-tx.xml
+END
+applicationContext-dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-dao.xml
+END
+applicationContext-validator.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-validator.xml
 END
 web.xml
 K 25
@@ -63,9 +63,9 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/cde_fco/!svn/ver/160/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/web.xml
 END
-applicationContext-data.xml
+applicationContext-hbm.xml
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/cde_fco/!svn/ver/53/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-data.xml
+V 100
+/svn/cde_fco/!svn/ver/81/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/applicationContext-hbm.xml
 END

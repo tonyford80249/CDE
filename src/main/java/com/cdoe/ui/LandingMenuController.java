@@ -24,6 +24,8 @@ public class LandingMenuController {
 		UserInfo userInfo = (UserInfo) session.getAttribute(UserInfo.USER_INFO_ATTR);
 		if (userInfo.isTransportationUser())
 			return ".TransportationHomePage-index";
+		else if (userInfo.isStateEqualUser())
+			return ".StateEqualHomePage-index";
 		else
 			return ".LandingMenu-index";
     }

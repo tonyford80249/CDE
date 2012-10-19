@@ -1,37 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services
-END
-TestPaymentWorkSheetManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 114
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestPaymentWorkSheetManager.java
-END
-TestCde40TransReimbFormManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 117
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCde40TransReimbFormManager.java
-END
-TestMillLevyCertManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestMillLevyCertManager.java
-END
-TestCapitalOutlayManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 111
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCapitalOutlayManager.java
-END
-TestUploadVariablesManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 113
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestUploadVariablesManager.java
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services
 END
 TestCrosswalkCollectionDataManager.java
 K 25
@@ -39,17 +9,23 @@ svn:wc:ra_dav:version-url
 V 121
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCrosswalkCollectionDataManager.java
 END
-TestDistrictPaymentReportManager.java
+TestReferenceDataManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 119
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistrictPaymentReportManager.java
+V 112
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestReferenceDataManager.java
 END
-TestImportAuditsManager.java
+TestUploadVariablesManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 110
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestImportAuditsManager.java
+V 113
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestUploadVariablesManager.java
+END
+TestDistributionAmountsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistributionAmountsManager.java
 END
 TestCommentsManager.java
 K 25
@@ -63,23 +39,17 @@ svn:wc:ra_dav:version-url
 V 107
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestElectionsManager.java
 END
-TestDistributionAmountsManager.java
+TestCoforsUploadManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 118
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistributionAmountsManager.java
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCoforsUploadManager.java
 END
-TestReferenceDataManager.java
+TestCapitalOutlayManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 112
-/svn/cde_fco/!svn/ver/107/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestReferenceDataManager.java
-END
-TestMillLevyOverrideWorksheetManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 123
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestMillLevyOverrideWorksheetManager.java
+V 111
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCapitalOutlayManager.java
 END
 TestSSOLoginManager.java
 K 25
@@ -87,9 +57,45 @@ svn:wc:ra_dav:version-url
 V 106
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestSSOLoginManager.java
 END
-TestCoforsUploadManager.java
+TestMillLevyCertManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCoforsUploadManager.java
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestMillLevyCertManager.java
+END
+TestImportAuditsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestImportAuditsManager.java
+END
+TestCde40TransReimbFormManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestCde40TransReimbFormManager.java
+END
+TestAuditRepaymentAdjustmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestAuditRepaymentAdjustmentManager.java
+END
+TestMillLevyOverrideWorksheetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestMillLevyOverrideWorksheetManager.java
+END
+TestPaymentWorkSheetManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestPaymentWorkSheetManager.java
+END
+TestDistrictPaymentReportManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/test/java/com/cdoe/services/TestDistrictPaymentReportManager.java
 END

@@ -68,6 +68,9 @@
            <property name="viewNames">
         </bean -->
         
+        <bean id="standardJsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+        </bean>
+        
 	<bean id="samplePdfView" name="samplePdfView" class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
 	   <property name="url" value="/WEB-INF/jasper/reports/sample.jrxml"/>	
             <!---property name="jdbcDataSource">
@@ -78,6 +81,10 @@
         <!-- The ResourceBundleViewResolver&#58; -->
         <bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
            <property name="basename"><value>reports</value></property>                      
+        </bean>               
+        
+        <bean id="excelDocument2" class="com.cdoe.ui.view.AltAtRiskCalcView">
+            
         </bean>
 
 

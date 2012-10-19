@@ -17,16 +17,7 @@ import com.cdoe.db.hibernate.HibernateDAO;
 public class DistrictDetailDAO extends HibernateDAO  implements  IDistrictDetailDAO {
 	
 	public List<OrganizationUnitMaster> getAllDistricts() {
-		 return getHibernateTemplate().executeFind(new HibernateCallback<List<OrganizationUnitMaster>>() {
-
-				@Override
-				public List<OrganizationUnitMaster> doInHibernate(Session session)
-						throws HibernateException, SQLException {
-					Query query = session.createQuery("FROM OrganizationUnitMaster o ");
-					return (List<OrganizationUnitMaster>) query.list();
-				}
-			});
-		
+		return (List<OrganizationUnitMaster>)getHibernateTemplate().find("FROM OrganizationUnitMaster o order by organizationCode");
 	}
 	
 	public List<OrganizationUnitMaster> lookUpDistrict(final String districtCode) {

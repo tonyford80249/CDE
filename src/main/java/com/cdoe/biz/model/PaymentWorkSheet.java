@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.cdoe.biz.model;
 
 import java.util.ArrayList;
@@ -9,13 +5,14 @@ import java.util.List;
 
 /**
  *
- * @author dyn-9
+ * @author Tony Ford
  */
 public class PaymentWorkSheet {
  private String districtNumber;
  private String districtName;
  private String county;
  private String fiscalYear;
+ private Long pupilCount;
  private List<PaymentWorkSheetCalculation> calculations = new ArrayList<PaymentWorkSheetCalculation>();
 
     public PaymentWorkSheet() {
@@ -61,6 +58,14 @@ public class PaymentWorkSheet {
 
     public void setCalculations(List<PaymentWorkSheetCalculation> calculations) {
         this.calculations = calculations;
+    }
+
+    public Long getPupilCount() {
+        return pupilCount;
+    }
+
+    public void setPupilCount(Long pupilCount) {
+        this.pupilCount = pupilCount;
     }
  
  

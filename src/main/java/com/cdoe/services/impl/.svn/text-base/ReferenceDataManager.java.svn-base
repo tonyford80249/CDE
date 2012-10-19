@@ -23,7 +23,6 @@ import com.cdoe.services.IReferenceDataManager;
 public class ReferenceDataManager implements IReferenceDataManager {
 	
 	private final Logger logger = Logger.getLogger(ReferenceDataManager.class);
-	private HashMap<String, String> districtReference;
 
 	private IDistrictDetailDAO districtsDao;
 	private StateEqualMasterDAO stateEqualMasterDao;
@@ -41,19 +40,12 @@ public class ReferenceDataManager implements IReferenceDataManager {
 	}
 
 	/**
-	 * This will initialize the internal district list after
-	 * the bean is constructed
-	 */
-	public void init() {
-		loadDistricts();
-	}
-	
-	/**
 	 * Returns the district name for the given code
 	 * @param orgCode
 	 * @return
 	 */
 	public String getDistrictName(String orgCode) {
+		HashMap<String, String> districtReference = loadDistricts();
 		return districtReference.get(orgCode);
 		
 	}
@@ -63,6 +55,7 @@ public class ReferenceDataManager implements IReferenceDataManager {
 	 * @return
 	 */
 	public Map<String, String> getDistrictReference() {
+		HashMap<String, String> districtReference = loadDistricts();
 		return districtReference;
 	}
 	
@@ -114,6 +107,14 @@ public class ReferenceDataManager implements IReferenceDataManager {
 		return stateEqualMasterDao.getElementValueList("CROSSWALK_DATA_TYPE");
 	}
 	
+	/**
+	 * Returns the list of Audit Repayment Adjustment frequencies
+	 * @return
+	 */
+	public List<String> getAuditRepaymentAdjustmentFrequencies() {
+		return stateEqualMasterDao.getElementValueList("AUDIT_REPAYMENT_ADJUSTMENT_FREQUENCY");
+	}
+	
 	//
 	// Private methods
 	//
@@ -121,15 +122,16 @@ public class ReferenceDataManager implements IReferenceDataManager {
 	/**
 	 * Loads the districts into the internal reference map
 	 */
-	private void loadDistricts() {
+	private HashMap<String, String> loadDistricts() {
 		List<OrganizationUnitMaster> districts = districtsDao.getAllDistricts();
-		 districtReference = new HashMap<String, String>();
+		HashMap<String, String> districtReference = new HashMap<String, String>();
 		for (OrganizationUnitMaster district : districts) {
 			logger.debug("Organizational Code " + district.getOrganizationCode());
 			logger.debug("Organizational Name " + district.getOrganizationName());
 			districtReference.put(district.getOrganizationCode(), district.getOrganizationName());
 			
 		}
+		return districtReference;
 	}
 	
 	

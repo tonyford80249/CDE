@@ -100,8 +100,8 @@ public class TransportationDAO extends HibernateDAO implements
 	public List<String> getCapitalOutlayDistricts(String fiscalYear) {
 		List<Transportation> transportationList = getHibernateTemplate()
 				.findByNamedParam("from Transportation "
-								+ "WHERE  fiscalYear = :fiscalYear","fiscalYear", fiscalYear  
-								+ "   AND capOutTran > 0 ");
+								+ "WHERE  fiscalYear = :fiscalYear  AND capOutTran > 0 ","fiscalYear", fiscalYear  
+								);
 		ArrayList<String> values = null;
 		if (transportationList != null) {
 			values = new ArrayList<String>();

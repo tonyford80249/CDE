@@ -57,6 +57,7 @@
 	</bean>
 	<bean id="districtPaymentReportManager" class="com.cdoe.services.impl.DistrictPaymentReportManager" parent="baseManager">
 		<property name="districtPaymentReportDAO" ref="districtPaymentReportDAO"/>
+		<property name="referenceDataManager" ref="referenceDataManager"/>
 	</bean>
 	<bean id="capitalOutlayManager" class="com.cdoe.services.impl.CapitalOutlayManager" parent="baseManager">
 		<property name="capitalOutlayDAO" ref="capitalOutlayDAO"/>
@@ -64,6 +65,7 @@
 	</bean>
 	<bean id="cde40SummaryManager" class="com.cdoe.services.impl.Cde40SummaryManager" parent="baseManager">
 		<property name="cde40SummaryDAO" ref="cde40SummaryDAO"/>
+		<property name="referenceDataManager" ref="referenceDataManager"/>
 	</bean>
 	<bean id="distributionAmountsManager" class="com.cdoe.services.impl.DistributionAmountsManager" parent="baseManager">
 		<property name="distributionAmountsDAO" ref="distributionAmountsDAO"/>
@@ -88,6 +90,9 @@
 	<bean id="createAuditManager" class="com.cdoe.services.impl.CreateAuditManager" parent="baseManager">
 		<property name="createAuditDAO" ref="createAuditDAO"/>
 	</bean>
+	<bean id="auditSummaryManager" class="com.cdoe.services.impl.AuditSummaryManager" parent="baseManager">
+		<property name="audSumUpdateDAO" ref="audSumUpdateDAO"/>
+	</bean>
 	<bean id="audSumUpdateManager" class="com.cdoe.services.impl.AudSumUpdateManager" parent="baseManager">
 		<property name="audSumUpdateDAO" ref="audSumUpdateDAO"/>
 	</bean>
@@ -103,9 +108,15 @@
 	<bean id="updateStudentsManager" class="com.cdoe.services.impl.UpdateStudentsManager" parent="baseManager">
 		<property name="updateStudentsDAO" ref="updateStudentsDAO"/>
 	</bean>
-	<bean id="referenceDataManager"  class="com.cdoe.services.impl.ReferenceDataManager" init-method="init">
+	<bean id="referenceDataManager"  class="com.cdoe.services.impl.ReferenceDataManager">
 		<property name="districtsDao" ref="districtDetailDAO"/>
 		<property name="stateEqualMasterDao" ref="stateEqualMasterDAO"/>
+	</bean>
+	<bean id="audCDE40TransReimbFormManager" class="com.cdoe.services.impl.AudCDE40TransReimbFormManager" parent="baseManager">
+		<property name="audCDE40TransReimbFormDAO" ref="audCDE40TransReimbFormDAO"/>
+	</bean>
+	<bean id="auditRepaymentAdjustmentManager" class="com.cdoe.services.impl.AuditRepaymentAdjustmentManager" parent="baseManager">
+		<property name="hibernateDAO" ref="auditRepaymentAdjustmentDAO"/>
 	</bean>
 	
 </beans>

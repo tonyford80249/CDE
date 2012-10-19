@@ -39,136 +39,49 @@ $Log:$
 }
 </style>
 
-<script type='text/javascript'>
-$(document).ready(function() {
-	$("table#capitalOutlayGrid").dataTable({
-					"bPaginate" : false,
-					"bSort" : false,
-					"bFilter" : false,
-					"bInfo" : false,
-					"bLengthChange" : true,
-					"bAutoWidth" : true,
-					"aoColumns": [
-						null,
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" },
-						{ "sSortDataType": "dom-text" }
-					]
-	});
-});
-</script>
-
-
 <script type="text/javascript">
-   function calculateOtherFields(index) {
+   function calculateTotalPurchaseRelatedFields(index) {
 	  		var i = 0;
 	  		
-	  		if (!isFloat((document.getElementById('totalPurchasePrice' + index).value).replace(/[^0-9-.]/g, ''))) {
+	  		var val = parseFloat((document.getElementById('totalPurchasePrice' + index).value).replace(/[^0-9-.]/g, ''));
+	  		if (!isFloat(val)) {
 	  			 alert("Please enter numeric value only");
 			     return;
 	  		}	
 	  		
-	  		var val = parseFloat((document.getElementById('totalPurchasePrice' + index).value).replace(/[^0-9-.]/g, ''));
-  		   var newVal  = val/10;
-		   
-		   document.getElementById('totalPurchasePrice' + index).value =  parseFloat(document.getElementById('totalPurchasePrice' + index).value).formatMoney();
-		   document.getElementById('depreciationCycleValue' + index).value = newVal;
-		   document.getElementById('depreciationCycleValue' + index).value =  parseFloat(document.getElementById('depreciationCycleValue' + index).value).formatMoney();
-		   document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value = newVal*(9 - index);
-		   var remainingAmount = val - document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value ;
-		   document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value =  parseFloat(document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value).formatMoney();
-		   
+		   document.getElementById('totalPurchasePrice' + index).value =  val.formatMoney();
+		   document.getElementById('depreciationCycleValue' + index).value = (val/10).formatMoney();
+		   document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value = ((val/10)*(9 - index)).formatMoney();;
+		   var remainingAmount = val - (val/10)*(9 - index) ;
 		   document.getElementById('capitalOutlayGridList' + index + '.remainingAmt').value =  parseFloat(remainingAmount).formatMoney();
 		   if (remainingAmount <= 0) {
-			   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value = 0;
+			   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value = 0.00;
 		   }
 		   else {
-		   	   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value = newVal;
+		   	   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value = (val/10).formatMoney();
 		   }
-		   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value =  parseFloat(document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value).formatMoney();
-			  
-		   
+	}
 
-		   
-   }
-
-   function calculateMilesRelatedFields(index) {
+   function calculateCapitalOutlayFields(index) {
 	  
 	   var i = 0;
 	   		var val1 = parseFloat(document.getElementById('capitalOutlayGridList' + index + '.contractorMiles').value.replace(/[^0-9-.]/g, ''));
 	   		var val2 = parseFloat(document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value.replace(/[^0-9-.]/g, ''));
-	   	
-	   	
-		   var exclVal = parseFloat((val1 * val2) / 100);
+ 		   var exclVal = parseFloat((val1 * val2) / 100);
 		   document.getElementById('capitalOutlayGridList' + index + '.outlayExclusion').value = exclVal.formatMoney();
-	       if ( isNaN(parseFloat(document.getElementById('capitalOutlayTotalFunding').value )))
-				 document.getElementById('capitalOutlayTotalFunding').value =  parseFloat(exclVal).formatMoney();
-			else {
-			   var totalFunding =  parseFloat(document.getElementById('capitalOutlayTotalFunding').value.replace(/[^0-9-.]/g, '')) + exclVal ; 
-			   document.getElementById('capitalOutlayTotalFunding').value =  parseFloat(totalFunding).formatMoney();
-			}
-		
-		  
-   }
-   
-   
-   function formatPage() {
-	   for (var index=0; index<10; index++) {
-	   		if (document.getElementById('totalPurchasePrice' + index) == null || ''== document.getElementById('totalPurchasePrice' + index).value )
-	   			continue;
-	   	   document.getElementById('totalPurchasePrice' + index).value =  parseFloat(document.getElementById('totalPurchasePrice' + index).value).formatMoney();
-		   document.getElementById('depreciationCycleValue' + index).value =  parseFloat(document.getElementById('depreciationCycleValue' + index).value).formatMoney();
-		   document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value =  parseFloat(document.getElementById('capitalOutlayGridList' + index + '.prevDepreciatedAmt').value).formatMoney();
-		   document.getElementById('capitalOutlayGridList' + index + '.remainingAmt').value =  parseFloat(document.getElementById('capitalOutlayGridList' + index + '.remainingAmt').value).formatMoney();
-		   document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value =  parseFloat(document.getElementById('capitalOutlayGridList' + index + '.depreciationPy').value).formatMoney();
-		   document.getElementById('capitalOutlayGridList' + index + '.outlayExclusion').value = parseFloat(document.getElementById('capitalOutlayGridList' + index + '.outlayExclusion').value).formatMoney();
-	   }
-		
-   }
-   
-   function removeFormatting() {
-	   alert("Your CDE-40 Form and Capital Outlay Form has been completed. A pdf copy of the CDE-40 and Capital Outlay will be emailed to the email address provided on this form. If any changes need to be made to this CDE-40 Form, please contact the Colorado Department of Education: 303-866-6843");
-	   for (var j=0; j<10; j++) {
-		  
-		   if (document.getElementById('totalPurchasePrice' + j) == null || ''== document.getElementById('totalPurchasePrice' + j).value )
-	   			continue;
 		   
-			document.getElementById('totalPurchasePrice' + j).value = (document.getElementById('totalPurchasePrice' + j).value).replace(/[^0-9-.]/g, '');
-			
-		   	document.getElementById('depreciationCycleValue' + j).value = (document.getElementById('depreciationCycleValue' +  j).value).replace(/[^0-9-.]/g, '');
-		   	document.getElementById('capitalOutlayGridList' + j + '.prevDepreciatedAmt').value = (document.getElementById('capitalOutlayGridList' + j + '.prevDepreciatedAmt').value).replace(/[^0-9-.]/g, '');
-		   	document.getElementById('capitalOutlayGridList' + j + '.remainingAmt').value = (document.getElementById('capitalOutlayGridList' + j + '.remainingAmt').value).replace(/[^0-9-.]/g, '');
-		   	document.getElementById('capitalOutlayGridList' + j + '.depreciationPy').value = (document.getElementById('capitalOutlayGridList' + j + '.depreciationPy').value).replace(/[^0-9-.]/g, '');
-		   	document.getElementById('capitalOutlayGridList' + j + '.outlayExclusion').value = (document.getElementById('capitalOutlayGridList' + j + '.outlayExclusion').value).replace(/[^0-9-.]/g, '');
-		   	document.getElementById('capitalOutlayGridList' + j + '.contractorMiles').value = (document.getElementById('capitalOutlayGridList' + j + '.contractorMiles').value).replace(/[^0-9-%]/g, '');
-		   	document.getElementById('capitalOutlayTotalFunding').value = document.getElementById('capitalOutlayTotalFunding').value.replace(/[^0-9-.]/g, '');
-	   }
-   }
-
-</script>
-<script type="text/javascript">
-	if (window.addEventListener) { // Mozilla, Netscape, Firefox     
-		window.addEventListener('load', WindowLoad, false);
-	} else if (window.attachEvent) { // IE     
-		window.attachEvent('onload', WindowLoad);
-	}
-	function WindowLoad(event) {
-		  for (var j=0; j<10; j++) {
-			checkAndFormatAmount('totalPurchasePrice' + j);
-			checkAndFormatAmount('depreciationCycleValue' + j);
-			checkAndFormatAmount('capitalOutlayGridList' + j + '.prevDepreciatedAmt');
-			checkAndFormatAmount('capitalOutlayGridList' + j + '.depreciationPy');
-			checkAndFormatAmount('capitalOutlayGridList' + j + '.outlayExclusion');
-			checkAndFormatAmount('capitalOutlayGridList' + j + '.contractorMiles');
-			checkAndFormatAmount('capitalOutlayTotalFunding');
-		  }
+		   var totalFunding =  parseFloat(document.getElementById('capitalOutlayTotalFunding').value.replace(/[^0-9-.]/g, '')) + exclVal;
+	       document.getElementById('capitalOutlayTotalFunding').value =  parseFloat(totalFunding).formatMoney();
+	 }
+	 
+	 
+	 function displayAlertMessage() {
 	
-	}
-</script>
+	    alert("Your CDE-40 Form and Capital Outlay Form has been completed. A pdf copy of the CDE-40 and Capital Outlay will be emailed to the email address provided on this form. If any changes need to be made to this CDE-40 Form, please contact the Colorado Department of Education: 303-866-6843");
+	 }
+   
+ </script>
+
 
 <div id="mainbody">
 	<div id="contentarea">
@@ -253,7 +166,7 @@ $(document).ready(function() {
 											size="10" maxlength="10"
 											path="capitalOutlayGridList[${idx.index}].totalPurchasePrice"
 											id="totalPurchasePrice${idx.index}"
-											onBlur="calculateOtherFields(${idx.index})" /></td>
+											onBlur="calculateTotalPurchaseRelatedFields(${idx.index})" /></td>
 
 									<td width="6%"><form:input readonly="true" size="10"
 											maxlength="10" id="depreciationCycleValue${idx.index}"
@@ -275,7 +188,7 @@ $(document).ready(function() {
 									<td width="6%"><form:input size="8" maxlength="8"
 											style="background-color:yellow"
 											path="capitalOutlayGridList[${idx.index}].contractorMiles"
-											onBlur="calculateMilesRelatedFields(${idx.index})" /></td>
+											onBlur="calculateCapitalOutlayFields(${idx.index})" /></td>
 
 									<td width="6%"><form:input size="8" maxlength="8"
 											readonly="true"
@@ -298,8 +211,8 @@ $(document).ready(function() {
 				</br>
 
 				<div style='text-align: center; margin: 1em 0;'>
-					<input type="Submit" id="saveButton"
-						value="Save/Electronic Signature" onClick="removeFormatting()" />
+					<input type="Submit" id="saveButton" onClick="displayAlertMessage"
+						value="Save/Electronic Signature" />
 				</div>
 			</form:form>
 			<!-- transportationForm -->

@@ -21,6 +21,35 @@ $Log:$
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<script language="javascript" type="text/javascript">
+	$(document).ready(function() {
+		/*
+		 *  Attached function to dropdown's onchange event.
+		 */
+		$('#districtNumberList').change(function() {
+			var varDistrictNumber = $('#districtNumberList option:selected').val();
+			$.ajax({
+				type: "GET",
+				url: "${pageContext.request.contextPath}/secure/Ajax/lookup/" + varDistrictNumber,
+				async:false,
+				success:function(result) {
+					$('#districtNameField').html(result);
+				}
+			});
+		 });
+		$('#districtNumberList2').change(function() {
+			var varDistrictNumber = $('#districtNumberList2 option:selected').val();
+			$.ajax({
+				type: "GET",
+				url: "${pageContext.request.contextPath}/secure/Ajax/lookup/" + varDistrictNumber,
+				async:false,
+				success:function(result) {
+					$('#districtNameField2').html(result);
+				}
+			});
+		 });
+	});
+</script>
 <%-- Wrap the entire JSP in a try/catch block so that runtime exceptions
     in the JSP can be caught and reported. --%>
 <%@include file="/WEB-INF/jsp/JspTry.inc"%>
@@ -29,11 +58,14 @@ $Log:$
 		<fmt:message
 			key="AddAdjustment.StaticText.aEnterUpdateAuditRepaymentAdjustmentStaticText" />
 	</h3>
-	<form>
 		<!-- Main outer table -->
 		<TABLE>
 			<TR>
 				<TD>
+					<form:form commandName="auditAdjustmentForm" 
+			   				   action="${pageContext.request.contextPath}/secure/AddAdjustment/save"
+			   				   method="POST"
+			   		>
 					<TABLE>
 						<TR>
 							<TD><fmt:message
@@ -46,43 +78,41 @@ $Log:$
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.districtCodeNameStaticText" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="districtCodeNameDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="districtNumberList" 
+								path="districtNumber" size="1" items="${districtCodeNameDropdownList}" /></TD>
 							<TD>District Name:</TD>
-							<TD><input id="DistrictName" path="districtName" size="26"
-								maxlength="26" />
+							<TD><div id="districtNameField"></div>
 							</TD>
 						</TR>
 						<TR>
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.beginningFiscalYearStaticText" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="beginningFiscalYearDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="fiscalYearList#start"
+								path="beginFiscalYear" size="1" items="${fiscalYearDropdownList}" /></TD>
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.endingFiscalYearStaticText" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="endingFiscalYearDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="fiscalYearList#end"
+								path="endFiscalYear" size="1" items="${fiscalYearDropdownList}" /></TD>
 						</TR>
 						<TR>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.beginningFiscalMonthStaticText" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="beginningFiscalMonthDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="monthList#start"
+								path="beginFiscalMonth" size="1" items="${monthDropdownList}" /></TD>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.endingFiscalMonthStaticText" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="endingFiscalMonthDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="monthList#end"
+								path="endFiscalMonth" size="1" items="${monthDropdownList}" /></TD>
 						</TR>
 						<TR>
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.frequencyStaticText" /></LABEL></TD>
-							<TD><select class="requiredControl" id=""
-								list="{'Monthly', 'Quaterly', 'Yearly'}"
-								path="frequencyDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="frequencyList"
+								path="frequency" size="1" items="${frequencyList}" /></TD>
 						</TR>
 						<TR>
 							<TD><fmt:message
@@ -92,24 +122,29 @@ $Log:$
 						<TR>
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.amountStaticText" /></LABEL></TD>
-							<TD><input cssClass="requiredControl" path="amountTextbox"
-								id="" /></TD>
+							<TD>$<form:input cssClass="input.requiredControl" path="amount"
+								id="input#1" /></TD>
 						</TR>
 					</TABLE>
 					<TABLE>
 						<TR>
-							<TD><input type="submit" id=""
+							<TD><input type="submit" id="saveAdjustmentButtong"
 								value="<fmt:message key="AddAdjustment.Button.saveAdjustmentButton" />" />
 							</TD>
 							<TD><input type="submit" id=""
-								value="<fmt:message key="AddAdjustment.Button.viewAdjustmentButton_2" />" />
+								value="<fmt:message key="AddAdjustment.Button.viewAdjustmentButton" />" />
 							</TD>
-							<TD><input type="reset" id=""
+							<TD><input type="reset" id="clearButton"
 								value="<fmt:message key="AddAdjustment.Button.clearButton_2" />" />
 							</TD>
 						</TR>
 					</TABLE>
-				
+					</form:form>
+					
+				 	<form:form commandName="otherAdjustmentForm" 
+			   				   action="${pageContext.request.contextPath}/secure/AddAdjustment/save"
+			   				   method="POST"
+			   		>
 					<h3><fmt:message
 									key="AddAdjustment.StaticText.bEnterUpdateOtherStateShareAdjustmentsNonCdeAuditFindingsStaticText" /></h3>
 				
@@ -118,18 +153,17 @@ $Log:$
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.districtCodeNameStaticText_2" /></LABEL>
 							</TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="districtCodeNameDropdownList2" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="districtNumberList2" 
+								path="districtNumber" size="1" items="${districtCodeNameDropdownList}" /></TD>
 							<TD>District Name:</TD>
-							<TD><input id="DistrictName" path="districtName" size="26"
-								maxlength="26" />
+							<TD><div id="districtNameField2"></div>
 							</TD>
 						</TR>
 						<TR>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.fiscalYearStaticText" /></LABEL></TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="fiscalYearDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="fiscalYearList"
+								path="fiscalYear" size="1" items="${fiscalYearDropdownList}" /></TD>
 							<TD><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.adjustmentNotesIEReasonStaticText" /></LABEL>
 							</TD>
@@ -137,23 +171,23 @@ $Log:$
 						<TR>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.monthStaticText" /></LABEL></TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="monthDropdownList" size="1" /></TD>
-							<TD><textarea id="" path="adjustmentNotesIEReasonTextarea"
-									cols="60" rows="6"></textarea></TD>
+							<TD><form:select class="list.requiredControl" id="monthList"
+								path="month" size="1" items="${monthDropdownList}" /></TD>
+							<TD><form:textarea id="" path="adjustmentNotes"
+									cols="60" rows="6"/></TD>
 						</TR>
 						<TR>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.typeStaticText_2" /></LABEL></TD>
-							<TD><select class="requiredControl" id="" list="{}"
-								path="typeDropdownList" size="1" /></TD>
+							<TD><form:select class="list.requiredControl" id="adjustmentsList"
+								path="adjustmentType" size="1" items="${adjustmentsList}" /></TD>
 							<TD></TD>
 						</TR>
 						<TR>
 							<TD ><LABEL FOR=""><fmt:message
 										key="AddAdjustment.StaticText.amountStaticText_2" /></LABEL></TD>
-							<TD><input cssClass="requiredControl" path="amountTextbox2"
-								id="" /></TD>
+							<TD>$<form:input cssClass="input.requiredControl" path="amount"
+								id="input#2" /></TD>
 							<TD></TD>
 						</TR>
 					</TABLE>
@@ -170,10 +204,10 @@ $Log:$
 							</TD>
 						</TR>
 					</TABLE>
+					</form:form>
 				</TD>
 			</TR>
 		</TABLE>
-	</form>
 </div>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/static/scripts/screen/AddAdjustment.js"></script>

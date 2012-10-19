@@ -77,7 +77,7 @@ public class StateEqual implements Serializable {
 	}
 	
 
-	@Column(name = "`District_Number`")
+	@Column(name = "DISTRICT_NUMBER")
 	private String districtNumber;
 
     public String getDistrictNumber () {
@@ -88,7 +88,7 @@ public class StateEqual implements Serializable {
         this.districtNumber = districtNumber;
     }
 
-	@Column(name = "`DATE_CHANGED`")
+	@Column(name = "DATE_CHANGED")
 	private String dateChanged;
 
     public String getDateChanged () {
@@ -110,7 +110,7 @@ public class StateEqual implements Serializable {
         this.specedPk = specedPk;
     }
 
-	@Column(name = "`FUNDED_PUPIL_COUNT`")
+	@Column(name = "FUNDED_PUPIL_COUNT")
 	private Double fundedPupilCount;
 
     public Double getFundedPupilCount () {
@@ -121,7 +121,7 @@ public class StateEqual implements Serializable {
         this.fundedPupilCount = fundedPupilCount;
     }
 
-	@Column(name = "`CAT_TRANSPORTATION`")
+	@Column(name = "CAT_TRANSPORTATION")
 	private Double catTransportation;
 
     public Double getCatTransportation () {
@@ -132,7 +132,7 @@ public class StateEqual implements Serializable {
         this.catTransportation = catTransportation;
     }
 
-	@Column(name = "`CAT_VOCED`")
+	@Column(name = "CAT_VOCED")
 	private Double catVoced;
 
     public Double getCatVoced () {
@@ -143,7 +143,7 @@ public class StateEqual implements Serializable {
         this.catVoced = catVoced;
     }
 
-	@Column(name = "`CAT_ELPA`")
+	@Column(name = "CAT_ELPA")
 	private Double catElpa;
 
     public Double getCatElpa () {
@@ -154,7 +154,7 @@ public class StateEqual implements Serializable {
         this.catElpa = catElpa;
     }
 
-	@Column(name = "`CAT_SPED_DISABILITIES`")
+	@Column(name = "CAT_SPED_DISABILITIES")
 	private Double catSpedDisabilities;
 
     public Double getCatSpedDisabilities () {
@@ -165,7 +165,7 @@ public class StateEqual implements Serializable {
         this.catSpedDisabilities = catSpedDisabilities;
     }
 
-	@Column(name = "`CAT_SPED_GIFTED_TALENTED`")
+	@Column(name = "CAT_SPED_GIFTED_TALENTED")
 	private Double catSpedGiftedTalented;
 
     public Double getCatSpedGiftedTalented () {
@@ -176,7 +176,7 @@ public class StateEqual implements Serializable {
         this.catSpedGiftedTalented = catSpedGiftedTalented;
     }
 
-	@Column(name = "`SIZE_FACTOR`")
+	@Column(name = "SIZE_FACTOR")
 	private Double sizeFactor;
 
     public Double getSizeFactor () {
@@ -187,7 +187,7 @@ public class StateEqual implements Serializable {
         this.sizeFactor = sizeFactor;
     }
 
-	@Column(name = "`COST_OF_LIVING_FACTOR`")
+	@Column(name = "COST_OF_LIVING_FACTOR")
 	private Double costOfLivingFactor;
 
     public Double getCostOfLivingFactor () {
@@ -198,7 +198,7 @@ public class StateEqual implements Serializable {
         this.costOfLivingFactor = costOfLivingFactor;
     }
 
-	@Column(name = "`PERSONNEL_COST_FACTOR`")
+	@Column(name = "PERSONNEL_COST_FACTOR")
 	private Double personnelCostFactor;
 
     public Double getPersonnelCostFactor () {
@@ -209,7 +209,7 @@ public class StateEqual implements Serializable {
         this.personnelCostFactor = personnelCostFactor;
     }
 
-	@Column(name = "`FORMULA_TP_WO_AT_RISK`")
+	@Column(name = "FORMULA_TP_WO_AT_RISK")
 	private Double formulaTpWoAtRisk;
 
     public Double getFormulaTpWoAtRisk () {
@@ -220,7 +220,7 @@ public class StateEqual implements Serializable {
         this.formulaTpWoAtRisk = formulaTpWoAtRisk;
     }
 
-	@Column(name = "`FREE_LUNCH_1_8`")
+	@Column(name = "FREE_LUNCH_1_8")
 	private Double freeLunch18;
 
     public Double getFreeLunch18 () {
@@ -231,7 +231,7 @@ public class StateEqual implements Serializable {
         this.freeLunch18 = freeLunch18;
     }
 
-	@Column(name = "`FREE_LUNCH_K_12`")
+	@Column(name = "FREE_LUNCH_K_12")
 	private Double freeLunchK12;
 
     public Double getFreeLunchK12 () {
@@ -242,7 +242,7 @@ public class StateEqual implements Serializable {
         this.freeLunchK12 = freeLunchK12;
     }
 
-	@Column(name = "`MEMBER_1_8`")
+	@Column(name = "MEMBER_1_8")
 	private Double member18;
 
     public Double getMember18 () {
@@ -253,7 +253,7 @@ public class StateEqual implements Serializable {
         this.member18 = member18;
     }
 
-	@Column(name = "`TOTAL_PROGRAM_AT_RISK`")
+	@Column(name = "TOTAL_PROGRAM_AT_RISK")
 	private Double totalProgramAtRisk;
 
     public Double getTotalProgramAtRisk () {
@@ -264,7 +264,7 @@ public class StateEqual implements Serializable {
         this.totalProgramAtRisk = totalProgramAtRisk;
     }
 
-	@Column(name = "`GRAND_TOTAL_PROGRAM`")
+	@Column(name = "GRAND_TOTAL_PROGRAM")
 	private Double grandTotalProgram;
 
     public Double getGrandTotalProgram () {
@@ -275,7 +275,7 @@ public class StateEqual implements Serializable {
         this.grandTotalProgram = grandTotalProgram;
     }
 
-	@Column(name = "`SOT_GROSS`")
+	@Column(name = "SOT_GROSS")
 	private Double sotGross;
 
     public Double getSotGross () {
@@ -286,7 +286,7 @@ public class StateEqual implements Serializable {
         this.sotGross = sotGross;
     }
 
-	@Column(name = "`PROPERTY_TAX`")
+	@Column(name = "PROPERTY_TAX")
 	private Double propertyTax;
 
     public Double getPropertyTax () {
@@ -297,7 +297,7 @@ public class StateEqual implements Serializable {
         this.propertyTax = propertyTax;
     }
 
-	@Column(name = "`STATE_EQUAL_OWNER`")
+	@Column(name = "STATE_EQUAL")
 	private Double stateEqualOwner;
 
     public Double getStateEqualOwner () {
@@ -308,7 +308,7 @@ public class StateEqual implements Serializable {
         this.stateEqualOwner = stateEqualOwner;
     }
 
-	@Column(name = "`CERT_TOTAL_PROGRAM_MILL_LEVY`")
+	@Column(name = "CERT_TOTAL_PROGRAM_MILL_LEVY")
 	private Double certTotalProgramMillLevy;
 
     public Double getCertTotalProgramMillLevy () {
@@ -319,7 +319,7 @@ public class StateEqual implements Serializable {
         this.certTotalProgramMillLevy = certTotalProgramMillLevy;
     }
 
-	@Column(name = "`MONTH_ENTITLE`")
+	@Column(name = "MONTH_ENTITLE")
 	private Double monthEntitle;
 
     public Double getMonthEntitle () {
@@ -330,7 +330,7 @@ public class StateEqual implements Serializable {
         this.monthEntitle = monthEntitle;
     }
 
-	@Column(name = "`YTD_ENTITLE`")
+	@Column(name = "YTD_ENTITLE")
 	private Double ytdEntitle;
 
     public Double getYtdEntitle () {
@@ -341,7 +341,7 @@ public class StateEqual implements Serializable {
         this.ytdEntitle = ytdEntitle;
     }
 
-	@Column(name = "`ADJ_OTHER`")
+	@Column(name = "ADJ_OTHER")
 	private Double adjOther;
 
     public Double getAdjOther () {
@@ -352,7 +352,7 @@ public class StateEqual implements Serializable {
         this.adjOther = adjOther;
     }
 
-	@Column(name = "`YTD_OTHER`")
+	@Column(name = "YTD_OTHER")
 	private Double ytdOther;
 
     public Double getYtdOther () {
@@ -363,7 +363,7 @@ public class StateEqual implements Serializable {
         this.ytdOther = ytdOther;
     }
 
-	@Column(name = "`ADJ_SWAP`")
+	@Column(name = "ADJ_SWAP")
 	private Double adjSwap;
 
     public Double getAdjSwap () {
@@ -374,7 +374,7 @@ public class StateEqual implements Serializable {
         this.adjSwap = adjSwap;
     }
 
-	@Column(name = "`YTD_SWAP`")
+	@Column(name = "YTD_SWAP")
 	private Double ytdSwap;
 
     public Double getYtdSwap () {
@@ -385,7 +385,7 @@ public class StateEqual implements Serializable {
         this.ytdSwap = ytdSwap;
     }
 
-	@Column(name = "`ALLOW_SPEND`")
+	@Column(name = "ALLOW_SPEND")
 	private Double allowSpend;
 
     public Double getAllowSpend () {
@@ -396,7 +396,7 @@ public class StateEqual implements Serializable {
         this.allowSpend = allowSpend;
     }
 
-	@Column(name = "`TOTAL_PROGRAM_TABOR`")
+	@Column(name = "TOTAL_PROGRAM_TABOR")
 	private Double totalProgramTabor;
 
     public Double getTotalProgramTabor () {
@@ -407,7 +407,7 @@ public class StateEqual implements Serializable {
         this.totalProgramTabor = totalProgramTabor;
     }
 
-	@Column(name = "`TOTAL_FUND_INCLUDING_ONLINE`")
+	@Column(name = "TOTAL_FUND_INCLUDING_ONLINE")
 	private Double totalFundIncludingOnline;
 
     public Double getTotalFundIncludingOnline () {
@@ -418,7 +418,7 @@ public class StateEqual implements Serializable {
         this.totalFundIncludingOnline = totalFundIncludingOnline;
     }
 
-	@Column(name = "`TOTAL_MAX_FUND`")
+	@Column(name = "TOTAL_MAX_FUND")
 	private Double totalMaxFund;
 
     public Double getTotalMaxFund () {
@@ -429,7 +429,7 @@ public class StateEqual implements Serializable {
         this.totalMaxFund = totalMaxFund;
     }
 
-	@Column(name = "`TOTAL_ADD_FUND`")
+	@Column(name = "TOTAL_ADD_FUND")
 	private Double totalAddFund;
 
     public Double getTotalAddFund () {
@@ -440,7 +440,7 @@ public class StateEqual implements Serializable {
         this.totalAddFund = totalAddFund;
     }
 
-	@Column(name = "`MEMBER_K_12`")
+	@Column(name = "MEMBER_K_12")
 	private Double memberK12;
 
     public Double getMemberK12 () {
@@ -451,7 +451,7 @@ public class StateEqual implements Serializable {
         this.memberK12 = memberK12;
     }
 
-	@Column(name = "`FUNDED_AT_RISK_COUNT`")
+	@Column(name = "FUNDED_AT_RISK_COUNT")
 	private Double fundedAtRiskCount;
 
     public Double getFundedAtRiskCount () {
@@ -462,7 +462,7 @@ public class StateEqual implements Serializable {
         this.fundedAtRiskCount = fundedAtRiskCount;
     }
 
-	@Column(name = "`FORMULA_PUPIL_FUND`")
+	@Column(name = "FORMULA_PUPIL_FUND")
 	private Double formulaPupilFund;
 
     public Double getFormulaPupilFund () {
@@ -473,7 +473,7 @@ public class StateEqual implements Serializable {
         this.formulaPupilFund = formulaPupilFund;
     }
 
-	@Column(name = "`TOTAL_AT_RISK_FUNDING`")
+	@Column(name = "TOTAL_AT_RISK_FUNDING")
 	private Double totalAtRiskFunding;
 
     public Double getTotalAtRiskFunding () {
@@ -484,7 +484,7 @@ public class StateEqual implements Serializable {
         this.totalAtRiskFunding = totalAtRiskFunding;
     }
 
-	@Column(name = "`CSI_ADMIN_MONTH`")
+	@Column(name = "CSI_ADMIN_MONTH")
 	private Double csiAdminMonth;
 
     public Double getCsiAdminMonth () {
@@ -495,7 +495,7 @@ public class StateEqual implements Serializable {
         this.csiAdminMonth = csiAdminMonth;
     }
 
-	@Column(name = "`FTE`")
+	@Column(name = "FTE")
 	private Double fte;
 
     public Double getFte () {
@@ -506,7 +506,7 @@ public class StateEqual implements Serializable {
         this.fte = fte;
     }
 
-	@Column(name = "`MINIMUM_FORMULA_FUND`")
+	@Column(name = "MINIMUM_FORMULA_FUND")
 	private Double minimumFormulaFund;
 
     public Double getMinimumFormulaFund () {
@@ -517,7 +517,7 @@ public class StateEqual implements Serializable {
         this.minimumFormulaFund = minimumFormulaFund;
     }
 
-	@Column(name = "`DISTRICT_CERT_TOTAL_ADD_FUND`")
+	@Column(name = "DISTRICT_CERT_TOTAL_ADD_FUND")
 	private Double districtCertTotalAddFund;
 
     public Double getDistrictCertTotalAddFund () {
@@ -528,7 +528,7 @@ public class StateEqual implements Serializable {
         this.districtCertTotalAddFund = districtCertTotalAddFund;
     }
 
-	@Column(name = "`SOT_NET`")
+	@Column(name = "SOT_NET")
 	private Double sotNet;
 
     public Double getSotNet () {
@@ -539,7 +539,7 @@ public class StateEqual implements Serializable {
         this.sotNet = sotNet;
     }
 
-	@Column(name = "`CHARTER_SCHOOL_FPC`")
+	@Column(name = "CHARTER_SCHOOL_FPC")
 	private Double charterSchoolFpc;
 
     public Double getCharterSchoolFpc () {
@@ -550,7 +550,7 @@ public class StateEqual implements Serializable {
         this.charterSchoolFpc = charterSchoolFpc;
     }
 
-	@Column(name = "`SMALL_CENTER_PAYMENTS`")
+	@Column(name = "SMALL_CENTER_PAYMENTS")
 	private Double smallCenterPayments;
 
     public Double getSmallCenterPayments () {
@@ -561,7 +561,7 @@ public class StateEqual implements Serializable {
         this.smallCenterPayments = smallCenterPayments;
     }
 
-	@Column(name = "`ESL_CSAP`")
+	@Column(name = "ESL_CSAP")
 	private Double eslCsap;
 
     public Double getEslCsap () {
@@ -572,7 +572,7 @@ public class StateEqual implements Serializable {
         this.eslCsap = eslCsap;
     }
 
-	@Column(name = "`MULTI_DISTRICT_ONLINE_FTE`")
+	@Column(name = "MULTI_DISTRICT_ONLINE_FTE")
 	private Double multiDistrictOnlineFte;
 
     public Double getMultiDistrictOnlineFte () {
@@ -583,7 +583,7 @@ public class StateEqual implements Serializable {
         this.multiDistrictOnlineFte = multiDistrictOnlineFte;
     }
 
-	@Column(name = "`SINGLE_DISTRICT_ONLINE_FTE`")
+	@Column(name = "SINGLE_DISTRICT_ONLINE_FTE")
 	private Double singleDistrictOnlineFte;
 
     public Double getSingleDistrictOnlineFte () {
@@ -594,7 +594,7 @@ public class StateEqual implements Serializable {
         this.singleDistrictOnlineFte = singleDistrictOnlineFte;
     }
 
-	@Column(name = "`CPP`")
+	@Column(name = "CPP")
 	private Double cpp;
 
     public Double getCpp () {
@@ -605,7 +605,7 @@ public class StateEqual implements Serializable {
         this.cpp = cpp;
     }
 
-	@Column(name = "`CHARTER_DEBT_MONTH`")
+	@Column(name = "CHARTER_DEBT_MONTH")
 	private Double charterDebtMonth;
 
     public Double getCharterDebtMonth () {
@@ -616,7 +616,7 @@ public class StateEqual implements Serializable {
         this.charterDebtMonth = charterDebtMonth;
     }
 
-	@Column(name = "`CHARTER_DEBT_YTD`")
+	@Column(name = "CHARTER_DEBT_YTD")
 	private Double charterDebtYtd;
 
     public Double getCharterDebtYtd () {
@@ -627,7 +627,7 @@ public class StateEqual implements Serializable {
         this.charterDebtYtd = charterDebtYtd;
     }
 
-	@Column(name = "`CSI_ADMIN_YTD`")
+	@Column(name = "CSI_ADMIN_YTD")
 	private Double csiAdminYtd;
 
     public Double getCsiAdminYtd () {
@@ -638,7 +638,7 @@ public class StateEqual implements Serializable {
         this.csiAdminYtd = csiAdminYtd;
     }
 
-	@Column(name = "`MONTH_PAYMENT`")
+	@Column(name = "MONTH_PAYMENT")
 	private Double monthPayment;
 
     public Double getMonthPayment () {
@@ -649,7 +649,7 @@ public class StateEqual implements Serializable {
         this.monthPayment = monthPayment;
     }
 
-	@Column(name = "`YTD_PAYMENT`")
+	@Column(name = "YTD_PAYMENT")
 	private Double ytdPayment;
 
     public Double getYtdPayment () {
@@ -660,7 +660,7 @@ public class StateEqual implements Serializable {
         this.ytdPayment = ytdPayment;
     }
 
-	@Column(name = "`MONTH_AUDIT_REPAY`")
+	@Column(name = "MONTH_AUDIT_REPAY")
 	private Double monthAuditRepay;
 
     public Double getMonthAuditRepay () {
@@ -671,7 +671,7 @@ public class StateEqual implements Serializable {
         this.monthAuditRepay = monthAuditRepay;
     }
 
-	@Column(name = "`CSI_TOTAL_PROGRAM_FUND`")
+	@Column(name = "CSI_TOTAL_PROGRAM_FUND")
 	private Double csiTotalProgramFund;
 
     public Double getCsiTotalProgramFund () {
@@ -682,7 +682,7 @@ public class StateEqual implements Serializable {
         this.csiTotalProgramFund = csiTotalProgramFund;
     }
 
-	@Column(name = "`YTD_AUDIT_REPAY`")
+	@Column(name = "YTD_AUDIT_REPAY")
 	private Double ytdAuditRepay;
 
     public Double getYtdAuditRepay () {
@@ -693,7 +693,7 @@ public class StateEqual implements Serializable {
         this.ytdAuditRepay = ytdAuditRepay;
     }
 
-	@Column(name = "`NEG_FACTOR`")
+	@Column(name = "NEG_FACTOR")
 	private Double negFactor;
 
     public Double getNegFactor () {
@@ -704,7 +704,7 @@ public class StateEqual implements Serializable {
         this.negFactor = negFactor;
     }
 
-	@Column(name = "`FISCAL_YEAR`")
+	@Column(name = "FISCAL_YEAR")
 	private String fiscalYear;
 
     public String getFiscalYear () {
@@ -715,7 +715,7 @@ public class StateEqual implements Serializable {
         this.fiscalYear = fiscalYear;
     }
 
-	@Column(name = "`ASSESSED_VAL`")
+	@Column(name = "ASSESSED_VAL")
 	private Double assessedVal;
 
     public Double getAssessedVal () {
@@ -726,7 +726,7 @@ public class StateEqual implements Serializable {
         this.assessedVal = assessedVal;
     }
 
-	@Column(name = "`CALC_TOTAL_PROGRAM_MILL_LEVY`")
+	@Column(name = "CALC_TOTAL_PROGRAM_MILL_LEVY")
 	private Double calcTotalProgramMillLevy;
 
     public Double getCalcTotalProgramMillLevy () {
@@ -737,7 +737,7 @@ public class StateEqual implements Serializable {
         this.calcTotalProgramMillLevy = calcTotalProgramMillLevy;
     }
 
-	@Column(name = "`STATE_EQUAL_OWNER_ADJUST`")
+	@Column(name = "STATE_EQUAL_ADJUST")
 	private Double stateEqualOwnerAdjust;
 
     public Double getStateEqualOwnerAdjust () {
@@ -748,7 +748,7 @@ public class StateEqual implements Serializable {
         this.stateEqualOwnerAdjust = stateEqualOwnerAdjust;
     }
 
-	@Column(name = "`STATE_AVERAGE_AT_RISK_PERCENT`")
+	@Column(name = "STATE_AVERAGE_AT_RISK_PERCENT")
 	private Double stateAverageAtRiskPercent;
 
     public Double getStateAverageAtRiskPercent () {
@@ -759,7 +759,7 @@ public class StateEqual implements Serializable {
         this.stateAverageAtRiskPercent = stateAverageAtRiskPercent;
     }
 
-	@Column(name = "`MINIMUM_STATE_AID`")
+	@Column(name = "MINIMUM_STATE_AID")
 	private Double minimumStateAid;
 
     public Double getMinimumStateAid () {
@@ -770,7 +770,7 @@ public class StateEqual implements Serializable {
         this.minimumStateAid = minimumStateAid;
     }
 
-	@Column(name = "`BASE_PER_PUPIL_FUND`")
+	@Column(name = "BASE_PER_PUPIL_FUND")
 	private Double basePerPupilFund;
 
     public Double getBasePerPupilFund () {
@@ -781,7 +781,7 @@ public class StateEqual implements Serializable {
         this.basePerPupilFund = basePerPupilFund;
     }
 
-	@Column(name = "`ONLINE_PER_PUPIL_FUND`")
+	@Column(name = "ONLINE_PER_PUPIL_FUND")
 	private Double onlinePerPupilFund;
 
     public Double getOnlinePerPupilFund () {
@@ -792,7 +792,7 @@ public class StateEqual implements Serializable {
         this.onlinePerPupilFund = onlinePerPupilFund;
     }
 
-	@Column(name = "`NEG_FACTOR_ONLINE_PPF`")
+	@Column(name = "NEG_FACTOR_ONLINE_PPF")
 	private Double negFactorOnlinePpf;
 
     public Double getNegFactorOnlinePpf () {
@@ -803,7 +803,7 @@ public class StateEqual implements Serializable {
         this.negFactorOnlinePpf = negFactorOnlinePpf;
     }
 
-	@Column(name = "`AT_RISK_BASE_FACTOR`")
+	@Column(name = "AT_RISK_BASE_FACTOR")
 	private Double atRiskBaseFactor;
 
     public Double getAtRiskBaseFactor () {
@@ -814,7 +814,7 @@ public class StateEqual implements Serializable {
         this.atRiskBaseFactor = atRiskBaseFactor;
     }
 
-	@Column(name = "`TOTAL_ONLINE_AND_ASCENT_FUND`")
+	@Column(name = "TOTAL_ONLINE_AND_ASCENT_FUND")
 	private Double totalOnlineAndAscentFund;
 
     public Double getTotalOnlineAndAscentFund () {
@@ -825,7 +825,7 @@ public class StateEqual implements Serializable {
         this.totalOnlineAndAscentFund = totalOnlineAndAscentFund;
     }
 
-	@Column(name = "`ADJ_DISTRICT_TOTAL_PROGRAM`")
+	@Column(name = "ADJ_DISTRICT_TOTAL_PROGRAM")
 	private Double adjDistrictTotalProgram;
 
     public Double getAdjDistrictTotalProgram () {
@@ -836,7 +836,7 @@ public class StateEqual implements Serializable {
         this.adjDistrictTotalProgram = adjDistrictTotalProgram;
     }
 
-	@Column(name = "`FULL_FUNDING_MILL`")
+	@Column(name = "FULL_FUNDING_MILL")
 	private Double fullFundingMill;
 
     public Double getFullFundingMill () {
@@ -847,7 +847,7 @@ public class StateEqual implements Serializable {
         this.fullFundingMill = fullFundingMill;
     }
 
-	@Column(name = "`TABOR_MILL`")
+	@Column(name = "TABOR_MILL")
 	private Double taborMill;
 
     public Double getTaborMill () {
@@ -858,7 +858,7 @@ public class StateEqual implements Serializable {
         this.taborMill = taborMill;
     }
 
-	@Column(name = "`SOT_ADJ_PERCENT`")
+	@Column(name = "SOT_ADJ_PERCENT")
 	private Double sotAdjPercent;
 
     public Double getSotAdjPercent () {
@@ -869,7 +869,7 @@ public class StateEqual implements Serializable {
         this.sotAdjPercent = sotAdjPercent;
     }
 
-	@Column(name = "`DISTRICT_CHARTER_FTE_COUNT`")
+	@Column(name = "DISTRICT_CHARTER_FTE_COUNT")
 	private Double districtCharterFteCount;
 
     public Double getDistrictCharterFteCount () {
@@ -880,7 +880,7 @@ public class StateEqual implements Serializable {
         this.districtCharterFteCount = districtCharterFteCount;
     }
 
-	@Column(name = "`CALC_CAT_BUY_MILL_LEVY`")
+	@Column(name = "CALC_CAT_BUY_MILL_LEVY")
 	private Double calcCatBuyMillLevy;
 
     public Double getCalcCatBuyMillLevy () {
@@ -891,7 +891,7 @@ public class StateEqual implements Serializable {
         this.calcCatBuyMillLevy = calcCatBuyMillLevy;
     }
 
-	@Column(name = "`CERT_CAT_BUY_MILL_LEVY`")
+	@Column(name = "CERT_CAT_BUY_MILL_LEVY")
 	private Double certCatBuyMillLevy;
 
     public Double getCertCatBuyMillLevy () {
@@ -902,7 +902,7 @@ public class StateEqual implements Serializable {
         this.certCatBuyMillLevy = certCatBuyMillLevy;
     }
 
-	@Column(name = "`TOTAL_PROGRAM_CAT_BUYOUT`")
+	@Column(name = "TOTAL_PROGRAM_CAT_BUYOUT")
 	private Double totalProgramCatBuyout;
 
     public Double getTotalProgramCatBuyout () {
@@ -913,7 +913,7 @@ public class StateEqual implements Serializable {
         this.totalProgramCatBuyout = totalProgramCatBuyout;
     }
 
-	@Column(name = "`ADJ_OODS`")
+	@Column(name = "ADJ_OODS")
 	private Double adjOods;
 
     public Double getAdjOods () {
@@ -924,7 +924,7 @@ public class StateEqual implements Serializable {
         this.adjOods = adjOods;
     }
 
-	@Column(name = "`CAT_LEVY_ADJ`")
+	@Column(name = "CAT_LEVY_ADJ")
 	private Double catLevyAdj;
 
     public Double getCatLevyAdj () {
@@ -935,7 +935,7 @@ public class StateEqual implements Serializable {
         this.catLevyAdj = catLevyAdj;
     }
 
-	@Column(name = "`MILL_LEVY_ADJ`")
+	@Column(name = "MILL_LEVY_ADJ")
 	private Double millLevyAdj;
 
     public Double getMillLevyAdj () {
@@ -946,7 +946,7 @@ public class StateEqual implements Serializable {
         this.millLevyAdj = millLevyAdj;
     }
 
-	@Column(name = "`YTD_OODS`")
+	@Column(name = "YTD_OODS")
 	private Double ytdOods;
 
     public Double getYtdOods () {

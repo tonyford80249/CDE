@@ -1,37 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 89
-/svn/cde_fco/!svn/ver/123/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal
-END
-ImportAudits.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/ImportAudits.jsp
-END
-Comments.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Comments.jsp
-END
-Elections.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Elections.jsp
-END
-AddAdjustment.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/AddAdjustment.jsp
-END
-CalculateEntitlements.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/cde_fco/!svn/ver/116/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/CalculateEntitlements.jsp
+/svn/cde_fco/!svn/ver/204/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal
 END
 MillLevyOverrideWorksheet.jsp
 K 25
@@ -39,41 +9,23 @@ svn:wc:ra_dav:version-url
 V 118
 /svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MillLevyOverrideWorksheet.jsp
 END
-MaintainCalculationRules.jsp
+CalculateEntitlements.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 117
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MaintainCalculationRules.jsp
+V 115
+/svn/cde_fco/!svn/ver/116/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/CalculateEntitlements.jsp
 END
-Reports.jsp
+AddAdjustment.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/cde_fco/!svn/ver/123/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Reports.jsp
+V 107
+/svn/cde_fco/!svn/ver/204/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/AddAdjustment.jsp
 END
 DisplayAdjustment.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/DisplayAdjustment.jsp
-END
-MillLevyCert.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MillLevyCert.jsp
-END
-MonthlyPayments.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svn/cde_fco/!svn/ver/116/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MonthlyPayments.jsp
-END
-UploadVariables.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/UploadVariables.jsp
 END
 CrosswalkCollectionData.jsp
 K 25
@@ -84,8 +36,62 @@ END
 StateEqualHomePage.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 111
-/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/StateEqualHomePage.jsp
+V 112
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/StateEqualHomePage.jsp
+END
+AltAtRiskFunding.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/AltAtRiskFunding.jsp
+END
+Comments.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Comments.jsp
+END
+UploadVariables.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/UploadVariables.jsp
+END
+MaintainCalculationRules.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MaintainCalculationRules.jsp
+END
+Elections.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Elections.jsp
+END
+MonthlyPayments.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/116/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MonthlyPayments.jsp
+END
+MillLevyCert.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/MillLevyCert.jsp
+END
+ImportAudits.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/89/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/ImportAudits.jsp
+END
+Reports.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cde_fco/!svn/ver/123/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/stateequal/Reports.jsp
 END
 CSICalculations.jsp
 K 25

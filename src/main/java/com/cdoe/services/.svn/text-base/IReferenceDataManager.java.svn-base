@@ -20,4 +20,6 @@ public interface IReferenceDataManager {
 	public String getLastPaymentDate();
 	
 	public List<String> getCrossWalkDataType();
+	
+	public List<String> getAuditRepaymentAdjustmentFrequencies();
 }

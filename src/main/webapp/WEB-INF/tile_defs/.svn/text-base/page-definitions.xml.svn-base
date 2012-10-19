@@ -34,6 +34,11 @@
 		<put-attribute name="page-title" value="AuditorHomePage" />
 		<put-attribute name="page-content" value="/WEB-INF/jsp/audit/AuditorHomePage.jsp" /> 
 	</definition>
+        
+        <definition name=".AltAtRiskFundCalc-index" extends="TopLevel_stateEqual">
+		<put-attribute name="page-title" value="AltAtRiskFunding" />
+		<put-attribute name="page-content" value="/WEB-INF/jsp/stateequal/AltAtRiskFunding.jsp" />
+	</definition>
 
 	<definition name=".MaintainCalculationRules-index" extends="TopLevel_stateEqual">
 		<put-attribute name="page-title" value="MaintainCalculationRules" />

@@ -25,5 +25,6 @@
 	<bean id="auditSasidExceptionValidator" class="com.cdoe.ui.validator.AuditSasidExceptionValidator"/>
 	<bean id="auditTrackingValidator" class="com.cdoe.ui.validator.AuditTrackingValidator"/>
 	<bean id="auditTranValidator" class="com.cdoe.ui.validator.AuditTranValidator"/>
+	<bean id="auditRepaymentAdjustmentValidator" class="com.cdoe.ui.validator.AuditRepaymentAdjustmentValidator"/>
 	
 </beans>

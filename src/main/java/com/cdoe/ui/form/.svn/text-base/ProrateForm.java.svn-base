@@ -7,6 +7,9 @@ package com.cdoe.ui.form;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+
+import org.springframework.format.annotation.NumberFormat;
+
 import com.cdoe.ui.form.grid.*;
 
 /**
@@ -63,6 +66,8 @@ public class ProrateForm {
     public void setFundingSources (String fundingSources) {
         this.fundingSources = fundingSources;
     }
+    
+    @NumberFormat(pattern = "###,###,###,###.00")
 	private Double totalFirstPayment;
 	
 	public Double getTotalFirstPayment () {
@@ -72,6 +77,8 @@ public class ProrateForm {
     public void setTotalFirstPayment (Double totalFirstPayment) {
         this.totalFirstPayment = totalFirstPayment;
     }
+    
+    @NumberFormat(pattern = "###,###,###,###.00")
 	private Double totalSecondPayment;
 	
 	public Double getTotalSecondPayment () {
@@ -81,6 +88,8 @@ public class ProrateForm {
     public void setTotalSecondPayment (Double totalSecondPayment) {
         this.totalSecondPayment = totalSecondPayment;
     }
+    
+    @NumberFormat(pattern = "###,###,###,###.00")	
 	private Double totalDistribution;
 	
 	public Double getTotalDistribution () {

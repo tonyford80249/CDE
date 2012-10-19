@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services
+/svn/cde_fco/!svn/ver/217/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services
 END
 ISSOLoginManager.java
 K 25
@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 115
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IImportAuditTransDataManager.java
 END
+IDisplayAdjustmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDisplayAdjustmentManager.java
+END
 IAudCDE40TransReimbFormManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 117
 /svn/cde_fco/!svn/ver/85/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAudCDE40TransReimbFormManager.java
-END
-IDisplayAdjustmentManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 112
-/svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDisplayAdjustmentManager.java
 END
 IMillLevyCertManager.java
 K 25
@@ -73,7 +73,7 @@ IDistrictPaymentReportManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 117
-/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDistrictPaymentReportManager.java
+/svn/cde_fco/!svn/ver/217/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IDistrictPaymentReportManager.java
 END
 ICSICalculationsManager.java
 K 25
@@ -141,29 +141,29 @@ svn:wc:ra_dav:version-url
 V 112
 /svn/cde_fco/!svn/ver/138/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IPaymentWorkSheetManager.java
 END
-ICde40TransReimbFormManager.java
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40TransReimbFormManager.java
-END
 IBaseManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 99
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IBaseManager.java
 END
-ICde40SummaryManager.java
+ICde40TransReimbFormManager.java
 K 25
 svn:wc:ra_dav:version-url
-V 108
-/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40SummaryManager.java
+V 115
+/svn/cde_fco/!svn/ver/120/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40TransReimbFormManager.java
 END
 IUploadVariablesManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IUploadVariablesManager.java
+END
+ICde40SummaryManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/217/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/ICde40SummaryManager.java
 END
 IUploadStudentsManager.java
 K 25
@@ -205,7 +205,13 @@ IReferenceDataManager.java
 K 25
 svn:wc:ra_dav:version-url
 V 109
-/svn/cde_fco/!svn/ver/124/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IReferenceDataManager.java
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IReferenceDataManager.java
+END
+IAuditRepaymentAdjustmentManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cde_fco/!svn/ver/196/cdoe_weblogic/trunk/cdoe/src/main/java/com/cdoe/services/IAuditRepaymentAdjustmentManager.java
 END
 ICreateAuditManager.java
 K 25

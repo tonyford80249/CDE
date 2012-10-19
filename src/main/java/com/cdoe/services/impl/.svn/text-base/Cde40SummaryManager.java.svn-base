@@ -7,9 +7,10 @@ import org.apache.log4j.Logger;
 import com.cdoe.biz.ICde40SummaryDAO;
 import com.cdoe.biz.model.Transportation;
 import com.cdoe.services.ICde40SummaryManager;
+import com.cdoe.services.IReferenceDataManager;
 import com.cdoe.ui.form.TransportationForm;
 import com.cdoe.ui.form.grid.TransportationGrid;
-import com.cdoe.util.DateUtil;
+import com.cdoe.util.UserInfo;
 
 public class Cde40SummaryManager extends TransportationDataManager implements
 		ICde40SummaryManager {
@@ -18,26 +19,63 @@ public class Cde40SummaryManager extends TransportationDataManager implements
 			.getLogger(Cde40SummaryManager.class);
 
 	private ICde40SummaryDAO cde40SummaryDAO;
-	private ReferenceDataManager referenceDataManager = new ReferenceDataManager();
-	
+	private IReferenceDataManager referenceDataManager;
+
 	public void saveOrUpdate(TransportationForm form) {
-		
-		List<TransportationGrid> transGridList = form.getTransportationGridList();
-		for (TransportationGrid transGrid: transGridList) {
-			long id = transGrid.getId();
-			Transportation obj = findById(Transportation.class, id); 
-			if (obj == null) {
-				super.saveOrUpdate(form);
-				
-			} else {
-				obj = updateTransSumInfo(obj, transGrid);
-				saveOrUpdate(obj);
+
+		List<TransportationGrid> transGridList = form
+				.getTransportationGridList();
+		for (TransportationGrid transGrid : transGridList) {
+			if (transGrid.getSelect() != null
+					&& "true".equalsIgnoreCase(transGrid.getSelect())) {
+				long id = transGrid.getId();
+				logger.debug("Updating data for DistrictNumber " +  transGrid.getDistrictNumber() + " ID " + id );
+				Transportation obj = findById(Transportation.class, id);
+				if (obj == null) {
+					logger.debug("Inserting new data ");
+					super.saveOrUpdate(form);
+
+				} else {
+					logger.debug("Updating new data ");
+					obj = updateTransSumInfo(obj, transGrid);
+					saveOrUpdate(obj);
+				}
 			}
 		}
-		
+
 	}
 	
-	private Transportation updateTransSumInfo(Transportation obj, TransportationGrid transGrid) {
+	
+	public void rejectDistrictForms(TransportationForm form) {
+
+		List<TransportationGrid> transGridList = form
+				.getTransportationGridList();
+		for (TransportationGrid transGrid : transGridList) {
+			if (transGrid.getSelect() != null
+					&& "true".equalsIgnoreCase(transGrid.getSelect())) {
+				long id = transGrid.getId();
+				logger.debug("Updating data for DistrictNumber " +  transGrid.getDistrictNumber() + " ID " + id );
+				Transportation obj = findById(Transportation.class, id);
+				if (obj == null) {
+					form.setMessage("CDE 40 Transportation data not available for the district " + transGrid.getDistrictNumber() + " for rejection");
+					form.setErrors("Invalid");
+					return;
+					//logger.debug("Inserting new data ");
+					//super.saveOrUpdate(form);
+
+				} else {
+					logger.debug("Updating new data ");
+					obj.setErrors("Yes");
+					saveOrUpdate(obj);
+				}
+			}
+		}
+
+	}
+
+	private Transportation updateTransSumInfo(Transportation obj,
+			TransportationGrid transGrid) {
+		obj.setOperTran(transGrid.getOperTran());
 		obj.setPupilTran(transGrid.getPupilTran());
 		obj.setCapOutTran(transGrid.getCapOutTran());
 		obj.setMigMiles(transGrid.getMigMiles());
@@ -48,19 +86,17 @@ public class Cde40SummaryManager extends TransportationDataManager implements
 		obj.setAdvPay(transGrid.getAdvPay());
 		obj.setActMiles(transGrid.getActMiles());
 		obj.setTotalMiles(transGrid.getTotalMiles());
-		
-		 return obj;
+
+		return obj;
 	}
 
-	public TransportationForm setupForm(String fiscalYear) {
+	public TransportationForm setupForm(String fiscalYear, UserInfo userInfo) {
 		TransportationForm form = new TransportationForm();
-		//String fiscalYear = "20102011"; //DateUtil.getFiscalYear();
-		List<Transportation> transportationList = cde40SummaryDAO
-				.getTransportationByFiscalYear(fiscalYear);
+		List<Transportation> transportationList = cde40SummaryDAO.getTransportationByFiscalYear(fiscalYear);
 		if (transportationList != null && transportationList.size() > 0) {
 			logger.info("Transportation data received");
 			form = setFormData(transportationList.get(0));
-			setGridData(form, transportationList);
+			setGridData(form, transportationList, userInfo);
 
 		} else {
 			logger.info("Transportation data not found");
@@ -68,12 +104,17 @@ public class Cde40SummaryManager extends TransportationDataManager implements
 		return form;
 	}
 
-	protected TransportationForm setGridData(TransportationForm form,List<Transportation> transportationList) {
-		List<TransportationGrid> transGridList = form.getTransportationGridList();
+	protected TransportationForm setGridData(TransportationForm form,
+			List<Transportation> transportationList, UserInfo userInfo) {
+		
+		List<TransportationGrid> transGridList = form
+				.getTransportationGridList();
 		for (Transportation transportation : transportationList) {
+			
 			TransportationGrid transGrid = new TransportationGrid();
-			transGrid.setId(transportation.getId()); 
+			transGrid.setId(transportation.getId());
 			transGrid.setNetCurrentOperExpend(transportation.getNetCurrentOperExpend());
+			transGrid.setOperTran(transportation.getOperTran());
 			transGrid.setMigMiles(transportation.getMigMiles());
 			transGrid.setRegDMiles(transportation.getRegDMiles());
 			transGrid.setSchoolDays(transportation.getSchoolDays());
@@ -87,12 +128,12 @@ public class Cde40SummaryManager extends TransportationDataManager implements
 			transGrid.setAdvPay(transportation.getAdvPay());
 			transGrid.setDistrictNumber(transportation.getDistrictNumber());
 			try {
-				transGrid.setDistrictName(referenceDataManager.getDistrictName((transportation.getDistrictNumber())));
+				transGrid.setDistrictName(userInfo.getDistrictMap().get(transportation.getDistrictNumber()));//referenceDataManager.getDistrictName((transportation.getDistrictNumber())));
 			} catch (Exception e) {
 				transGrid.setDistrictName("No Matching District Name");
 			}
-			
-			//transGrid.setDateUpdated("12/18/2012");
+
+			transGrid.setDateUpdated(transportation.getDateChanged());
 			transGridList.add(transGrid);
 		}
 
@@ -102,10 +143,10 @@ public class Cde40SummaryManager extends TransportationDataManager implements
 	public void setCde40SummaryDAO(ICde40SummaryDAO cde40SummaryDAO) {
 		this.cde40SummaryDAO = cde40SummaryDAO;
 	}
-	
-	/*public void setReferenceDataManager(ReferenceDataManager referenceDataManager) {
-		this.referenceDataManager = referenceDataManager;
-	}*/
 
+	public void setReferenceDataManager(
+			IReferenceDataManager referenceDataManager) {
+		this.referenceDataManager = referenceDataManager;
+	}
 
 }

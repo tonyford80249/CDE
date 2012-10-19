@@ -7,6 +7,9 @@ package com.cdoe.ui.form;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+
+import org.springframework.format.annotation.NumberFormat;
+
 import com.cdoe.ui.form.grid.*;
 
 /**
@@ -55,6 +58,9 @@ public class CapitalOutlayForm {
     public void setBaseYear (Long baseYear) {
         this.baseYear = baseYear;
     }
+    
+    
+    @NumberFormat(pattern="###,###,###,###.##")
 	private Double capitalOutlayTotalFunding;
 	
 	public Double getCapitalOutlayTotalFunding () {

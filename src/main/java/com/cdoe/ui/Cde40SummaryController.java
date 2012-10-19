@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cdoe.biz.model.Transportation;
 import com.cdoe.services.ICde40SummaryManager;
 import com.cdoe.ui.form.TransportationForm;
+import com.cdoe.ui.form.grid.TransportationGrid;
 import com.cdoe.util.DateUtil;
+import com.cdoe.util.UserInfo;
 import com.resqsoft.util.RequestUtils;
 
 @Controller
@@ -36,11 +38,13 @@ public class Cde40SummaryController {
 	private ICde40SummaryManager cde40SummaryManager;
 
 	@Autowired
-	private Validator transportationValidator;
+	private Validator cde40TransFormValidator;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String index(Model model, HttpServletRequest request) {
+	public String index(Model model, HttpServletRequest request) {            
                 final String FISCAL_YEAR =  "fiscalYear";
+                
+                UserInfo userInfo = (UserInfo) request.getSession().getAttribute(UserInfo.USER_INFO_ATTR);
                 
 		HttpSession session = request.getSession();
 		String fiscalYear =  (String) session.getAttribute(FISCAL_YEAR);
@@ -51,7 +55,7 @@ public class Cde40SummaryController {
                  session.setAttribute(FISCAL_YEAR, fiscalYear);
                 }
                 
-		TransportationForm form = cde40SummaryManager.setupForm(fiscalYear);
+		TransportationForm form = cde40SummaryManager.setupForm(fiscalYear, userInfo);
 		model.addAttribute("transportationForm", form);
 		return ".Cde40Summary-index";
 	}
@@ -61,26 +65,37 @@ public class Cde40SummaryController {
 			@ModelAttribute TransportationForm transportationForm,
 			BindingResult result, HttpServletRequest request) {
 		
-		HttpSession session = request.getSession();
-		session.getAttribute("idArray");
 		
+		logger.debug("saveButton" +  request.getParameter("saveButton")  +  "value2" +  request.getParameter("rejectDistrict") + "value3" +  request.getParameter("downLoadToExcel"));
 		
-		String value1  = request.getParameter("saveButton");
-		String value2  = request.getParameter("rejectDistrict");
-		String value3  = request.getParameter("downLoadToExcel");
+		if ( request.getParameter("saveButton") != null) {
+			validateCde40TransReimburseData(transportationForm, result);
+			cde40SummaryManager.saveOrUpdate(transportationForm);
+			transportationForm.setMessage("Cde40 Transportation Reimbursement Information Saved Successfully");
+		}
+		else if (request.getParameter("rejectDistrict") != null) {
+			logger.debug("Reject district Path");
+			cde40SummaryManager.rejectDistrictForms(transportationForm);
+		}
 		
-		System.out.println("value1" +  value1 +  "value2" + value2 + "value3" + value3);
-		
-		transportationValidator.validate(transportationForm, result);
-		/*
-		 * if (result.hasErrors()) { return ".Cde40Summary-index"; }
-		 */
-		for (int i = 0; i < transportationForm.getTransportationGridList().size(); i++)
-			System.out.println("The grid values "
-					+ transportationForm.getTransportationGridList().get(i).getId());
-		cde40SummaryManager.saveOrUpdate(transportationForm);
 		model.addAttribute("saved", true);
+		
 		return ".Cde40Summary-index";
+	}
+	
+	private void validateCde40TransReimburseData(TransportationForm transportationForm, BindingResult result) {
+		List<TransportationGrid> transGridList = transportationForm.getTransportationGridList();
+		for (TransportationGrid transGrid : transGridList) {
+			if (transGrid.getSelect() != null
+					&& "true".equalsIgnoreCase(transGrid.getSelect())) {
+				cde40TransFormValidator.validate(transportationForm, result);
+				if (result.hasErrors()) {
+					transportationForm.setMessage("Cde40 Transportation Reimbursement Information has errors");
+					return;
+				}
+			}
+		}
+	 
 	}
 
 }

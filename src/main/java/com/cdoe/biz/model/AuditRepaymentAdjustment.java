@@ -1,7 +1,6 @@
 
 package com.cdoe.biz.model;
 
-import java.util.Date;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -23,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @Entity
-@Table(name = "`Audit_Repayment_Adjustment`")
+@Table(name = "Audit_Repayment")
 public class AuditRepaymentAdjustment implements Serializable {
 
 	/**
@@ -77,7 +76,7 @@ public class AuditRepaymentAdjustment implements Serializable {
 	}
 	
 
-	@Column(name = "`District_Number`")
+	@Column(name = "DISTRICT_NUMBER")
 	private String districtNumber;
 
     public String getDistrictNumber () {
@@ -88,7 +87,7 @@ public class AuditRepaymentAdjustment implements Serializable {
         this.districtNumber = districtNumber;
     }
 
-	@Column(name = "`BEGIN_FISCAL_YEAR`")
+	@Column(name = "BEGIN_FISCAL_YEAR")
 	private String beginFiscalYear;
 
     public String getBeginFiscalYear () {
@@ -99,7 +98,7 @@ public class AuditRepaymentAdjustment implements Serializable {
         this.beginFiscalYear = beginFiscalYear;
     }
 
-	@Column(name = "`END_FISCAL_YEAR`")
+	@Column(name = "END_FISCAL_YEAR")
 	private String endFiscalYear;
 
     public String getEndFiscalYear () {
@@ -110,40 +109,40 @@ public class AuditRepaymentAdjustment implements Serializable {
         this.endFiscalYear = endFiscalYear;
     }
 
-	@Column(name = "`BEGIN_FISCAL_MONTH`")
-	private Long beginFiscalMonth;
+	@Column(name = "BEGIN_FISCAL_MONTH")
+	private String beginFiscalMonth;
 
-    public Long getBeginFiscalMonth () {
+    public String getBeginFiscalMonth () {
         return this.beginFiscalMonth;
     }
 
-    public void setBeginFiscalMonth (Long beginFiscalMonth) {
+    public void setBeginFiscalMonth (String beginFiscalMonth) {
         this.beginFiscalMonth = beginFiscalMonth;
     }
 
-	@Column(name = "`END_FISCAL_MONTH`")
-	private Long endFiscalMonth;
+	@Column(name = "END_FISCAL_MONTH")
+	private String endFiscalMonth;
 
-    public Long getEndFiscalMonth () {
+    public String getEndFiscalMonth () {
         return this.endFiscalMonth;
     }
 
-    public void setEndFiscalMonth (Long endFiscalMonth) {
+    public void setEndFiscalMonth (String endFiscalMonth) {
         this.endFiscalMonth = endFiscalMonth;
     }
 
-	@Column(name = "`FREQUENCY`")
-	private Long frequency;
+	@Column(name = "FREQUENCY")
+	private String frequency;
 
-    public Long getFrequency () {
+    public String getFrequency () {
         return this.frequency;
     }
 
-    public void setFrequency (Long frequency) {
+    public void setFrequency (String frequency) {
         this.frequency = frequency;
     }
 
-	@Column(name = "`AMOUNT`")
+	@Column(name = "PAYMENT_AMOUNT")
 	private Double amount;
 
     public Double getAmount () {

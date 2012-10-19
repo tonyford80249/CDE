@@ -54,12 +54,18 @@ public class Cde40TransReimbFormController {
 		} else {
 			districtCode = userInfo.getUsersDistricts().get(0);
 		}
+		//Remove the below two lines of code when the districtCode gets always populated correctly. But for now it is coming as "" so added the code 
+		if (districtCode == null || "".equals(districtCode))
+			districtCode = "t600";
+		// ends remove
 		TransportationForm form = cde40TransReimbFormManager.setupForm(districtCode);
 		boolean isCapitalOutlayDistrict = capitalOutlayManager.isCapitalOutlayDistricts(form.getFiscalYear(), form.getDistrictNumber());
-		form.setCapitalOutLay(isCapitalOutlayDistrict);
+		form.setIsCapitalOutLay(isCapitalOutlayDistrict);
 		form.setDistrictNumber(districtCode);
 		String districtName = userInfo.lookupDistrict(districtCode);
 		form.setDistrictName(districtName);
+		if ("None".equalsIgnoreCase(form.getErrors()))
+			form.setMessage("Cde40 Transportation Reimbursement Information already saved successfully. No more updates will be saved");
 		model.addAttribute("transportationForm", form);
 		return ".Cde40TransReimbForm-index";
     }
@@ -69,20 +75,14 @@ public class Cde40TransReimbFormController {
     	
 		cde40TransFormValidator.validate(transportationForm, result);
 		if (result.hasErrors()) {
-			List<ObjectError> errors = result.getAllErrors();
-			StringBuffer errorMessage = new StringBuffer("");
-			for (ObjectError enError : errors) {
-				logger.debug(enError.getDefaultMessage());
-				logger.debug(enError.getCode());
-				if (enError.getDefaultMessage().length() > 100)
-				{
-					errorMessage.append(enError.getDefaultMessage().substring(0,100) + "\n");
-				} else
-					errorMessage.append(enError.getDefaultMessage() + "\n");
-			}
-			transportationForm.setErrors(errorMessage.toString());
 			return ".Cde40TransReimbForm-index";
 		}
+		if ("None".equalsIgnoreCase(transportationForm.getErrors())) {
+			transportationForm.setMessage("Cde40 Transportation Reimbursement Information already saved before. No updates were done");
+			return ".Cde40TransReimbForm-index";
+			
+		}
+			
 		cde40TransReimbFormManager.saveOrUpdate(transportationForm);
 		transportationForm.setMessage("Cde40 Transportation Reimbursement Information saved successfully");
 		model.addAttribute("saved", true);

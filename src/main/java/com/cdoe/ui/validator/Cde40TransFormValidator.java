@@ -26,6 +26,7 @@ public class Cde40TransFormValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		TransportationForm form = (TransportationForm) target;
+		//Deals at the form level and not the grid
 		
 		if (form.getNamePreparerCde40() == null || "".equals(form.getNamePreparerCde40())) {
 			errors.rejectValue("namePreparerCde40", "String", "Name of the person cannot be blank");

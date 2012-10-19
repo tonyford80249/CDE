@@ -41,6 +41,8 @@
 							<li><a href="${pageContext.request.contextPath}/secure/CalculateEntitlements">Calculate
 									Entitlements</a></li>
 							<li><a href="${pageContext.request.contextPath}/secure/Reports">Reports</a></li>
+                                                        
+                                                        <li><a href="${pageContext.request.contextPath}/secure/AltAtRiskFunding">Alternate At Risk Funding Calculation</a></li>
 						</ul>
 					</li>
 					<% } else  { %>

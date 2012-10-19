@@ -41,6 +41,7 @@
 				<prop key="hibernate.connection.release_mode">${hibernate.release_mode}</prop>
 				<prop key="hibernate.cache.use_second_level_cache">false</prop>
                 <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.default_schema">state_equal_owner</prop>
 			</props>
 		</property>
 	</bean>

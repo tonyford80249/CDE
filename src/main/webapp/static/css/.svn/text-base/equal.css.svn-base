@@ -78,7 +78,7 @@ border: 1px solid #779BBF;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.field, .bodyText { font-size: 1.25em !important; font-weight: normal; display: inline-block; white-space: normal; line-height: 1.4em; vertical-align: middle; color: #050505; margin: 0 0 0.5em 0; }
+.field, .bodyText { font-size: 1.10em !important; font-weight: normal; display: inline-block; white-space: normal; line-height: 1.2em; vertical-align: middle; color: #050505; margin: 0 0 0.5em 0; }
 .field { width: 500px; }
 /*.field:after { content: ":"; }*/
 
@@ -126,3 +126,4 @@ h3 {
 	color: #ffffff;
 	width: 100%;
 }
+

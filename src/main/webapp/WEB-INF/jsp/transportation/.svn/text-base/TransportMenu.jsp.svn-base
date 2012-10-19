@@ -56,7 +56,7 @@ $Log:$
                      <a id="" href="Cde40TransReimbForm"><span>CDE-40 Transportation Reimbursement Form</span></a>
                 </li>      
                 <% 
-				  if (userInfo.isTransportationUser() && userInfo.isAdminUser()) { 
+				  //if (userInfo.isTransportationUser() && userInfo.isAdminUser()) { 
 				 %>          				
 				<li>
                    <c:url value="Distribution Amounts" var="link"/>
@@ -78,7 +78,7 @@ $Log:$
                    <c:url value="Calculation Worksheet" var="link"/>
                    <a id="" href="${pageContext.request.contextPath}/secure/PaymentWorkSheet"><span>Calculation Worksheet</span></a>
                 </li>
-                <% } %>
+                <% //} %>
 			  </ul><!-- bottom-radius10 -->
 			</li>
 		</ul>

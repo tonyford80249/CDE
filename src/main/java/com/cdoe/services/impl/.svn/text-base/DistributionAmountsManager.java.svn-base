@@ -53,6 +53,7 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		return form;
 	}
 	
+	//Not Used
 	public ProrateForm setupForm(long id) {
 		Prorate obj = findById(Prorate.class, id); 
 		
@@ -79,7 +80,7 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 			form = setFormData(form, prorateList.get(0));
 
 		} else {
-			form.setFiscalYear( DateUtil.getFiscalYear());
+			form.setFiscalYear( DateUtil.getPrevFiscalYear());
 			logger.info("Prorate Transportation data not found");
 		}
 		return form;
@@ -116,10 +117,11 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		
 		List<Object[]> resultList = distributionAmountsDAO.getCDE40TotalByFiscalYear(fiscalYear);
 		Object[] res = resultList.get(0);
-		System.out.println(" res 0 " + res[0]);
-		System.out.println(" res 1 " + res[1]);
+		
 		double advPay = ((Double)res[0]).doubleValue();
 		double reimTran = ((Double)res[1]).doubleValue();
+		logger.debug(" advPay 0 " + advPay);
+		logger.debug(" reimTran 1 " + reimTran);
 		
 		double prorateFactor =  ((prorateForm.getTotalDistribution() != null ? prorateForm.getTotalDistribution().doubleValue() : 0 ) - advPay )/ reimTran;
 	
@@ -128,7 +130,7 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		for (Transportation transportation : transportationList) {
 			logger.debug("prorateFactor " + prorateFactor);
 			double finalReimEntitlementProrated = prorateFactor * (transportation.getFinalReimEntitlement() != null ? transportation.getFinalReimEntitlement().doubleValue() : 0);
-			double totalPayment = finalReimEntitlementProrated +  transportation.getAdvPay();
+			double totalPayment = finalReimEntitlementProrated +  (transportation.getAdvPay() != null ? transportation.getAdvPay().doubleValue() : 0);
 			double totalMileage =  (transportation.getTotalReimMileage() != null ? transportation.getTotalReimMileage().doubleValue() : 0) * (transportation.getMigMiles() != null ? transportation.getMigMiles().doubleValue() : 0);
 			double migrantEducation = 0;
 			if (totalMileage != 0)
@@ -142,7 +144,7 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 				prorateForm.setProrateFactor1stPayment(prorateFactor);
 			}
 			else {
-				double secondPayment = netPayment - transportation.getFirstPayment();
+				double secondPayment = netPayment - (transportation.getFirstPayment() != null ? transportation.getFirstPayment().doubleValue() : 0);
 				transportation.setSecondPayment(secondPayment);
 				prorateForm.setProrateFactor2ndPayment(prorateFactor);
 			}
@@ -154,11 +156,6 @@ public class DistributionAmountsManager extends BaseManager implements IDistribu
 		}
 		saveOrUpdate(prorateForm);
 	}
-	
-	
-	
-	
-	
 	
 	public void updateProrateNote(ProrateForm prorateForm) {
 		distributionAmountsDAO.updateProrateNote(prorateForm.getFiscalYear(), prorateForm.getFundingSources());

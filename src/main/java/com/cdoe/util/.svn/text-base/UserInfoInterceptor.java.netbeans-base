@@ -50,17 +50,32 @@ public class UserInfoInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		boolean retValue = true;
-		HttpSession session = request.getSession();
-		if (session != null && session.isNew() && session.getAttribute("USER_INFO") == null) {
-			Map<String, String> districtMap = referenceDataManager.getDistrictReference();
+		HttpSession session = request.getSession(false);
+		if (session != null && session.isNew()
+				&& session.getAttribute("USER_INFO") == null) {
+			Map<String, String> districtMap = referenceDataManager
+					.getDistrictReference();
 			UserInfo userInfo = new UserInfo(request, districtMap);
 			if (userInfo.isValid()) {
-				request.getSession().setAttribute("USER_INFO", userInfo);
+				request.getSession().setAttribute(UserInfo.USER_INFO_ATTR, userInfo);
+				// For now, assume that a district user is only assigned to one
+				// district
+				String currentDistrict = userInfo.getUsersDistricts().get(0);
+				request.getSession().setAttribute("districtNos",
+						currentDistrict);
+				request.getSession().setAttribute("districtName",
+						userInfo.getDistrictMap().get(currentDistrict));
+				request.getSession().setAttribute("fiscalYear",
+						DateUtil.getFiscalYear());
+
 				retValue = true;
 			} else {
 				request.getSession().invalidate();
 				throw new CdeApplicationSecurityException("User not authorized");
 			}
+		} else if (session != null && session.getAttribute("USER_INFO") == null) {
+			session.invalidate();
+			response.sendRedirect("/equal/index.jsp");
 		}
 		return retValue;
 	}

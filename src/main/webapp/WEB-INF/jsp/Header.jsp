@@ -8,22 +8,24 @@
 	//String userName = (String) session.getAttribute("userName");
 	UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");
 	String userName = null;
-	if (userInfo != null)
+	if (userInfo != null && !"".equals(userName))
 		userName = userInfo.getUserId();
-	if (userName == null || "".equals(userName))
-		userName = "default Username";
+	else
+		userName = "Username not set";
 		
-			
-	String moduleName = request.getParameter("pageName"); 
-	boolean homePage = false;
+    String moduleName = request.getParameter("pageName"); 
 	
 	
 	if ((moduleName == null) || "".equals(moduleName) ) {
-	    moduleName = (String) session.getAttribute("moduleName");
-	    if ((moduleName == null) || "".equals(moduleName) )
-	       moduleName = "State Equal Systems";
+	    if ( userInfo.isTransportationUser())
+	       moduleName = "Transportation";
+	    else if (userInfo.isStateEqualUser() || userInfo.isAuditDistrictUser())
+	        moduleName = "Audit";
+	    else if (userInfo.isStateEqualUser())
+	       moduleName = "State Equal";
+	    else moduleName = "State Equal Systems";
 	}  else {
-		homePage=true;
+		
 		if ("LandingMenu".equals(moduleName))
 			 moduleName = "State Equal Systems";
 		else	
@@ -32,17 +34,16 @@
 	session.setAttribute("moduleName", moduleName);
 	System.out.println("moduleName" +  moduleName);
 	
-if (!homePage) { 
-   if ("Transportation".equals(moduleName)) {  
+/* This is the logic for taking to the home page */	
+ 
+   if ("Transportation".equals(moduleName)) 
       homeUrl = "TransportationHomePage";
-   } else if ("Auditor".equals(moduleName)) {
+   else if ("Auditor".equals(moduleName))
      homeUrl = "AuditorHomePage";
-   } else {
+   else if ("State Equal".equalsIgnoreCase(moduleName))
         homeUrl = "StateEqualHomePage";
-        }
-} else {
-	homeUrl = "LandingMenu";
-}   
+   else homeUrl = "LandingMenu";
+      
 %>
 
 		<div id="headcdetext">

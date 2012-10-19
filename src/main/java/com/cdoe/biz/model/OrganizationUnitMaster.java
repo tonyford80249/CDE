@@ -16,7 +16,8 @@ import org.hibernate.annotations.Where;
 @Entity
 @Table(name = "ORGANIZATION_UNIT_MASTER", schema="DEVDETAILMGR")
 @Immutable
-@Where(clause="organization_unit_type = 'DISTRICT'")
+@Where(clause="organization_unit_type in ('DISTRICT', 'BOCES', 'FACILITY') and ((DATE_CLOSED is null " +
+"or DATE_CLOSED > sysdate) and (DATE_OPERATIONAL is null) or (DATE_OPERATIONAL < sysdate))")
 public class OrganizationUnitMaster implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -55,6 +56,50 @@ public class OrganizationUnitMaster implements Serializable {
 
 	public void setOrganizationUnitType(String organizationUnitType) {
 		this.organizationUnitType = organizationUnitType;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime
+				* result
+				+ ((organizationCode == null) ? 0 : organizationCode.hashCode());
+		result = prime
+				* result
+				+ ((organizationName == null) ? 0 : organizationName.hashCode());
+		result = prime
+				* result
+				+ ((organizationUnitType == null) ? 0 : organizationUnitType
+						.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrganizationUnitMaster other = (OrganizationUnitMaster) obj;
+		if (organizationCode == null) {
+			if (other.organizationCode != null)
+				return false;
+		} else if (!organizationCode.equals(other.organizationCode))
+			return false;
+		if (organizationName == null) {
+			if (other.organizationName != null)
+				return false;
+		} else if (!organizationName.equals(other.organizationName))
+			return false;
+		if (organizationUnitType == null) {
+			if (other.organizationUnitType != null)
+				return false;
+		} else if (!organizationUnitType.equals(other.organizationUnitType))
+			return false;
+		return true;
 	}
 
 }

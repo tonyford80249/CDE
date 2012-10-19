@@ -81,6 +81,10 @@
         <!-- The ResourceBundleViewResolver&#58; -->
         <bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
            <property name="basename"><value>reports</value></property>                      
+        </bean>               
+        
+        <bean id="excelDocument2" class="com.cdoe.ui.view.AltAtRiskCalcView">
+            
         </bean>
 
 

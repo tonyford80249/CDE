@@ -13,7 +13,7 @@ import net.sf.jasperreports.engine.JasperReport;
 
 /**
  *
- * @author dyn-9
+ * @author Tony Ford
  */
 public class PaymentWorksheetJRDataSourceProvider implements  JRDataSourceProvider {
     /**
@@ -74,31 +74,67 @@ public class PaymentWorksheetJRDataSourceProvider implements  JRDataSourceProvid
         
     }
     
+    /**
+     * 
+     * @return 
+     */
     public boolean supportsGetFieldsOperation() {
         return true;
     }
 
+    /**
+     * 
+     * @param jr
+     * @return
+     * @throws JRException
+     * @throws UnsupportedOperationException 
+     */
     public JRField[] getFields(JasperReport jr) throws JRException, UnsupportedOperationException {
-      JRField[] fieldsAre = new JRField[6];  
+      JRField[] fieldsAre = new JRField[7];  
       
       fieldsAre[0] = new BasicField(PaymentWorksheetDatasource.DISTRICT_NAME,String.class);
       fieldsAre[1] = new BasicField(PaymentWorksheetDatasource.DISTRICT_NUMBER,String.class);
       fieldsAre[2] = new BasicField(PaymentWorksheetDatasource.DISTRICT_COUNTY,String.class);
       fieldsAre[3] = new BasicField(PaymentWorksheetDatasource.FISCAL_YEAR,String.class);
-      fieldsAre[4] = new BasicField(PaymentWorksheetDatasource.TITLE,String.class);
-      fieldsAre[5] = new BasicField(PaymentWorksheetDatasource.CALCULATION,String.class);
+      fieldsAre[4] = new BasicField(PaymentWorksheetDatasource.PUPIL_COUINT,Long.class);
+      fieldsAre[5] = new BasicField(PaymentWorksheetDatasource.TITLE,String.class);
+      fieldsAre[6] = new BasicField(PaymentWorksheetDatasource.CALCULATION,String.class);
       
       return fieldsAre;
     }
+    
+    /**
+     * 
+     * @param fieldName
+     * @param type
+     * @return 
+     */
+    public BasicField createBasicField(String fieldName, Class type) {
+     return new BasicField(fieldName, type);   
+    }
 
+    /**
+     * 
+     * @param jr
+     * @return
+     * @throws JRException 
+     */
     public JRDataSource create(JasperReport jr) throws JRException {
      return  new PaymentWorksheetDatasource(createPaymentWorkSheet());
     }
 
+    /**
+     * 
+     * @param jrds
+     * @throws JRException 
+     */
     public void dispose(JRDataSource jrds) throws JRException {
         
     }
-    
+    /**
+     * 
+     * @param vargs 
+     */
     public static final void main(String[] vargs) {
      PaymentWorkSheet worksheet = createPaymentWorkSheet();   
        
@@ -126,6 +162,7 @@ public class PaymentWorksheetJRDataSourceProvider implements  JRDataSourceProvid
      worksheet.setDistrictNumber("303");
      worksheet.setFiscalYear("2012-2013");
      worksheet.setCounty("Denver");
+     worksheet.setPupilCount(23980L);
     
                
      worksheet.getCalculations().add(new PaymentWorkSheetCalculation("1. Number of pupils", 3498,REGULAR_TYPE));

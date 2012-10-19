@@ -1,6 +1,7 @@
 package com.cdoe.services;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-
-import com.cdoe.services.impl.ReferenceDataManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -27,7 +26,7 @@ import com.cdoe.services.impl.ReferenceDataManager;
 public class TestReferenceDataManager {
 	
 	@Autowired
-	private ReferenceDataManager referenceDataManager;
+	private IReferenceDataManager referenceDataManager;
 
 	@Test
 	public void testGetDistrictName() {
@@ -39,7 +38,10 @@ public class TestReferenceDataManager {
 	public void testGetDistrictReference() {
 		Map<String, String> districts = referenceDataManager.getDistrictReference();
 		assertNotNull(districts);
-		assertTrue("Number of districts was: " + districts.size(), districts.size() == 188);
+		for (String districtNum : districts.keySet()) {
+			System.out.println("District: " + districtNum + ": " + districts.get(districtNum));
+		}
+		System.out.println("Total: " + districts.size());
 	}
 
 	@Test

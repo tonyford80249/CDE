@@ -4,10 +4,8 @@
  */
 package com.cdoe.ui.form;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Date;
-import com.cdoe.ui.form.grid.*;
+import org.springframework.format.annotation.NumberFormat;
+
 
 /**
  * Java bean object representing a business entity which will be used by Spring Form
@@ -17,13 +15,13 @@ import com.cdoe.ui.form.grid.*;
  */
 public class AuditRepaymentAdjustmentForm {
 
-	private long id;
+	private Long id;
 	
-    public long getId() {
+    public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -54,33 +52,35 @@ public class AuditRepaymentAdjustmentForm {
     public void setEndFiscalYear (String endFiscalYear) {
         this.endFiscalYear = endFiscalYear;
     }
-	private Long beginFiscalMonth; 
+	private String beginFiscalMonth; 
 	
-	public Long getBeginFiscalMonth () {
+	public String getBeginFiscalMonth () {
         return this.beginFiscalMonth;
     }
 
-    public void setBeginFiscalMonth (Long beginFiscalMonth) {
+    public void setBeginFiscalMonth (String beginFiscalMonth) {
         this.beginFiscalMonth = beginFiscalMonth;
     }
-	private Long endFiscalMonth; 
+	private String endFiscalMonth; 
 	
-	public Long getEndFiscalMonth () {
+	public String getEndFiscalMonth () {
         return this.endFiscalMonth;
     }
 
-    public void setEndFiscalMonth (Long endFiscalMonth) {
+    public void setEndFiscalMonth (String endFiscalMonth) {
         this.endFiscalMonth = endFiscalMonth;
     }
-	private Long frequency; 
+	private String frequency; 
 	
-	public Long getFrequency () {
+	public String getFrequency () {
         return this.frequency;
     }
 
-    public void setFrequency (Long frequency) {
+    public void setFrequency (String frequency) {
         this.frequency = frequency;
     }
+    
+    @NumberFormat(pattern="###,###.##")
 	private Double amount; 
 	
 	public Double getAmount () {

@@ -12,4 +12,6 @@ public interface ICde40SummaryManager extends IBaseManager {
 	
 	TransportationForm setupForm(long id);
 
+	void rejectDistrictForms(TransportationForm form);
+
 }

@@ -45,6 +45,10 @@ $Log:$
 		}
 		
 		document.getElementById('totalDistribution').value = val1 + val2;
+		checkAndFormatAmount('totalDistribution');
+		checkAndFormatAmount('totalFirstPayment');
+		checkAndFormatAmount('totalSecondPayment');
+		
 	}
 	
 	function editFields() {
@@ -99,12 +103,7 @@ $Log:$
 							<TD align="left"><LABEL FOR=""><spring:message
 										code="DistributionAmounts.StaticText.firstDistributionAmountStaticText" /></LABEL>
 							</TD>
-							<%
-								System.out.println();
-							%>
 							
-						
-
                             <TD><form:input id="totalFirstPayment"
 											path="totalFirstPayment" onBlur="calculateTotalPayment()" />
 									<form:hidden path="fiscalYear" />

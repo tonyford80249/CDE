@@ -16,6 +16,10 @@ public class DisplayAdjustmentManager extends BaseManager implements IDisplayAdj
 	
 	private IDisplayAdjustmentDAO displayAdjustmentDAO;
 	
+        public  List<StateEqual> getStateEqualInfo(final String districtNos, final String fiscalYear) {
+         return displayAdjustmentDAO.getStateEqualByDistrictAndYear(districtNos, fiscalYear);   
+        }
+        
 	public void saveOrUpdate(StateEqualForm form) {
 		long id = form.getId();
 		StateEqualbacked obj = findById(StateEqualbacked.class, id); 

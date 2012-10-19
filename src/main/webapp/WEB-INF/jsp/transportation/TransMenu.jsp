@@ -47,14 +47,14 @@ ol.menu li a:hover { font-weight: bold; }
 				<ol class='menu'>
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href='${pageContext.request.contextPath}/secure/Cde40TransReimbForm'>CDE-40 Transportation Reimbursement Form</a></li>
 			     <% 
-				  if (userInfo.isTransportationUser() && userInfo.isAdminUser()) { 
+				  //if (userInfo.isTransportationUser() && userInfo.isAdminUser()) { 
 				 %>        	  
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href="${pageContext.request.contextPath}/secure/DistributionAmounts">Distribution Amounts</a></li>
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href="${pageContext.request.contextPath}/secure/DistrictPaymentReport">District Payment Report</a></li>
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href="${pageContext.request.contextPath}/secure/CoforsUpload">COFRS Upload</a></li>
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href='${pageContext.request.contextPath}/secure/Cde40Summary'>CDE-40 Summary</a></li>
 				  <li><span class='ui-icon ui-icon-carat-1-e'></span><a href="${pageContext.request.contextPath}/secure/PaymentWorkSheet">Calculation Worksheet</a></li>
-				   <% } %>
+				   <% //} %>
 				</ol>
 		    </div><!-- pagecontent -->
 		</div><!-- contentarea -->

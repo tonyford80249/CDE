@@ -70,7 +70,7 @@ $Log:$
 						<TR>
 							<TD align="left"><c:url value="Audit" var="link" /> <a
 								id=""
-								href="${pageContext.request.contextPath}/secure/AuditorHomePage?pageName=AuditorHome"><font
+								href="${pageContext.request.contextPath}/secure/AuditorHomePage?pageName=AuditHome"><font
 									color="black"><b>2. Audit</b></font></a></TD>
 						</TR>
 						

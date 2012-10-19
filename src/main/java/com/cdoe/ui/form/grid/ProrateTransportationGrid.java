@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
+import org.springframework.format.annotation.NumberFormat;
+
 /**
  * Java bean object serves as a data container to hold values for the DataGrid.
  * 
@@ -32,6 +34,8 @@ public class ProrateTransportationGrid {
 		public void setOrganizationName (String organizationName) {
 		    this.organizationName = organizationName;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double firstPayment;
 		
 		public Double getFirstPayment () {
@@ -41,6 +45,8 @@ public class ProrateTransportationGrid {
 		public void setFirstPayment (Double firstPayment) {
 		    this.firstPayment = firstPayment;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double secondPayment;
 		
 		public Double getSecondPayment () {
@@ -50,6 +56,8 @@ public class ProrateTransportationGrid {
 		public void setSecondPayment (Double secondPayment) {
 		    this.secondPayment = secondPayment;
 		}
+		
+		@NumberFormat(pattern="###,###,###,###.00")
 		private Double districtDistribution;
 		
 		public Double getDistrictDistribution () {

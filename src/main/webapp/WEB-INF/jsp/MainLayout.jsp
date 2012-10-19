@@ -27,10 +27,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery-datatables-1.7.4/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery-ui-1.8.17.custom/js/jquery-ui-1.8.17.custom.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery.format-1.2/jquery.format-1.2.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery.format-1.2/jquery.format-1.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/shared/FormValidation.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/shared/formatter.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/scripts/jquery/jquery-ext.js"></script>
 
 </head>

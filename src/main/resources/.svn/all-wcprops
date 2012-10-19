@@ -1,13 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/cde_fco/!svn/ver/149/cdoe_weblogic/trunk/cdoe/src/main/resources
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/resources
 END
 system.properties
 K 25
 svn:wc:ra_dav:version-url
 V 86
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/resources/system.properties
+END
+reports.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/resources/reports.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/cde_fco/!svn/ver/71/cdoe_weblogic/trunk/cdoe/src/main/resources/log4j.properties
+END
+application-resources.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/186/cdoe_weblogic/trunk/cdoe/src/main/resources/application-resources.properties
 END
 message.properties
 K 25
@@ -20,24 +38,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 89
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/resources/db-access.properties
-END
-application-resources.properties
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/cde_fco/!svn/ver/149/cdoe_weblogic/trunk/cdoe/src/main/resources/application-resources.properties
-END
-reports.properties
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/cde_fco/!svn/ver/149/cdoe_weblogic/trunk/cdoe/src/main/resources/reports.properties
-END
-log4j.properties
-K 25
-svn:wc:ra_dav:version-url
-V 85
-/svn/cde_fco/!svn/ver/71/cdoe_weblogic/trunk/cdoe/src/main/resources/log4j.properties
 END
 hibernate.properties
 K 25

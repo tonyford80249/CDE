@@ -24,10 +24,24 @@ $Log:$
 <%-- Wrap the entire JSP in a try/catch block so that runtime exceptions
     in the JSP can be caught and reported. --%>
 
-<script language="javascript" type="text/javascript">
+<script language="javascript" type="text/javascript">        
+    
 	$(document)
 			.ready(
 					function() {
+                                             //disable input
+                                             $('input.disabled').attr('disabled', true);
+                                                                                          
+                                             $('input#printAllReport').click(
+                                              function() {//json
+                                                
+                                                            window.open("${pageContext.request.contextPath}/secure/PaymentWorkSheet/report/allPaymentWorksheets.pdf?"
+								+ "fiscalYear="
+								+ $('input#fiscalYearId').val()
+                                                            );								
+							}
+                                                );
+                                              
 
 						/*
 						 *  Attached function to dropdown's onchange event.
@@ -166,14 +180,15 @@ $Log:$
 																			'input#totalMiles')
 																			.val(
 																					json.transportationForm.totalMiles);
+                                                                                                                                        $('input#printOneReport').unbind();
 																	$(
 																			'input#printOneReport')
 																			.click(
 																					function() {
-																						window.location = "${pageContext.request.contextPath}/secure/PaymentWorkSheet/report/paymentWorksheet.pdf?districtNumber="
+																						window.open("${pageContext.request.contextPath}/secure/PaymentWorkSheet/report/paymentWorksheet.pdf?districtNumber="
 																								+ json.transportationForm.districtNumber
 																								+ "&fiscalYear="
-																								+ json.transportationForm.fiscalYear;
+																								+ json.transportationForm.fiscalYear);
 																					});
 
 																} else {
@@ -285,6 +300,7 @@ $Log:$
 																			'input#totalMiles')
 																			.val(
 																					0.0);
+                                                                                                                                        $('input#printOneReport').unbind();
 																	$(
 																			'input#printOneReport')
 																			.click(
@@ -351,11 +367,11 @@ $Log:$
 									<form:options items="${districtNumbers}"></form:options>
 								</form:select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 							<TD>School District Namer&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-							<TD><form:input id="DistrictName" path="districtName"
+							<TD><form:input cssClass="disabled" id="DistrictName" path="districtName"
 									size="26" maxlength="26" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 							<TD><spring:message
 									code="PaymentWorkSheet.StaticText.fiscalYearStaticText" />&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-							<TD><form:input id="" path="fiscalYear" size="8"
+							<TD><form:input cssClass="disabled" id="fiscalYearId" path="fiscalYear" size="8"
 									maxlength="8" /></TD>
 						</TR>
 
@@ -365,102 +381,101 @@ $Log:$
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.numberOfPupilsStaticText" /></TD>
-						<TD><form:input id="pupilTran" path="pupilTran" /></TD>
+                                                <TD><form:input cssClass="disabled" id="pupilTran" path="pupilTran" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$1TotalCurrentOperatingExpendituresForPupilTransportationLine1cFromCde40StaticText" />
 						</TD>
-						<TD><form:input id="totalCurrentOperatingExp" path="operTran" /></TD>
+						<TD><form:input cssClass="disabled" id="totalCurrentOperatingExp" path="operTran" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$2CapitalOutlayExclusionForPupilTransportationForIndependentContractorsAsCalculatedByCdeStaticText" />
 						</TD>
-						<TD><form:input id="capitalOutlayExpense" path="capOutTran" /></TD>
+						<TD><form:input cssClass="disabled" id="capitalOutlayExpense" path="capOutTran" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$3NetCurrentOperatingExpendituresLine1MinusLine2StaticText" />
 						</TD>
-						<TD><form:input id="netCurrentOperExpense"
+						<TD><form:input cssClass="disabled" id="netCurrentOperExpense"
 								path="netCurrentOperExpend" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$4MileageTraveledForTransportingMigrantEducationPupilsLine2Cde40StaticText" />
 						</TD>
-						<TD><form:input id="migrationMiles" path="migMiles" /></TD>
+						<TD><form:input cssClass="disabled" id="migrationMiles" path="migMiles" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$5MileageTraveledForRegularPupilTransportationOnTheMileageCountDateLine3Cde40NearestToOctober1StaticText" />
 						</TD>
-						<TD><form:input id="regularDailyMiles" path="regDMiles" /></TD>
+						<TD><form:input cssClass="disabled" id="regularDailyMiles" path="regDMiles" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$6DaysOfSchoolHeldWhenPupilsWereTransportedIn20102011FiscalYearSchoolTermLine4Cde40StaticText" />
 						</TD>
-						<TD><form:input id="schoolDays" path="schoolDays" /></TD>
+						<TD><form:input cssClass="disabled" id="schoolDays" path="schoolDays" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$7RegularEducationPupilTransportationMileageStaticText" />
 						</TD>
-						<TD><form:input id="" path="regMiles" /></TD>
+						<TD><form:input id="" cssClass="disabled" path="regMiles" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$8TransportationReimbursableMileageLine4PlusLine7StaticText" />
 						</TD>
-						<TD><form:input id="totalReimMileage" path="totalReimMileage" /></TD>
+						<TD><form:input id="totalReimMileage" cssClass="disabled" path="totalReimMileage" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$9MileageEntitlementLine8Times3787StaticText" />
 						</TD>
-						<TD><form:input id="mileageEntitlement"
-								path="mileageEntitlement" /></TD>
+						<TD><form:input id="mileageEntitlement" cssClass="disabled" path="mileageEntitlement" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$10ExcessCostsLine3MinusLine9StaticText" />
 						</TD>
-						<TD><form:input id="excessCosts" path="exCosts" /></TD>
+						<TD><form:input id="excessCosts" cssClass="disabled" path="exCosts" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$11ExcessCostsEntitlementLine10Times3387StaticText" />
 						</TD>
-						<TD><form:input id="expenseReimbursement" path="exReim" /></TD>
+						<TD><form:input id="expenseReimbursement" cssClass="disabled" path="exReim" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$12MileageEntitlementPlusExcessCostEntitlementLine9PlusLine11StaticText" />
 						</TD>
-						<TD><form:input id="mileageEntitlement"
+						<TD><form:input id="mileageEntitlement" cssClass="disabled"
 								path="mileageEntitlement" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$13MaximumReimbursementEntitlementLine3Times90StaticText" />
 						</TD>
-						<TD><form:input id="maxReimEntitlement"
+						<TD><form:input id="maxReimEntitlement" cssClass="disabled"
 								path="maxReimEntitlement" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$14CalculatedReimbursementEntitlementFor20102011LessOfLines12Or13StaticText" />
 						</TD>
-						<TD><form:input id="reimbursementTranportation"
+						<TD><form:input id="reimbursementTranportation" cssClass="disabled"
 								path="reimTran" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$15CalculatedReimbursementEntitlementFor20092010SeeAttachedListStaticText" />
 						</TD>
-						<TD><form:input id="reimbursementTranportationLastYear"
+						<TD><form:input id="reimbursementTranportationLastYear" cssClass="disabled"
 								path="reimTranLy" /></TD>
 					</TR>
 
@@ -468,26 +483,26 @@ $Log:$
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$16ReimbursementEntitlementFor20102011NotIncludingFinancialAidForBoardGreatOfLines14And15StaticText" />
 						</TD>
-						<TD><form:input id="reimEntitlement" path="reimEntitlement" /></TD>
+						<TD><form:input id="reimEntitlement" cssClass="disabled" path="reimEntitlement" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$17FinancialAidForProvidingBoardNumberOfDaysBoardWasPaidForPupilsInLieuOfTransportationTimes1StaticText" />
 						</TD>
-						<TD><form:input id="boardTran" path="boardTran" /></TD>
+						<TD><form:input id="boardTran" cssClass="disabled" path="boardTran" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$18ReimbursementEntitlementFor20102011Line16PlusLine17StaticText" />
 						</TD>
-						<TD><form:input id="totalReimEntitlement"
+						<TD><form:input id="totalReimEntitlement" cssClass="disabled"
 								path="totalReimEntitlement" /></TD>
 					</TR>
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$19AdvanceReimbursementEntitlementFor20102011StaticText" />
 						</TD>
-						<TD><form:input id="advancePayLastYear" path="advPayLy"
+						<TD><form:input id="advancePayLastYear" cssClass="disabled" path="advPayLy"
 								readonly="true" /></TD>
 					</TR>
 					<TR>
@@ -495,14 +510,14 @@ $Log:$
 								code="PaymentWorkSheet.StaticText.$20FinalReimbursementEntitlementFor20102011Line18MinusLine19StaticText" />
 						</TD>
 						<TD><form:input id="finalReimEntitlement"
-								path="finalReimEntitlement" readonly="true" /></TD>
+								path="finalReimEntitlement" cssClass="disabled" readonly="true" /></TD>
 					</TR>
 
 					<TR>
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$21FinalReimbursementEntitlementProratedLine20Times51718479StaticText" />
 						</TD>
-						<TD><form:input id="finalReimProrated"
+						<TD><form:input id="finalReimProrated" cssClass="disabled"
 								path="finalReimProrated" readonly="true" /></TD>
 					</TR>
 
@@ -510,23 +525,23 @@ $Log:$
 						<TD><spring:message
 								code="PaymentWorkSheet.StaticText.$23AdditionalReimbursementForCourtDesegregationOrderStaticText" />
 						</TD>
-						<TD><form:input id="desegReim" path="desegReim"
+						<TD><form:input id="desegReim" path="desegReim" cssClass="disabled"
 								readonly="true" /></TD>
 					</TR>
 					<TR>
 						<TD>23. Total payment for 2010-2011 (Line 21 plus Line 22)</TD>
-						<TD><form:input id="totalDistribution" path=""
+						<TD><form:input id="totalDistribution" path="" cssClass="disabled"
 								readonly="true" /></TD>
 					</TR>
 					<TR>
 						<TD>24. Total actual miles traveled for activity trips, field
 							trips, athletic trips, etc. for 2010-2011</TD>
-						<TD><form:input id="actualMiles" path="actMiles" /></TD>
+						<TD><form:input id="actualMiles" path="actMiles" cssClass="disabled"/></TD>
 					</TR>
 					<TR>
 						<TD>25. Total actual miles traveled for any purpose in
 							2010-2011 (excluding transportation support vehicles)</TD>
-						<TD><form:input id="totalMiles" path="totalMiles" /></TD>
+						<TD><form:input id="totalMiles" path="totalMiles" cssClass="disabled"/></TD>
 					</TR>
 				</TABLE>
 				</br>
@@ -543,7 +558,7 @@ $Log:$
 								<input type="Button" id="printOneReport" name="printOneReport"
 									value="Print Current Report" />
 							</c:if>
-							<TD><input type="Submit" id="printAllReport"
+							<TD><input type="Button" id="printAllReport"
 								name="printAllReport" value="Print All Reports" /></TD>
 							<TD><input type="Submit" id="uploadToWeb" name="uploadToWeb"
 								value="Upload Reports To Web" /></TD>

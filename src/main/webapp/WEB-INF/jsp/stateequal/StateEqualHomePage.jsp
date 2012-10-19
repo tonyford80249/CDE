@@ -125,6 +125,11 @@ $Log:$
 					<td><a href="${pageContext.request.contextPath}/secure/Reports">3.
 							Reports</a></td>
 				</tr>
+                                <tr></tr>
+				<tr>
+					<td><a href="${pageContext.request.contextPath}/secure/AltAtRiskFunding">4.
+							Alternate At Risk Funding Calculation (via xls spreadsheet)</a></td>
+				</tr>
 				<tr></tr>
 				<tr>
 				<td>

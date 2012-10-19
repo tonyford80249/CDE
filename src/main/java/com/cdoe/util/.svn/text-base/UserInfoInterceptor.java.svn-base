@@ -73,8 +73,8 @@ public class UserInfoInterceptor extends HandlerInterceptorAdapter {
 				request.getSession().invalidate();
 				throw new CdeApplicationSecurityException("User not authorized");
 			}
-		} else if (session.getAttribute("USER_INFO") == null) {
-			request.getSession().invalidate();
+		} else if (session != null && session.getAttribute("USER_INFO") == null) {
+			session.invalidate();
 			response.sendRedirect("/equal/index.jsp");
 		}
 		return retValue;

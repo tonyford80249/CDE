@@ -29,7 +29,7 @@ $Log:$
 <%
     String prevFiscalYear = DateUtil.getPrevFiscalYear();
 	String formattedFiscalYear = DateUtil.getFiscalYearFormattedLong(prevFiscalYear);
-		UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");
+    UserInfo userInfo = (UserInfo) session.getAttribute("USER_INFO");
 %>
 <script type='text/javascript'>
 	$(document)
@@ -157,57 +157,14 @@ $Log:$
 					});
 </script>
 
-<script type="text/javascript">
-	if (window.addEventListener) { // Mozilla, Netscape, Firefox     
-		window.addEventListener('load', WindowLoad, false);
-	} else if (window.attachEvent) { // IE     
-		window.attachEvent('onload', WindowLoad);
-	}
-	function WindowLoad(event) {
-		checkAndFormatAmount('TotalCurrentOperatingExp');
-		formatMileageField('MigMilesOfTransportation');
-		formatMileageField('regDMiles');
-		//formatMileageField('DaysSchoolWasInSession');
-		//formatMileageField('NosOfPupilSchedules');
-		formatMileageField('TotalActualMilesTravelled');
-		formatMileageField('TotalActualMilesTraveledForAnyPurpose');
-		//checkAndFormatAmount('FeesCollected');
-
-	}
-</script>
-
 
 <script language="javascript" type="text/javascript">
 	function saveData() {
-		if (document.getElementById('isCapitalOutLay') == false)
+		if (document.getElementById("isCapitalOutLay") == null || document.getElementById("isCapitalOutLay").value == "false")
 			alert("Your CDE-40 Form has been completed. A pdf copy of the CDE-40 will be emailed to the email address provided on this form. If any changes need to be made to this CDE-40 Form, please contact the Colorado Department of Education: 303-866-6843");
-		//document.getElementById('Message').value = "";
-		document.getElementById('TotalCurrentOperatingExp').value = (document
-				.getElementById('TotalCurrentOperatingExp').value).replace(
-				/[^0-9-.]/g, '');
-		document.getElementById('MigMilesOfTransportation').value = (document
-				.getElementById('MigMilesOfTransportation').value).replace(
-				/[^0-9-.]/g, '');
-		document.getElementById('regDMiles').value = (document
-				.getElementById('regDMiles').value).replace(/[^0-9-.]/g, '');
-		document.getElementById('TotalActualMilesTraveledForAnyPurpose').value = (document
-				.getElementById('TotalActualMilesTraveledForAnyPurpose').value)
-				.replace(/[^0-9-.]/g, '');
-		document.getElementById('TotalActualMilesTravelled').value = (document
-				.getElementById('TotalActualMilesTravelled').value).replace(
-				/[^0-9-.]/g, '');
-	}
-
-	function formatPage() {
-		formatMileageField('MigMilesOfTransportation');
-		formatMileageField('regDMiles');
-		formatMileageField('TotalActualMilesTraveledForAnyPurpose');
-		formatMileageField('TotalActualMilesTravelled');
-
-		document.getElementById('TotalCurrentOperatingExp').value = parseFloat(
-				document.getElementById('TotalCurrentOperatingExp').value)
-				.formatMoney();
-
+	    else
+	        alert("You will need to complete the Capital Outlay Form also. Saving data and transferring to Capital Outlay");
+	
 	}
 </script>
 
@@ -218,19 +175,18 @@ $Log:$
 		method="post">
 
 		<!-- Main outer table -->
-
-		<h3>
+		</br>
+		<h2>
 			<spring:message
 				code="Cde40TransReimbForm.StaticText.reimbursementClaimsForEntitlementPeriodStaticText" />
 			&nbsp;<%=formattedFiscalYear%>
-		</h3>
+		</h2>
+		<font color="red"><c:out id="Message" value="${transportationForm.message}"/></font>
 		<TABLE>
 			<TR>
-				<TD width="1180px">
-
-					<TABLE>
-						<div class="formBlock boxShadow3 radius10">
-						    <h3><spring:message  code="Cde40TransReimbForm.StaticText.nameOfPersonPreparingTheReportStaticText" />	</h3>
+				<TD>
+					<div class="formBlock boxShadow3 radius10">
+						    <h3><spring:message  code="Cde40TransReimbForm.StaticText.nameOfPersonPreparingTheReportStaticText" /></h3>
 							<div style='float: left;'>
 								<span class="field" style='width: 100px;'><label
 									for="namePreparerCde40">Name</label></span> <span class="bodyText"
@@ -273,26 +229,29 @@ $Log:$
 							</div>
 							<div style='clear: both;'></div>
 						</div>
-						</TABLE>
-						<TABLE>
-						 
-							<TR>
-								<TD COLSPAN="6"><b><spring:message
-											code="Cde40TransReimbForm.StaticText.reimbursementInformationStaticText" /></b>
-								</TD>
-							</TR>
 						
-						</TABLE>
-						<div id='hintRI' class="hint boxShadow3 radius5 right"></div>
 						<TABLE>
+							<!-- div id='hintRI' class="hint boxShadow3 radius5 right" --> 
+						 	<TR>
+						 		
+								<TD COLSPAN="6"><h3><b><spring:message
+											code="Cde40TransReimbForm.StaticText.reimbursementInformationStaticText" /></h3></b>
+								</TD>
+								<TD><form:hidden path="id" /><form:hidden id="isCapitalOutLay" path="isCapitalOutLay" /></TD>
+							</TR>
+							
 							<TR>
+								
 								<TD width="78%">&nbsp;&nbsp;<spring:message
 										code="Cde40TransReimbForm.StaticText.$1aTotalCurrentOperatingExpendituresForPupilTransportationStaticText" />
 								</TD>
 
-								<TD>$<form:input id="TotalCurrentOperatingExp"
-										path="operTran" /><font color="red"><b>*</b> <form:errors path="operTran"
-										cssClass="validationError" /></font>
+								<TD>
+									$<form:input id="TotalCurrentOperatingExp"
+										path="operTran" 
+										onBlur="checkAndFormatAmount('TotalCurrentOperatingExp')"/><font color="red"><b>*</b> 
+										<form:errors path="operTran" cssClass="validationError" /></font>
+									</div>
 								</TD>
 							</TR>
 
@@ -363,9 +322,10 @@ $Log:$
 										onBlur="formatMileageField('TotalActualMilesTraveledForAnyPurpose')" /><font color="red"><b>*</b> 
 									<form:errors path="totalMiles" cssClass="validationError" /></font></TD>
 							</TR>
-						</TABLE>
-						</div>
-						<font color="red"><c:out id="Message" value="${transportationForm.message}"/></font>
+					<!-- /div> -->
+					</TABLE>
+					
+					
 						</br>
 						<TABLE>
 							<TR>

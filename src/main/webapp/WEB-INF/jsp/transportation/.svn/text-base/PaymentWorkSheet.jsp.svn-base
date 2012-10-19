@@ -355,7 +355,7 @@ $Log:$
 									size="26" maxlength="26" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 							<TD><spring:message
 									code="PaymentWorkSheet.StaticText.fiscalYearStaticText" />&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-							<TD><form:input id="" path="fiscalYear" size="8"
+							<TD><form:input id="fiscalYearId" path="fiscalYear" size="8"
 									maxlength="8" /></TD>
 						</TR>
 

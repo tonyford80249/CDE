@@ -3,6 +3,7 @@ package com.cdoe.util;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,8 @@ import us.co.cde.state.security.exception.CdeSecurityException;
  * obtained from the container security.
  */
 public class UserInfo implements Serializable {
+	
+	public static final String USER_INFO_ATTR = "USER_INFO";
 
     private static final long serialVersionUID = 1L;
     private final Logger log = Logger.getLogger(UserInfo.class);
@@ -93,6 +96,11 @@ public class UserInfo implements Serializable {
     public Collection<Roles> getUserRoles() {
     	log.debug("getUserRoles returning user: " + oamUser.getOamGroups());
     	return oamUser.getOamGroups().values();
+    }
+    
+    public boolean logout(HttpServletRequest request) throws Exception {
+      OamAuthentication auth = OamAuthentication.getInstance(request);
+      return auth.logout();
     }
     
     /**
@@ -177,7 +185,10 @@ public class UserInfo implements Serializable {
 	 * @return
 	 */
 	public List<String> getAllDistrictCodes() {
-		return new ArrayList<String>(districtMap.keySet());
+		List<String> districtCodes = new ArrayList<String>(districtMap.keySet());
+		districtCodes.add("");
+		Collections.sort(districtCodes);
+		return districtCodes;
 	}
 	
 	/**
@@ -186,11 +197,6 @@ public class UserInfo implements Serializable {
 	 */
 	public List<String> getAllDistrictNames() {
 		return new ArrayList<String>(districtMap.values());
-	}
-	
-	public void logout() {
-		authenticator.logout();
-		
 	}
 	
 	/**

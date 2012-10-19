@@ -1,43 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 78
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp
-END
-LoginFooter.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 93
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/LoginFooter.jsp
-END
-blank.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/blank.jsp
-END
-Home.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Home.jsp
-END
-Header.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 89
-/svn/cde_fco/!svn/ver/131/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Header.jsp
-END
-AdvanceAndEntitlementReport.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AdvanceAndEntitlementReport.jsp
-END
-Error.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 87
-/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Error.jsp
+/svn/cde_fco/!svn/ver/216/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp
 END
 AudTracking.jsp
 K 25
@@ -45,41 +9,11 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AudTracking.jsp
 END
-AuditorMenu.jsp
+Error.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 94
-/svn/cde_fco/!svn/ver/103/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AuditorMenu.jsp
-END
-SSOLogin.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 90
-/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/SSOLogin.jsp
-END
-footer.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 88
-/svn/cde_fco/!svn/ver/93/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/footer.jsp
-END
-LandingMenu.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/cde_fco/!svn/ver/181/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/LandingMenu.jsp
-END
-PageListContent.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 97
-/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/PageListContent.jsp
-END
-menu.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/svn/cde_fco/!svn/ver/67/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/menu.jsp
+V 87
+/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Error.jsp
 END
 JspTry.inc
 K 25
@@ -99,11 +33,77 @@ svn:wc:ra_dav:version-url
 V 95
 /svn/cde_fco/!svn/ver/66/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AuditorHeader.jsp
 END
+AdvanceAndEntitlementReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AdvanceAndEntitlementReport.jsp
+END
+PageListContent.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/PageListContent.jsp
+END
+Header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/cde_fco/!svn/ver/212/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Header.jsp
+END
+blank.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/blank.jsp
+END
+LandingMenu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/cde_fco/!svn/ver/213/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/LandingMenu.jsp
+END
 LoginHeader.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 93
 /svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/LoginHeader.jsp
+END
+ModuleMenuHeader.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cde_fco/!svn/ver/67/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/ModuleMenuHeader.jsp
+END
+SSOLogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/SSOLogin.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cde_fco/!svn/ver/93/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/footer.jsp
+END
+AuditorMenu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/cde_fco/!svn/ver/103/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/AuditorMenu.jsp
+END
+Home.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/cde_fco/!svn/ver/76/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/Home.jsp
+END
+menu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cde_fco/!svn/ver/202/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/menu.jsp
 END
 MainLayout.jsp
 K 25
@@ -111,9 +111,9 @@ svn:wc:ra_dav:version-url
 V 93
 /svn/cde_fco/!svn/ver/143/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/MainLayout.jsp
 END
-ModuleMenuHeader.jsp
+LoginFooter.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 98
-/svn/cde_fco/!svn/ver/67/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/ModuleMenuHeader.jsp
+V 93
+/svn/cde_fco/!svn/ver/35/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/LoginFooter.jsp
 END

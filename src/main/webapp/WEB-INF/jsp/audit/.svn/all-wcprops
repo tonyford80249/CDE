@@ -3,17 +3,11 @@ svn:wc:ra_dav:version-url
 V 84
 /svn/cde_fco/!svn/ver/156/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit
 END
-AuditReports.jsp
+DistrictAuditHistory.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 101
-/svn/cde_fco/!svn/ver/154/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditReports.jsp
-END
-ChangeBilling.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ChangeBilling.jsp
+V 109
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/DistrictAuditHistory.jsp
 END
 ChangeELPA.jsp
 K 25
@@ -21,41 +15,35 @@ svn:wc:ra_dav:version-url
 V 99
 /svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ChangeELPA.jsp
 END
+ValidateSASIDs.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ValidateSASIDs.jsp
+END
+ChangeBilling.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ChangeBilling.jsp
+END
+AuditorHomePage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/cde_fco/!svn/ver/155/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditorHomePage.jsp
+END
+AuditTransport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditTransport.jsp
+END
 AuditTracking.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditTracking.jsp
-END
-CreateAudit.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/CreateAudit.jsp
-END
-EditDistrict.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/EditDistrict.jsp
-END
-DistrictInformation.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/DistrictInformation.jsp
-END
-AuditorMenu.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditorMenu.jsp
-END
-DistrictAuditHistory.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/DistrictAuditHistory.jsp
 END
 ChangeAtRiskCounts.jsp
 K 25
@@ -63,17 +51,23 @@ svn:wc:ra_dav:version-url
 V 106
 /svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ChangeAtRiskCounts.jsp
 END
-ValidateSASIDs.jsp
+AudCDE40TransReimbForm.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AudCDE40TransReimbForm.jsp
+END
+EditDistrict.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/EditDistrict.jsp
+END
+UploadStudents.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 103
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ValidateSASIDs.jsp
-END
-AudSumUpdate.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/cde_fco/!svn/ver/130/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AudSumUpdate.jsp
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/UploadStudents.jsp
 END
 ImportAuditTransData.jsp
 K 25
@@ -81,11 +75,29 @@ svn:wc:ra_dav:version-url
 V 108
 /svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/ImportAuditTransData.jsp
 END
-AudCDE40TransReimbForm.jsp
+AuditorMenu.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 111
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AudCDE40TransReimbForm.jsp
+V 100
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditorMenu.jsp
+END
+DistrictInformation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/DistrictInformation.jsp
+END
+CreateAudit.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/CreateAudit.jsp
+END
+AdjustmentStatus.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AdjustmentStatus.jsp
 END
 DistrictAuditReporting.jsp
 K 25
@@ -105,27 +117,15 @@ svn:wc:ra_dav:version-url
 V 106
 /svn/cde_fco/!svn/ver/156/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditCounts31Grid.jsp
 END
-AuditorHomePage.jsp
+AuditReports.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 104
-/svn/cde_fco/!svn/ver/155/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditorHomePage.jsp
+V 101
+/svn/cde_fco/!svn/ver/154/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditReports.jsp
 END
-UploadStudents.jsp
+AudSumUpdate.jsp
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/UploadStudents.jsp
-END
-AdjustmentStatus.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 105
-/svn/cde_fco/!svn/ver/140/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AdjustmentStatus.jsp
-END
-AuditTransport.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 102
-/svn/cde_fco/!svn/ver/88/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AuditTransport.jsp
+V 101
+/svn/cde_fco/!svn/ver/130/cdoe_weblogic/trunk/cdoe/src/main/webapp/WEB-INF/jsp/audit/AudSumUpdate.jsp
 END

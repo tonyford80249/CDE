@@ -45,5 +45,6 @@
 	<bean id="validateSASIDsDAO" class="com.cdoe.biz.impl.ValidateSASIDsDAO" parent="hibernateDAO"/>
 	<bean id="updateStudentsDAO" class="com.cdoe.biz.impl.UpdateStudentsDAO" parent="hibernateDAO"/>
 	<bean id="stateEqualMasterDAO" class="com.cdoe.biz.impl.StateEqualMasterDAO" parent="hibernateDAO"/>
-
+	<bean id="audCDE40TransReimbFormDAO" class="com.cdoe.biz.impl.AudCDE40TransReimbFormDAO" parent="hibernateDAO"/>
+	<bean id="auditRepaymentAdjustmentDAO" class="com.cdoe.biz.impl.AuditRepaymentAdjustmentDAO" parent="hibernateDAO"/>
 </beans>
